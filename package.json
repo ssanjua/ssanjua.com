@@ -12,6 +12,9 @@
   "dependencies": {
     "@astrojs/check": "^0.5.10",
     "@astrojs/tailwind": "^5.1.0",
+    "@fontsource-variable/martian-mono": "^5.0.12",
+    "@fontsource-variable/noto-sans": "^5.0.4",
+    "@fontsource/noto-sans-osmanya": "^5.0.12",
     "astro": "^4.5.17",
     "tailwindcss": "^3.4.3",
     "typescript": "^5.4.4"
