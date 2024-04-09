@@ -6,6 +6,7 @@ import '@fontsource-variable/noto-sans';
 
 interface Props {
 	title: string;
+	description: string;
 }
 
 const { title } = Astro.props;
@@ -39,8 +40,8 @@ const { title } = Astro.props;
 		background-color: black;
 		display: flex;
 		flex-direction: column;
-		min-height: 100vh;
 	}
+	
 	.descripcion-text {
 		font-family: 'Martian Mono Variable', monospace;
 		font-size: 14px;
