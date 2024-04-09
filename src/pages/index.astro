@@ -7,6 +7,8 @@ import GitHubIcon from "../components/icons/GitHubIcon.astro";
 import SocialButtons from '../components/SocialButtons.astro';
 import XIcon from '../components/icons/XIcon.astro';
 import InstagramIcon from '../components/icons/InstagramIcon.astro';
+import SocialContact from '../components/SocialContact.astro';
+import DownloadIcon from '../components/icons/DownloadIcon.astro';
 ---
 
 <Layout title="Welcome to Astro.">
@@ -42,20 +44,31 @@ import InstagramIcon from '../components/icons/InstagramIcon.astro';
 					src="https://avatars.githubusercontent.com/u/122236110?v=4" alt="ssanjua profile picture"
 				/>
 			</div>
-			<nav class="flex gap-x-2">
-					<SocialButtons href="https://github.com/ssanjua">
-						<GitHubIcon  class="w-8 h-8" />
-					</SocialButtons> 
-					<SocialButtons href="https://github.com/ssanjua">
-						<LinkedinIcon  class="w-8 h-8" />
-					</SocialButtons> 
-					<SocialButtons href="https://github.com/ssanjua">
-						<XIcon  class="w-8 h-8" />
-					</SocialButtons> 
-					<SocialButtons href="https://github.com/ssanjua">
-						<InstagramIcon  class="w-8 h-8" />
-					</SocialButtons> 
-			</nav>
+			<div class="flex flex-col md:flex-row md:justify-between">
+				<nav class="flex justify-start gap-x-2 py-4">
+						<SocialButtons href="https://github.com/ssanjua">
+							<GitHubIcon  class="w-8 h-8" />
+						</SocialButtons> 
+						<SocialButtons href="https://github.com/ssanjua">
+							<LinkedinIcon  class="w-8 h-8" />
+						</SocialButtons> 
+						<SocialButtons href="https://github.com/ssanjua">
+							<XIcon  class="w-8 h-8" />
+						</SocialButtons> 
+						<SocialButtons href="https://github.com/ssanjua">
+							<InstagramIcon  class="w-8 h-8" />
+						</SocialButtons> 
+				</nav>
+				<nav class="mt-4 md:mt-0 md:ml-auto md:mr-5 flex gap-x-2 py-4">
+					<SocialContact href="">
+						<span>CONTACTO</span>
+					</SocialContact>
+					<SocialContact href="">
+						<DownloadIcon class="w-8 h-8" />
+						<span class="px-2">CV</span>
+					</SocialContact>
+				</nav>
+			</div>
 		</section>
 	</main>
 </Layout>
