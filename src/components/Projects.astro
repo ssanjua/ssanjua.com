@@ -10,10 +10,11 @@ import MySQLIcon from "./icons/MySQLIcon.astro";
 import GitHubIcon from "./icons/GitHubIcon.astro";
 import LinkButton from "./LinkButton.astro";
 import Link from "./icons/Link.astro";
+import ProjectsIcon from "./icons/ProjectsIcon.astro";
 
 const TAGS = {
   NEXT: {
-    name: "Next.js",
+    name: "Next",
     class: "bg-black text-white",
     icon: NextjsIcon,
   },
@@ -33,7 +34,7 @@ const TAGS = {
     icon: JavaScriptIcon,
   },
   NODE: {
-    name: "Node.js",
+    name: "Node",
     class: "bg-green-500 bg-opacity-20 text-white",
     icon: NodeJsIcon,
   },
@@ -57,7 +58,8 @@ const TAGS = {
 const PROJECTS = [
   {
     title: "Bookeando",
-    description: "Proyecto completo, desde la ideación del backend y frontend. Stripe, Autenticación y testing con e2e",
+    description:
+      "Proyecto completo, desde la ideación del backend y frontend. Stripe, Autenticación y testing con e2e",
     link: "https://bookeando.onrender.com/",
     github: "https://github.com/ssanjua/booking-web",
     image: "/projects/bookeando.webp",
@@ -65,7 +67,8 @@ const PROJECTS = [
   },
   {
     title: "YarcoDelivery",
-    description: "Aplicación full stack de delivery de comidas con auth0, Stripe para manejar los pagos, perfil de usuario y gestión avanzada. Control de pedidos, de órdenes y menú.",
+    description:
+      "Aplicación full stack de delivery de comidas con auth0, Stripe para manejar los pagos, perfil de usuario y gestión avanzada. Control de pedidos, de órdenes y menú.",
     link: "https://sanjuan-delivery-app-frontend.onrender.com/",
     github: "https://github.com/ssanjua/sanjuan-delivery-app",
     image: "/projects/yarcoDelivery.webp",
@@ -79,62 +82,56 @@ const PROJECTS = [
     image: "/projects/shortURL.webp",
     tags: [TAGS.JAVASCRIPT, TAGS.REACT, TAGS.NEXT, TAGS.ZOD, TAGS.SQL],
   },
+  {
+    title: "ShortURL",
+    description: "ShotenURL website to help shorten URLS",
+    link: "url-shortener-ss.vercel.app/",
+    github: "https://github.com/ssanjua/url-shortener",
+    image: "/projects/shortURL.webp",
+    tags: [TAGS.JAVASCRIPT, TAGS.REACT, TAGS.NEXT, TAGS.ZOD, TAGS.SQL],
+  },
 ];
 ---
 
-<div class="flex flex-col gap-y-16">
+<div class="grid md:grid-cols-2 gap-6">
   {
     PROJECTS.map(({ title, description, tags, image, link, github }) => (
-      <article class="flex flex-col space-x-0 space-y-8 group md:flex-row md:space-x-8 md:space-y-0">
-        <div class="w-full md:w-1/2">
-          <div class="relative flex flex-col items-center col-span-6 row-span-5 gap-8 transition duration-500 ease-in-out transform shadow-xl overflow-clip rounded-xl sm:rounded-xl md:group-hover:-translate-y-1 md:group-hover:shadow-2xl lg:border lg:border-gray-800 lg:hover:border-gray-700 lg:hover:bg-gray-800/50">
-            <img
-              alt="Recién llegado vs 5 años en Nueva Zelanda"
-              class="object-cover object-top w-full h-56 transition duration-500 sm:h-full md:scale-110 md:group-hover:scale-105"
-              loading="lazy"
-              src={image}
-            />
+      <div class="mb-4">
+        <div class="flex items-center mb-4">
+          <ProjectsIcon class="mr-4" />
+          <h3 class="text-xl font-bold text-white mr-4">{title}</h3>
+          <div class="flex gap-3">
+            <LinkButton href={github}>
+              <GitHubIcon stroke="white" class="size-4 " />
+              Code
+            </LinkButton>
+            <LinkButton href={link}>
+              <Link class="size-3" />
+              Demo
+            </LinkButton>
           </div>
         </div>
-
-        <div class="w-full md:w-1/2 md:max-w-lg">
-          <h3 class="text-2xl font-bold text-white dark:text-white">
-            {title}
-          </h3>
-
-          <div class="mt-2 text-white/80 dark:text-white/90">
-              {description}
-            </div>
-          <div class="flex flex-wrap mt-4">
-            <ul class="flex flex-row mb-2 gap-x-2">
+        <div class="group relative overflow-hidden rounded-2xl">
+          <img
+            src={image}
+            alt={`Project ${title}`}
+            class="w-full object-cover rounded-2xl transition-all duration-300 ease-out group-hover:opacity-80 group-hover:scale-110"
+          />
+          <div class="absolute inset-0 flex flex-col justify-end p-2 bg-gradient-to-t from-black to-transparent">
+            <div class="flex flex-wrap items-center gap-1 mt-2">
               {tags.map((tag) => (
-                <li>
-                  <span
-                    class={`flex gap-x-2 rounded-full text-xs ${tag.class} py-2 px-2`}
-                  >
-                    <tag.icon class="size-4" />
-                    {tag.name}
-                  </span>
-                </li>
+                <span
+                  class={`inline-block rounded-full text-xs py-1 px-2 ${tag.class}`}
+                >
+                  <tag.icon class="inline-block size-3.5" />
+                  {tag.name}
+                </span>
               ))}
-            </ul>
-            <footer class="flex items-end justify-start mt-2 gap-x-4">
-              {github && (
-                <LinkButton href={github}>
-                  <GitHubIcon stroke="white" class="size-6 " />
-                  Code
-                </LinkButton>
-              )}
-              {link && (
-                <LinkButton href={link}>
-                  <Link class="size-4" />
-                  Preview
-                </LinkButton>
-              )}
-            </footer>
+            </div>
+            <p class="text-sm mt-3 text-gray-300">{description}</p>
           </div>
         </div>
-      </article>
+      </div>
     ))
   }
 </div>
