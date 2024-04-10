@@ -28,9 +28,6 @@ const { title, description } = Astro.props;
 			<div
 				class="absolute bottom-0 left-[-20%] right-0 top-[-10%] h-[500px] w-[500px] rounded-full bg-[radial-gradient(circle_farthest-side,rgba(255,0,182,.15),rgba(255,255,255,0))]"
 			>
-			</div><div
-				class="absolute bottom-0 right-[-20%] top-[-10%] h-[500px] w-[500px] rounded-full bg-[radial-gradient(circle_farthest-side,rgba(255,0,182,.15),rgba(255,255,255,0))]"
-			>
 			</div>
 		</div>
 		<Header />
@@ -52,6 +49,7 @@ const { title, description } = Astro.props;
 		display: flex;
 		flex-direction: column;
 		min-height: 100vh;
+		overscroll-behavior: none;
 	}
 
 	.descripcion-text {
@@ -59,6 +57,12 @@ const { title, description } = Astro.props;
 		font-size: 14px;
 		line-height: 1.6;
 	}
+
+	@media (prefers-color-scheme: dark) {
+        body {
+          color: rgba(255, 255, 255, 0.9);
+        }
+    }
 
 	@media screen (prefers-reduce-motion: reduce) {
 		html {
