@@ -1,8 +1,8 @@
 ---
-import Header from '../components/Header.astro';
-import '@fontsource-variable/martian-mono';
-import '@fontsource-variable/noto-sans';
-import Footer from '../components/Footer.astro';
+import Header from "../components/Header.astro";
+import "@fontsource-variable/martian-mono";
+import "@fontsource-variable/noto-sans";
+import Footer from "../components/Footer.astro";
 // font-family: 'Noto Sans Variable', sans-serif;
 
 interface Props {
@@ -24,7 +24,15 @@ const { title, description } = Astro.props;
 		<title>{title}</title>
 	</head>
 	<body>
-		<div class="relative h-full w-full bg-slate-950"><div class="absolute bottom-0 left-[-20%] right-0 top-[-10%] h-[500px] w-[500px] rounded-full bg-[radial-gradient(circle_farthest-side,rgba(255,0,182,.15),rgba(255,255,255,0))]"></div><div class="absolute bottom-0 right-[-20%] top-[-10%] h-[500px] w-[500px] rounded-full bg-[radial-gradient(circle_farthest-side,rgba(255,0,182,.15),rgba(255,255,255,0))]"></div></div>
+		<div class="relative h-full w-full bg-slate-950">
+			<div
+				class="absolute bottom-0 left-[-20%] right-0 top-[-10%] h-[500px] w-[500px] rounded-full bg-[radial-gradient(circle_farthest-side,rgba(255,0,182,.15),rgba(255,255,255,0))]"
+			>
+			</div><div
+				class="absolute bottom-0 right-[-20%] top-[-10%] h-[500px] w-[500px] rounded-full bg-[radial-gradient(circle_farthest-side,rgba(255,0,182,.15),rgba(255,255,255,0))]"
+			>
+			</div>
+		</div>
 		<Header />
 		<slot />
 		<Footer />
@@ -35,7 +43,7 @@ const { title, description } = Astro.props;
 		color-scheme: light dark;
 	}
 	html {
-		font-family: 'Noto Sans Variable', sans-serif;
+		font-family: "Noto Sans Variable", sans-serif;
 		scroll-behavior: smooth;
 	}
 
@@ -45,9 +53,9 @@ const { title, description } = Astro.props;
 		flex-direction: column;
 		min-height: 100vh;
 	}
-	
+
 	.descripcion-text {
-		font-family: 'Martian Mono Variable', monospace;
+		font-family: "Martian Mono Variable", monospace;
 		font-size: 14px;
 		line-height: 1.6;
 	}
@@ -57,5 +65,4 @@ const { title, description } = Astro.props;
 			scroll-behavior: auto;
 		}
 	}
-
 </style>
