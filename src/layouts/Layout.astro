@@ -2,6 +2,7 @@
 import Header from '../components/Header.astro';
 import '@fontsource-variable/martian-mono';
 import '@fontsource-variable/noto-sans';
+import Footer from '../components/Footer.astro';
 // font-family: 'Noto Sans Variable', sans-serif;
 
 interface Props {
@@ -26,6 +27,7 @@ const { title, description } = Astro.props;
 		<div class="relative h-full w-full bg-slate-950"><div class="absolute bottom-0 left-[-20%] right-0 top-[-10%] h-[500px] w-[500px] rounded-full bg-[radial-gradient(circle_farthest-side,rgba(255,0,182,.15),rgba(255,255,255,0))]"></div><div class="absolute bottom-0 right-[-20%] top-[-10%] h-[500px] w-[500px] rounded-full bg-[radial-gradient(circle_farthest-side,rgba(255,0,182,.15),rgba(255,255,255,0))]"></div></div>
 		<Header />
 		<slot />
+		<Footer />
 	</body>
 </html>
 <style is:global>
@@ -34,18 +36,26 @@ const { title, description } = Astro.props;
 	}
 	html {
 		font-family: 'Noto Sans Variable', sans-serif;
+		scroll-behavior: smooth;
 	}
 
 	body {
 		background-color: black;
 		display: flex;
 		flex-direction: column;
+		min-height: 100vh;
 	}
 	
 	.descripcion-text {
 		font-family: 'Martian Mono Variable', monospace;
 		font-size: 14px;
 		line-height: 1.6;
+	}
+
+	@media screen (prefers-reduce-motion: reduce) {
+		html {
+			scroll-behavior: auto;
+		}
 	}
 
 </style>

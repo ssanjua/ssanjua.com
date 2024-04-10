@@ -12,25 +12,29 @@ import DownloadIcon from '../components/icons/DownloadIcon.astro';
 import MailIcon from '../components/icons/MailIcon.astro';
 import Experience from '../components/Experience.astro';
 import SectionContainer from '../components/SectionContainer.astro';
+import EducationIcon from '../components/icons/EducationIcon.astro';
+import ProjectsIcon from '../components/icons/ProjectsIcon.astro';
+import Projects from '../components/Projects.astro';
 ---
 
 <Layout 
 	title="ssanjua - portfolio - full stack web developer"
 	description="full stack web developer based in spain, seeking work"
 	>
-	<main>
-		<SectionContainer>
+	<main class="px-4">
+		<SectionContainer class="py-44 pb-24">
 		<h3 class="text-white text-6xl font-bold flex flex-row gap-x-4 pb-4">
-				SSANJUA <a 
+				SSANJUA 
+				<a 
 					href="https://linkedin.com/in/paupallares"
 					target="_blank"
 					rel="nonopener" 
 					class="flex justify-center items-center">
 					<Badge>Full Stack Developer</Badge>
-				</div>
-			</h3>
+				</a>
+		</h3>
 			<div class="flex gap-10">
-				<h2 class="descripcion-text text-wrap">
+				<h2 class="descripcion-text text-wrap max-w-[700px] text-pretty">
 					<span class="opacity-85">
 					Hola! Soy Paula, también conocida como ssanjua. Apasionada por la tecnología y comprometida con la creación de productos que marquen
 					la diferencia, mi experiencia en el sector multimedia me ha formado en liderazgo
@@ -51,7 +55,7 @@ import SectionContainer from '../components/SectionContainer.astro';
 				/>
 			</div>
 			<div class="flex flex-col md:flex-row md:justify-between mt-4">
-				<nav class="flex justify-start gap-x-2 py-4">
+				<nav class="flex justify-start gap-2 py-4 flex-gap">
 						<SocialButtons href="https://github.com/ssanjua">
 							<GitHubIcon  class="w-8 h-8" />
 						</SocialButtons> 
@@ -68,7 +72,7 @@ import SectionContainer from '../components/SectionContainer.astro';
 				<nav class="md:mt-0 md:ml-auto md:mr-5 flex gap-x-4 py-4">
 					<SocialContact href="">
 						<MailIcon class="size-4"/>
-						<span>CONTACTO</span>
+						<span>CONTACT</span>
 					</SocialContact>
 					<SocialContact href="https://drive.google.com/file/d/1me7-_HcOuj8stwOJCg11MWzkd-nwmm2-/view?usp=sharing">
 						<DownloadIcon class="size-4" />
@@ -77,7 +81,18 @@ import SectionContainer from '../components/SectionContainer.astro';
 				</nav>
 			</div>
 		</SectionContainer>
-		<SectionContainer>
+		<SectionContainer id="projects">
+			<h2 class="flex gap-x-2 items-center text-2xl font-semibold mb-10">
+				<ProjectsIcon class="size-8" />
+				PROYECTOS
+			</h2>
+			<Projects />
+		</SectionContainer>
+		<SectionContainer id="education">
+			<h2 class="flex gap-x-2 items-center text-2xl font-semibold mb-10">
+				<EducationIcon class="size-8" />
+				EDUCATION
+			</h2>
 			<Experience />
 		</SectionContainer>
 	</main>

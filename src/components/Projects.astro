@@ -1,0 +1,104 @@
+---
+import NextjsIcon from "./icons/NextjsIcon.astro"
+import TailwindIcon from "./icons/TailwindIcon.astro"
+import ReactIcon from "./icons/ReactIcon.astro"
+import JavaScriptIcon from "./icons/JavaScriptIcon.astro"
+import NodeJsIcon from "./icons/NodeJsIcon.astro"
+import MongoDBIcon from "./icons/MongoDBIcon.astro"
+import ZodIcon from "./icons/ZodIcon.astro"
+import MySQLIcon from "./icons/MySQLIcon.astro"
+
+const TAGS = {
+  NEXT: {
+    name: "Next.js",
+    class: "bg-black text-white",
+    icon: NextjsIcon,
+  },
+  TAILWIND: {
+    name: "Tailwind CSS",
+    class: "bg-[#003159] text-white",
+    icon: TailwindIcon,
+  },
+  REACT: {
+    name: "React",
+    class: "bg-blue-700 bg-opacity-50 text-white",
+    icon: ReactIcon,
+  },
+  JAVASCRIPT: {
+    name: "JavaScript",
+    class: "bg-yellow-500 bg-opacity-20 text-white",
+    icon: JavaScriptIcon,
+  },
+  NODE: {
+    name: "Node.js",
+    class: "bg-green-500 bg-opacity-20 text-white",
+    icon: NodeJsIcon,
+  },
+  MONGODB: {
+    name: "MongoDB",
+    class: "bg-green-300 bg-opacity-30 text-white",
+    icon: MongoDBIcon,
+  },
+  ZOD: {
+    name: "Zod",
+    class: "bg-white bg-opacity-20 text-white",
+    icon: ZodIcon,
+  },
+  SQL: {
+    name: "PostgreSQL",
+    class: "bg-blue-400 bg-opacity-50 text-white",
+    icon: MySQLIcon,
+  },
+}
+
+const PROJECTS = [
+    {
+        title: 'Bookeando',
+        description: 'Lorem',
+        link: 'https://bookeando.onrender.com/',
+        github: 'https://github.com/ssanjua/booking-web',
+        image: '/projects/bookeando.webp',
+        tags: [TAGS.REACT, TAGS.NEXT, TAGS.NODE, TAGS.TAILWIND,  TAGS.MONGODB],
+    },
+    {
+        title: 'YarcoDelivery',
+        description: 'Lorem',
+        link: 'https://sanjuan-delivery-app-frontend.onrender.com/',
+        github: 'https://github.com/ssanjua/sanjuan-delivery-app',
+        image: '/projects/yarcoDelivery.webp',
+        tags: [TAGS.REACT, TAGS.NEXT, TAGS.NODE, TAGS.TAILWIND,  TAGS.MONGODB],
+    },
+    {
+        title: 'ShortURL',
+        description: 'Lorem',
+        link: 'url-shortener-ss.vercel.app/',
+        github: 'https://github.com/ssanjua/url-shortener',
+        image: '/projects/shortURL.webp',
+        tags: [TAGS.JAVASCRIPT, TAGS.REACT, TAGS.NEXT, TAGS.ZOD, TAGS.SQL],
+    },
+
+]
+---
+
+{
+    PROJECTS.map(({ title, description, tags, image, link, github }) => (        <article>
+            <h3 class="text-2xl font-semibold text-red-600 mb-2">{title}</h3> 
+            <p class="text-lg mb-2">{description}</p>
+            <ul class="flex flex-row mb-2 gap-x-2">
+                {tags.map((tag) => (
+                    <li>
+                    <span
+                        class={`flex gap-x-2 rounded-full text-xs ${tag.class} py-2 px-3 `}
+                    >
+                        <tag.icon class="size-4" />
+                        {tag.name}
+                    </span>
+                    </li>
+                ))}
+            </ul>  
+            <img
+                class="rounded shadow-2xl shadow-white/20" 
+                src={image} alt={`imagen de ${title}`} />
+        </article>
+    ))
+}
