@@ -1,85 +1,115 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import Card from '../components/Card.astro';
-import Badge from '../components/Badge.astro';
+import Layout from "../layouts/Layout.astro";
+import Card from "../components/Card.astro";
+import Badge from "../components/Badge.astro";
 import LinkedinIcon from "../components/icons/LinkedinIcon.astro";
 import GitHubIcon from "../components/icons/GitHubIcon.astro";
-import SocialButtons from '../components/SocialButtons.astro';
-import XIcon from '../components/icons/XIcon.astro';
-import InstagramIcon from '../components/icons/InstagramIcon.astro';
-import SocialContact from '../components/SocialContact.astro';
-import DownloadIcon from '../components/icons/DownloadIcon.astro';
-import MailIcon from '../components/icons/MailIcon.astro';
-import Experience from '../components/Experience.astro';
-import SectionContainer from '../components/SectionContainer.astro';
-import EducationIcon from '../components/icons/EducationIcon.astro';
-import ProjectsIcon from '../components/icons/ProjectsIcon.astro';
-import Projects from '../components/Projects.astro';
+import SocialButtons from "../components/SocialButtons.astro";
+import XIcon from "../components/icons/XIcon.astro";
+import InstagramIcon from "../components/icons/InstagramIcon.astro";
+import SocialContact from "../components/SocialContact.astro";
+import DownloadIcon from "../components/icons/DownloadIcon.astro";
+import MailIcon from "../components/icons/MailIcon.astro";
+import Experience from "../components/Experience.astro";
+import SectionContainer from "../components/SectionContainer.astro";
+import EducationIcon from "../components/icons/EducationIcon.astro";
+import ProjectsIcon from "../components/icons/ProjectsIcon.astro";
+import Projects from "../components/Projects.astro";
+import TechStackIcon from "../components/icons/TechStackIcon.astro";
+import TechStack from "../components/TechStack.astro";
 ---
 
-<Layout 
+<Layout
 	title="ssanjua - portfolio - full stack web developer"
 	description="full stack web developer based in spain, seeking work"
-	>
+>
 	<main class="px-4">
 		<SectionContainer class="py-44 pb-24">
-		<h3 class="text-white text-6xl font-bold flex flex-row gap-x-4 pb-4">
-				SSANJUA 
-				<a 
+			<h3
+				class="text-white text-6xl font-bold flex flex-row gap-x-4 pb-4"
+			>
+				SSANJUA
+				<a
 					href="https://linkedin.com/in/paupallares"
 					target="_blank"
-					rel="nonopener" 
-					class="flex justify-center items-center">
+					rel="nonopener"
+					class="flex items-center transition md:justify-center md:hover:scale-105"
+				>
 					<Badge>Full Stack Developer</Badge>
 				</a>
-		</h3>
+			</h3>
 			<div class="flex gap-10">
-				<h2 class="descripcion-text text-wrap max-w-[700px] text-pretty">
+				<h2
+					class="descripcion-text text-wrap max-w-[700px] text-pretty"
+				>
 					<span class="opacity-85">
-					Hola! Soy Paula, también conocida como ssanjua. Apasionada por la tecnología y comprometida con la creación de productos que marquen
-					la diferencia, mi experiencia en el sector multimedia me ha formado en liderazgo
-					y trabajo colaborativo. Especializada en tecnologías como 
-					</span>	
-						<span class="font-bold text-white">JavaScript, React,
-						Node.js y bases de datos SQL/NoSQL,</span> 
-					<span class="opacity-85">	
-					mis proyectos incluyen aplicaciones como </span>
-					<span class="text-white font-bold">Bookeando y YarcoDelivery,</span> 
-					<span class="opacity-85">abordando tanto el backend como el frontend. Valorada
-					técnicos con un pensamiento creativo y efectivo en la resolución de problemas.
+						Hola! Soy Paula, también conocida como ssanjua.
+						Apasionada por la tecnología y comprometida con la
+						creación de productos que marquen la diferencia, mi
+						experiencia en el sector multimedia me ha formado en
+						liderazgo y trabajo colaborativo. Especializada en
+						tecnologías como
+					</span>
+					<span class="font-bold text-white"
+						>JavaScript, React, Node.js y bases de datos SQL/NoSQL,</span
+					>
+					<span class="opacity-85">
+						mis proyectos incluyen aplicaciones como
+					</span>
+					<span class="text-white font-bold"
+						>Bookeando y YarcoDelivery,</span
+					>
+					<span class="opacity-85"
+						>abordando tanto el backend como el frontend. Valorada
+						técnicos con un pensamiento creativo y efectivo en la
+						resolución de problemas.
 					</span>
 				</h2>
 				<img
-					class="rounded-full w-40 h-40" 
-					src="https://avatars.githubusercontent.com/u/122236110?v=4" alt="ssanjua profile picture"
+					class="rounded-full w-40 h-40"
+					src="https://avatars.githubusercontent.com/u/122236110?v=4"
+					alt="ssanjua profile picture"
 				/>
 			</div>
 			<div class="flex flex-col md:flex-row md:justify-between mt-4">
 				<nav class="flex justify-start gap-2 py-4 flex-gap">
-						<SocialButtons href="https://github.com/ssanjua">
-							<GitHubIcon  class="w-8 h-8" />
-						</SocialButtons> 
-						<SocialButtons href="https://www.linkedin.com/in/paupallares/">
-							<LinkedinIcon  class="size-8" />
-						</SocialButtons> 
-						<SocialButtons href="https://twitter.com/pupipallares">
-							<XIcon  class="w-8 h-8" />
-						</SocialButtons> 
-						<SocialButtons href="https://www.instagram.com/ppupipallares/">
-							<InstagramIcon  class="size-8" />
-						</SocialButtons> 
-				</nav>
-				<nav class="md:mt-0 md:ml-auto md:mr-5 flex gap-x-4 py-4">
 					<SocialContact href="">
-						<MailIcon class="size-4"/>
+						<MailIcon class="size-4" />
 						<span>CONTACT</span>
 					</SocialContact>
-					<SocialContact href="https://drive.google.com/file/d/1me7-_HcOuj8stwOJCg11MWzkd-nwmm2-/view?usp=sharing">
+					<SocialContact
+						href="https://drive.google.com/file/d/1me7-_HcOuj8stwOJCg11MWzkd-nwmm2-/view?usp=sharing"
+					>
 						<DownloadIcon class="size-4" />
 						<span>CV</span>
 					</SocialContact>
 				</nav>
+				<nav class="md:mt-0 md:ml-auto md:mr-5 flex gap-x-2 py-4">
+					<SocialButtons href="https://github.com/ssanjua">
+						<GitHubIcon class="size-6" />
+					</SocialButtons>
+					<SocialButtons
+						href="https://www.linkedin.com/in/paupallares/"
+					>
+						<LinkedinIcon class="size-6" />
+					</SocialButtons>
+					<SocialButtons href="https://twitter.com/pupipallares">
+						<XIcon class="size-6" />
+					</SocialButtons>
+					<SocialButtons
+						href="https://www.instagram.com/ppupipallares/"
+					>
+						<InstagramIcon class="size-6" />
+					</SocialButtons>
+				</nav>
 			</div>
+		</SectionContainer>
+		<SectionContainer id="tech">
+			<h2 class="flex gap-x-2 items-center text-3xl font-semibold mb-10">
+				<TechStackIcon class="size-8" />
+				TECH STACK
+			</h2>
+			<TechStack />
 		</SectionContainer>
 		<SectionContainer id="projects">
 			<h2 class="flex gap-x-2 items-center text-3xl font-semibold mb-10">
