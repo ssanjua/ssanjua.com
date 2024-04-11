@@ -30,9 +30,11 @@ const { title, description } = Astro.props;
 			>
 			</div>
 		</div>
-		<Header />
-		<slot />
-		<Footer />
+		<div class="mx-auto max-w-[850px] px-4">
+			<Header />
+			<slot />
+			<Footer />
+		</div>
 	</body>
 </html>
 <style is:global>
@@ -59,10 +61,10 @@ const { title, description } = Astro.props;
 	}
 
 	@media (prefers-color-scheme: dark) {
-        body {
-          color: rgba(255, 255, 255, 0.9);
-        }
-    }
+		body {
+			color: rgba(255, 255, 255, 0.9);
+		}
+	}
 
 	@media screen (prefers-reduce-motion: reduce) {
 		html {
