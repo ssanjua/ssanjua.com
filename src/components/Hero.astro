@@ -1,0 +1,93 @@
+---
+import Badge from "./Badge.astro";
+import SectionContainer from "./SectionContainer.astro";
+import SocialButtons from "./SocialButtons.astro";
+import SocialContact from "./SocialContact.astro";
+import DownloadIcon from "./icons/DownloadIcon.astro";
+import GitHubIcon from "./icons/GitHubIcon.astro";
+import InstagramIcon from "./icons/InstagramIcon.astro";
+import LinkedinIcon from "./icons/LinkedinIcon.astro";
+import MailIcon from "./icons/MailIcon.astro";
+import XIcon from "./icons/XIcon.astro";
+---
+
+<SectionContainer class="py-44 pb-24">
+    <h3
+        class="text-white text-6xl font-bold flex flex-row gap-x-4 pb-4"
+    >
+        SSANJUA
+        <a
+            href="https://linkedin.com/in/paupallares"
+            target="_blank"
+            rel="nonopener"
+            class="flex items-center transition md:justify-center md:hover:scale-105"
+        >
+            <Badge>Full Stack Developer</Badge>
+        </a>
+    </h3>
+    <div class="flex gap-10">
+        <h2
+            class="descripcion-text text-wrap max-w-[700px] text-pretty"
+        >
+            <span class="opacity-85">
+                Hola! Soy Paula, también conocida como ssanjua.
+                Apasionada por la tecnología y comprometida con la
+                creación de productos que marquen la diferencia, mi
+                experiencia en el sector multimedia me ha formado en
+                liderazgo y trabajo colaborativo. Especializada en
+                tecnologías como
+            </span>
+            <span class="font-bold text-white"
+                >JavaScript, React, Node.js y bases de datos SQL/NoSQL,</span
+            >
+            <span class="opacity-85">
+                mis proyectos incluyen aplicaciones como
+            </span>
+            <span class="text-white font-bold"
+                >Bookeando y YarcoDelivery,</span
+            >
+            <span class="opacity-85"
+                >abordando tanto el backend como el frontend. Valorada
+                técnicos con un pensamiento creativo y efectivo en la
+                resolución de problemas.
+            </span>
+        </h2>
+        <img
+            class="rounded-full size-40"
+            src="https://avatars.githubusercontent.com/u/122236110?v=4"
+            alt="ssanjua profile picture"
+        />
+    </div>
+    <div class="flex flex-col md:flex-row md:justify-between mt-4">
+        <nav class="flex justify-start gap-4 py-4 flex-gap">
+            <SocialContact href="">
+                <MailIcon class="size-4" />
+                <span>CONTACT</span>
+            </SocialContact>
+            <SocialContact
+                href="https://drive.google.com/file/d/1me7-_HcOuj8stwOJCg11MWzkd-nwmm2-/view?usp=sharing"
+            >
+                <DownloadIcon class="size-4" />
+                <span>CV</span>
+            </SocialContact>
+        </nav>
+        <nav class="md:mt-0 md:ml-auto md:mr-5 flex gap-x-2 py-4">
+            <SocialButtons href="https://github.com/ssanjua">
+                <GitHubIcon class="size-6" />
+            </SocialButtons>
+            <SocialButtons
+                href="https://www.linkedin.com/in/paupallares/"
+            >
+                <LinkedinIcon class="size-6" />
+            </SocialButtons>
+            <SocialButtons href="https://twitter.com/pupipallares">
+                <XIcon class="size-6" />
+            </SocialButtons>
+            <SocialButtons
+                href="https://www.instagram.com/ppupipallares/"
+            >
+                <InstagramIcon class="size-6" />
+            </SocialButtons>
+        </nav>
+    </div>
+</SectionContainer>
