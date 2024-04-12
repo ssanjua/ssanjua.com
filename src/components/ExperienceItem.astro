@@ -1,53 +1,68 @@
 ---
+import LinkInline from "./LinkInline.astro";
+import GoIcon from "./icons/GoIcon.astro";
+
 export interface Props {
     title: string;
     school: string;
     description: string;
     link?: string;
     date: string;
+    logo: string;
 }
-const { title, school, description, link, date } = Astro.props;
+const { title, school, description, link, date, logo } = Astro.props;
 ---
 
-<li class="mb-10 ms-4">
-    <div
-        class="absolute w-3 h-3 bg-red-600 rounded-full mt-1.5 -start-1.5 border border-red-600 dark:border-red-600 dark:bg-red-600"
-    >
-    </div>
-    <time
-        class="mb-1 text-sm font-normal leading-none text-gray-400 dark:text-gray-500"
-        >{date}</time
-    >
-    <h3 class="text-lg font-bold dark:text-white mt-2">{school}</h3>
-    <h3 class="text-lg font-semibold text-red-600 dark:text-white">{title}</h3>
-    <p
-        class="mb-4 text-base font-normal text-gray-200 dark:text-gray-400 text-pretty"
-    >
-        {description}
-    </p>
-    {
-        link && (
-            <a
-                href={link}
-                class="inline-flex items-center px-4 py-2 text-sm font-medium text-gray-900 bg-white border border-gray-200 rounded-lg hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:outline-none focus:ring-gray-100 focus:text-blue-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700 dark:focus:ring-gray-700"
+<div
+    class="relative pb-4 grid before:absolute before:left-[-35px] before:block before:h-full before:border-l-1 before:border-gray-400 dark:before:border-gray-400 before:content-[''] md:grid-cols-9 md:space-x-4"
+>
+    <div class="relative md:col-span-1">
+        <div class="sticky top-0">
+            <span
+                class="text-red-600 -left-[26px] absolute rounded-full text-5xl"
+                >&bull;</span
             >
-                View Ceritifate...{" "}
-                <svg
-                    class="w-3 h-3 ms-2 rtl:rotate-180"
-                    aria-hidden="true"
-                    xmlns="http://www.w3.org/2000/svg"
-                    fill="none"
-                    viewBox="0 0 14 10"
-                >
-                    <path
-                        stroke="currentColor"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        stroke-width="2"
-                        d="M1 5h12m0 0L9 1m4 4L9 9"
-                    />
-                </svg>
-            </a>
-        )
-    }
-</li>
+
+            {
+                logo && (
+                    <div class="flex justify-start pl-2 md:pl-4">
+                        <img
+                            src={logo}
+                            alt={`${school} logo`}
+                            class="rounded-full size-14"
+                        />
+                    </div>
+                )
+            }
+        </div>
+    </div>
+
+    <div class="relative md:col-span-3 ">
+        <div>
+            <h3 class="text-xl font-bold text-white pb-1">{title}</h3>
+            <h4 class="font-semibold text text-white/90 dark:text-white">
+                {school}
+            </h4>
+            <time class="p-0 m-0 text-sm text-gray-200/90 dark:text-white/80"
+                >{date}</time
+            >
+        </div>
+
+        {
+            link && (
+                <LinkInline href={link}>
+                    Certificate
+                    <GoIcon class="size-4" />
+                </LinkInline>
+            )
+        }
+    </div>
+
+    <div
+        class="relative flex flex-col pb-4 text-gray-600 gap-x-2 dark:text-gray-300 md:col-span-5"
+    >
+        <p class="text-sm font-normal text-gray-200 dark:text-gray-400">
+            {description}
+        </p>
+    </div>
+</div>
