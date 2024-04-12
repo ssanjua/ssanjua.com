@@ -11,11 +11,15 @@ import GitHubIcon from "./icons/GitHubIcon.astro";
 import LinkButton from "./LinkButton.astro";
 import Link from "./icons/Link.astro";
 import ProjectsIcon from "./icons/ProjectsIcon.astro";
+import TypeScriptIcon from "./icons/TypeScriptIcon.astro";
+import PythonIcon from "./icons/PythonIcon.astro";
+import HTMLIcon from "./icons/HtmlIcon.astro";
+import CssIcon from "./icons/CssIcon.astro";
 
 const TAGS = {
   NEXT: {
     name: "Next",
-    class: "bg-black text-white",
+    class: "bg-black/50 text-white",
     icon: NextjsIcon,
   },
   TAILWIND: {
@@ -25,33 +29,53 @@ const TAGS = {
   },
   REACT: {
     name: "React",
-    class: "bg-blue-700 bg-opacity-50 text-white",
+    class: "bg-blue-700/50 text-white",
     icon: ReactIcon,
   },
   JAVASCRIPT: {
     name: "JavaScript",
-    class: "bg-yellow-500 bg-opacity-20 text-white",
+    class: "bg-yellow-500/20 text-white",
     icon: JavaScriptIcon,
   },
   NODE: {
     name: "Node",
-    class: "bg-green-500 bg-opacity-20 text-white",
+    class: "bg-green-500/20 text-white",
     icon: NodeJsIcon,
   },
   MONGODB: {
     name: "MongoDB",
-    class: "bg-green-300 bg-opacity-30 text-white",
+    class: "bg-green-300/30 text-white",
     icon: MongoDBIcon,
   },
   ZOD: {
     name: "Zod",
-    class: "bg-white bg-opacity-20 text-white",
+    class: "bg-white/20 text-white",
     icon: ZodIcon,
   },
   SQL: {
     name: "PostgreSQL",
-    class: "bg-blue-400 bg-opacity-50 text-white",
+    class: "bg-blue-400/50 text-white",
     icon: MySQLIcon,
+  },
+  TYPESCRIPT: {
+    name: "TypeScript",
+    class: "bg-blue-800/40 text-white",
+    icon: TypeScriptIcon,
+  },
+  PYTHON: {
+    name: "Phyton",
+    class: "bg-yellow-800/40 text-white",
+    icon: PythonIcon,
+  },
+  HTML: {
+    name: "HTML",
+    class: "bg-orange-800/80 text-white",
+    icon: HTMLIcon,
+  },
+  CSS: {
+    name: "CSS",
+    class: "bg-blue-800/80 text-white",
+    icon: CssIcon,
   },
 };
 
@@ -63,7 +87,7 @@ const PROJECTS = [
     link: "https://bookeando.onrender.com/",
     github: "https://github.com/ssanjua/booking-web",
     image: "/projects/bookeando.webp",
-    tags: [TAGS.REACT, TAGS.NEXT, TAGS.NODE, TAGS.TAILWIND, TAGS.MONGODB],
+    tags: [TAGS.REACT, TAGS.TYPESCRIPT, TAGS.NEXT, TAGS.NODE, TAGS.TAILWIND, TAGS.MONGODB],
   },
   {
     title: "YarcoDelivery",
@@ -72,7 +96,7 @@ const PROJECTS = [
     link: "https://sanjuan-delivery-app-frontend.onrender.com/",
     github: "https://github.com/ssanjua/sanjuan-delivery-app",
     image: "/projects/yarcoDelivery.webp",
-    tags: [TAGS.REACT, TAGS.NEXT, TAGS.NODE, TAGS.TAILWIND, TAGS.MONGODB],
+    tags: [TAGS.REACT, TAGS.TYPESCRIPT, TAGS.NEXT, TAGS.NODE, TAGS.TAILWIND, TAGS.MONGODB],
   },
   {
     title: "ShortURL",
@@ -83,12 +107,12 @@ const PROJECTS = [
     tags: [TAGS.JAVASCRIPT, TAGS.REACT, TAGS.NEXT, TAGS.ZOD, TAGS.SQL],
   },
   {
-    title: "ShortURL",
-    description: "ShotenURL website to help shorten URLS",
-    link: "url-shortener-ss.vercel.app/",
-    github: "https://github.com/ssanjua/url-shortener",
-    image: "/projects/shortURL.webp",
-    tags: [TAGS.JAVASCRIPT, TAGS.REACT, TAGS.NEXT, TAGS.ZOD, TAGS.SQL],
+    title: "Harveys App",
+    description: "Fun App for CS50 final exam",
+    link: "ssanjua.pythonanywhere.com",
+    github: "https://github.com/ssanjua/MicaelScott-Harvey_app",
+    image: "/projects/harveys.webp",
+    tags: [ TAGS.PYTHON, TAGS.HTML, TAGS.CSS,  TAGS.JAVASCRIPT],
   },
 ];
 ---
