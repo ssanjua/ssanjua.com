@@ -1,0 +1,71 @@
+---
+import LinkButton from "./LinkButton.astro";
+import { TAGS } from "./Projects.astro";
+import LinkButtonSecondary from "./buttons/LinkButtonSecondary.astro";
+import GitHubIcon from "./icons/GitHubIcon.astro";
+import Link from "./icons/Link.astro";
+import ProjectsIcon from "./icons/ProjectsIcon.astro";
+
+const SMALL_PROJECTS = [
+    {
+        title: "Markdown Previewer",
+        link: "https://markdown-previewer-wine.vercel.app/",
+        github: "https://github.com/ssanjua/markdown-previewer",
+        image: "/projects/markdown.webp",
+        tags: [TAGS.REACT, TAGS.HTML, TAGS.CSS],
+    },
+    {
+        title: "Random Quote Machine",
+        link: "https://randomquote-beryl.vercel.app/",
+        github: "https://github.com/ssanjua/Random-quote-machine",
+        image: "/projects/randomQuote.webp",
+        tags: [TAGS.REACT, TAGS.HTML, TAGS.CSS],
+    },
+    {
+        title: "Subway Counter",
+        link: "https://ssanjua-subwaycounterapp.netlify.app/",
+        github: "https://github.com/ssanjua/MicaelScott-Harvey_app",
+        image: "/projects/subwayCounter.webp",
+        tags: [TAGS.JAVASCRIPT, TAGS.HTML, TAGS.CSS],
+    },
+];
+---
+
+<div class="grid md:grid-cols-3 gap-2 mt-8">
+    {
+        SMALL_PROJECTS.map(({ title, tags, image, link, github }) => (
+            <div class="group relative overflow-hidden rounded-2xl">
+                <img
+                    src={image}
+                    alt={`Project ${title}`}
+                    class="w-full object-cover rounded-2xl transition-all duration-300 ease-out group-hover:opacity-80 group-hover:scale-110"
+                />
+                <div class="absolute inset-0 flex flex-col justify-between p-2 bg-gradient-to-t from-black to-transparent">
+                    <div class="flex items-center justify-between">
+                        <ProjectsIcon class="mr-2 size-5" />
+                        <h3 class="font-semibold text-sm text-white mr-4">{title}</h3>
+                        <div class="flex gap-1">
+                            <LinkButtonSecondary href={github}>
+                                <GitHubIcon stroke="white" class="size-5 " />
+                            </LinkButtonSecondary>
+                            <LinkButtonSecondary href={link}>
+                                <Link class="size-4" />
+                            </LinkButtonSecondary>
+                        </div>
+                    </div>
+                    <div class="flex-grow"></div>
+                    <div class="flex flex-wrap items-center gap-1">
+                        {tags.map((tag) => (
+                            <span
+                                class={`inline-block rounded-full text-xs py-1 px-2 ${tag.class}`}
+                            >
+                                <tag.icon class="inline-block size-3.5" />
+                                {tag.name}
+                            </span>
+                        ))}
+                    </div>
+                </div>
+            </div>
+        ))
+    }
+</div>

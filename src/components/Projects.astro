@@ -16,7 +16,7 @@ import PythonIcon from "./icons/PythonIcon.astro";
 import HTMLIcon from "./icons/HtmlIcon.astro";
 import CssIcon from "./icons/CssIcon.astro";
 
-const TAGS = {
+export const TAGS = {
   NEXT: {
     name: "Next",
     class: "bg-black/50 text-white",
@@ -87,7 +87,14 @@ const PROJECTS = [
     link: "https://bookeando.onrender.com/",
     github: "https://github.com/ssanjua/booking-web",
     image: "/projects/bookeando.webp",
-    tags: [TAGS.REACT, TAGS.TYPESCRIPT, TAGS.NEXT, TAGS.NODE, TAGS.TAILWIND, TAGS.MONGODB],
+    tags: [
+      TAGS.REACT,
+      TAGS.TYPESCRIPT,
+      TAGS.NEXT,
+      TAGS.NODE,
+      TAGS.TAILWIND,
+      TAGS.MONGODB,
+    ],
   },
   {
     title: "YarcoDelivery",
@@ -96,12 +103,19 @@ const PROJECTS = [
     link: "https://sanjuan-delivery-app-frontend.onrender.com/",
     github: "https://github.com/ssanjua/sanjuan-delivery-app",
     image: "/projects/yarcoDelivery.webp",
-    tags: [TAGS.REACT, TAGS.TYPESCRIPT, TAGS.NEXT, TAGS.NODE, TAGS.TAILWIND, TAGS.MONGODB],
+    tags: [
+      TAGS.REACT,
+      TAGS.TYPESCRIPT,
+      TAGS.NEXT,
+      TAGS.NODE,
+      TAGS.TAILWIND,
+      TAGS.MONGODB,
+    ],
   },
   {
     title: "ShortURL",
     description: "ShotenURL website to help shorten URLS",
-    link: "url-shortener-ss.vercel.app/",
+    link: "https://'url-shortener-ss.vercel.app/",
     github: "https://github.com/ssanjua/url-shortener",
     image: "/projects/shortURL.webp",
     tags: [TAGS.JAVASCRIPT, TAGS.REACT, TAGS.NEXT, TAGS.ZOD, TAGS.SQL],
@@ -109,12 +123,13 @@ const PROJECTS = [
   {
     title: "Harveys App",
     description: "Fun App for CS50 final exam",
-    link: "ssanjua.pythonanywhere.com",
+    link: "https://ssanjua.pythonanywhere.com",
     github: "https://github.com/ssanjua/MicaelScott-Harvey_app",
     image: "/projects/harveys.webp",
-    tags: [ TAGS.PYTHON, TAGS.HTML, TAGS.CSS,  TAGS.JAVASCRIPT],
+    tags: [TAGS.PYTHON, TAGS.HTML, TAGS.CSS, TAGS.JAVASCRIPT],
   },
 ];
+
 ---
 
 <div class="grid md:grid-cols-2 gap-6">
@@ -142,7 +157,10 @@ const PROJECTS = [
             class="w-full object-cover rounded-2xl transition-all duration-300 ease-out group-hover:opacity-80 group-hover:scale-110"
           />
           <div class="absolute inset-0 flex flex-col justify-end p-2 bg-gradient-to-t from-black to-transparent">
-            <div class="flex flex-wrap items-center gap-1 mt-2">
+            <p class="text-sm mt-3 text-gray-300">{description}</p>
+          </div>
+        </div>
+        <div class="flex flex-wrap items-center gap-1">
               {tags.map((tag) => (
                 <span
                   class={`inline-block rounded-full text-xs py-1 px-2 ${tag.class}`}
@@ -152,10 +170,8 @@ const PROJECTS = [
                 </span>
               ))}
             </div>
-            <p class="text-sm mt-3 text-gray-300">{description}</p>
-          </div>
-        </div>
       </div>
     ))
   }
 </div>
+
