@@ -9,10 +9,12 @@ import TechStackIcon from "../components/icons/TechStackIcon.astro";
 import TechStack from "../components/TechStack.astro";
 import Hero from "../components/Hero.astro";
 import SmallProjects from "../components/SmallProjects.astro";
+import Contact from "../components/Contact.astro";
+import ContactIcon from "../components/icons/ContactIcon.astro";
 ---
 
 <Layout
-	title="ssanjua - portfolio - full stack web developer"
+	title="ssanjua - full stack web developer - portfolio "
 	description="full stack web developer based in spain, seeking work"
 >
 	<main>
@@ -38,6 +40,13 @@ import SmallProjects from "../components/SmallProjects.astro";
 				EDUCATION
 			</h2>
 			<Experience />
+		</SectionContainer>
+		<SectionContainer id="contact">
+			<h2 class="flex gap-x-2 items-center text-3xl font-semibold mb-10">
+				<ContactIcon class="size-8" />
+				CONTACT
+			</h2>
+			<Contact />
 		</SectionContainer>
 	</main>
 </Layout>

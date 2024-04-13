@@ -1,0 +1,11 @@
+
+---
+const { class: className = '', ...rest } = Astro.props;
+---
+
+<img        
+    {...rest}
+    class={`rounded-full transition-transform duration-300 hover:scale-105 shadow-sm hover:shadow-md ${className}`}
+    src="https://avatars.githubusercontent.com/u/122236110?v=4"
+    alt="ssanjua profile picture"
+/>

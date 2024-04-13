@@ -19,13 +19,13 @@ const { title, school, description, link, date, logo } = Astro.props;
     <div class="relative md:col-span-1">
         <div class="sticky top-0">
             <span
-                class="text-red-600 -left-[26px] absolute rounded-full text-5xl"
+                class="text-white/90 -left-[26px] absolute rounded-full text-5xl"
                 >&bull;</span
             >
 
             {
                 logo && (
-                    <div class="flex justify-start pl-2 md:pl-4">
+                    <div class="flex justify-start pl-2 pb-2 md:pl-4 ">
                         <img
                             src={logo}
                             alt={`${school} logo`}
@@ -37,9 +37,9 @@ const { title, school, description, link, date, logo } = Astro.props;
         </div>
     </div>
 
-    <div class="relative md:col-span-3 ">
-        <div>
-            <h3 class="text-xl font-bold text-white pb-1">{title}</h3>
+    <div class="relative md:col-span-3">
+        <div class="mb-1 pl-2 md:pl-0">
+            <h3 class="text-xl font-bold text-white pb-2">{title}</h3>
             <h4 class="font-semibold text text-white/90 dark:text-white">
                 {school}
             </h4>
@@ -47,7 +47,8 @@ const { title, school, description, link, date, logo } = Astro.props;
                 >{date}</time
             >
         </div>
-
+        
+        <div class="pl-2 md:pl-0">
         {
             link && (
                 <LinkInline href={link}>
@@ -56,10 +57,11 @@ const { title, school, description, link, date, logo } = Astro.props;
                 </LinkInline>
             )
         }
+        </div>
     </div>
 
     <div
-        class="relative flex flex-col pb-4 text-gray-600 gap-x-2 dark:text-gray-300 md:col-span-5"
+        class="relative flex flex-col pb-4 text-gray-600 gap-x-2 dark:text-gray-300 md:col-span-5 pl-2 md:pl-0"
     >
         <p class="text-sm font-normal text-gray-200 dark:text-gray-400">
             {description}
