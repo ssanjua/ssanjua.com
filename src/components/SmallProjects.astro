@@ -4,6 +4,7 @@ import { TAGS } from "./Projects.astro";
 import LinkButtonSecondary from "./buttons/LinkButtonSecondary.astro";
 import GitHubIcon from "./icons/GitHubIcon.astro";
 import Link from "./icons/Link.astro";
+import PlusIcon from "./icons/PlusIcon.astro";
 import ProjectsIcon from "./icons/ProjectsIcon.astro";
 
 const SMALL_PROJECTS = [
@@ -42,7 +43,7 @@ const SMALL_PROJECTS = [
                 />
                 <div class="absolute inset-0 flex flex-col justify-between p-2 bg-gradient-to-t from-black to-transparent">
                     <div class="flex items-center justify-between">
-                        <ProjectsIcon class="mr-2 size-5" />
+                        <PlusIcon class="mr-2 size-3" />
                         <h3 class="font-semibold text-sm mr-4">{title}</h3>
                         <div class="flex gap-1">
                             <LinkButtonSecondary href={github}>

@@ -15,6 +15,7 @@ import TypeScriptIcon from "./icons/TypeScriptIcon.astro";
 import PythonIcon from "./icons/PythonIcon.astro";
 import HTMLIcon from "./icons/HtmlIcon.astro";
 import CssIcon from "./icons/CssIcon.astro";
+import PlusIcon from "./icons/PlusIcon.astro";
 
 export const TAGS = {
   NEXT: {
@@ -136,7 +137,7 @@ const PROJECTS = [
     PROJECTS.map(({ title, description, tags, image, link, github }) => (
       <div class="mb-4">
         <div class="flex items-center">
-          <ProjectsIcon class="mr-4" />
+          <PlusIcon class="size-4 mr-2" />
           <h3 class="text-xl font-semibold mr-4">{title}</h3>
           <div class="flex gap-3">
             <LinkButton href={github}>
