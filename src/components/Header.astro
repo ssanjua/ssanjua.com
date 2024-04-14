@@ -1,37 +1,48 @@
 ---
+import LanguageSwitch from "./LanguageSwitch.astro";
 import ProfilePicture from "./ProfilePicture.astro";
 import ThemeToggle from "./ThemeToggle.astro";
+import EnglishIcon from "./icons/EnglishIcon.astro";
+import SpainIcon from "./icons/SpainIcon.astro";
 ---
 
-<header class="fixed top-0 left-0 w-full z-50 py-3">
-    <div class="flex justify-between items-center max-w-[850px] mx-auto px-4">
+<header class="fixed top-0 left-0 w-full z-50 py-2 bg-transparent backdrop-filter backdrop-blur-none transition-all duration-300 ease-in-out on-scroll">
+    <div class="flex items-center justify-between items-center max-w-[850px] mx-auto px-4">
         <a href="#top">
-            <ProfilePicture class="size-12 shadow-md" />
+            <ProfilePicture class="size-10 shadow-md" />
         </a>
 
         <nav class="flex flex-row text-sm gap-x-2 md:gap-x-4 lg:gap-x-6">
+            <LanguageSwitch />
             <a
-                class="text-gray-600 hover:text-gray-400 dark:text-white/80 dark:hover:text-white px-2 md:px-4 py-2 rounded-full transition-colors duration-300"
-                href="#top">EN</a
-            >
-            <a
-                class="text-gray-600 hover:text-gray-400 dark:text-white/80 dark:hover:text-white px-2 md:px-4 py-2 rounded-full transition-colors duration-300"
+                class="text-gray-700 hover:text-gray-600 hover:font-bold dark:text-white/80 dark:hover:text-white px-2 md:px-4 py-2 rounded-full transition-all duration-300 ease-in-out"
                 href="#tech">Tech</a
             >
             <a
-                class="text-gray-600 hover:text-gray-400 dark:text-white/80 dark:hover:text-white px-2 md:px-4 py-2 rounded-full transition-colors duration-300"
+                class="text-gray-700 hover:text-gray-600 hover:font-bold dark:text-white/80 dark:hover:text-white px-2 md:px-4 py-2 rounded-full transition-all duration-300 ease-in-out"
                 href="#projects">Projects</a
             >
             <a
-                class="text-gray-600 hover:text-gray-400 dark:text-white/80 dark:hover:text-white px-2 md:px-4 py-2 rounded-full transition-colors duration-300"
+                class="text-gray-700 hover:text-gray-600 hover:font-bold dark:text-white/80 dark:hover:text-white px-2 md:px-4 py-2 rounded-full transition-all duration-300 ease-in-out"
                 href="#education">Education</a
             >
 
             <a
-                class="text-gray-600 hover:text-gray-400 dark:text-white/80 dark:hover:text-white px-2 md:px-4 py-2 rounded-full transition-colors duration-300"
+                class="text-gray-700 hover:text-gray-600 hover:font-bold dark:text-white/80 dark:hover:text-white px-2 md:px-4 py-2 rounded-full transition-all duration-300 ease-in-out"
                 href="#contact">Contact me</a
             >
             <ThemeToggle />
         </nav>
     </div>
 </header>
+
+<script is:inline>
+    document.addEventListener("scroll", function() {
+  const header = document.querySelector('header');
+  if (window.scrollY > 10) { // Ajusta el '10' a la cantidad de px que prefieras antes de cambiar el estilo
+    header.classList.add('on-scroll');
+  } else {
+    header.classList.remove('on-scroll');
+  }
+});
+</script>

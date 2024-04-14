@@ -86,6 +86,10 @@ const { title, description } = Astro.props;
 		line-height: 1.6;
 	}
 
+	.on-scroll {
+		@apply bg-white/80 dark:bg-black/80 backdrop-blur;
+	}
+
 	@media (prefers-color-scheme: dark) {
 		body {
 			color: rgba(255, 255, 255, 0.9);

@@ -1,10 +1,8 @@
 # Astro Starter Kit: Basics
 
 TODO:
-// dark mode and light mode
 // click "take me to the top"
 // translate EN <-> ES
-// hero 
 // sanjua title transition
 
 ## 🧞 Commands
