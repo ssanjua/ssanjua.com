@@ -89,11 +89,14 @@ const TAGS = [
     <div  id="tech" class="grid grid-cols-3 md:grid-cols-8 gap-4">
         {
             TAGS.map(({ name, icon: Icon }) => (
-                <div class="flex flex-col items-center justify-center text-center p-4 bg-white/10 rounded-lg shadow transition-all duration-300 hover:shadow-2xl hover:bg-white/15 hover:scale-110">
+                <div class="flex flex-col items-center justify-center text-center p-4 rounded-lg shadow-md transition-all duration-300 hover:shadow-2xl hover:scale-110
+                            bg-white/20 border border-gray-200 hover:bg-white/15
+                            dark:bg-white/10 dark:border-none dark:hover:bg-white/15"
+                >
                     <div class="mb-2 transition-all duration-300 hover:scale-110">
                         <Icon class="size-8" />
                     </div>
-                    <span class="text-xs font-medium text-white/80">
+                    <span class="text-xs font-medium text-gray-900 dark:text-white/80">
                         {name}
                     </span>
                 </div>

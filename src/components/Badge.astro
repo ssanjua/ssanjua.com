@@ -1,5 +1,13 @@
-<span 
-    class="cursor-pointer rounded-full border border-red-600 bg-red-600/60 text-white/90 text-xs py-2 px-4 font-medium me-2 p-2 dark:bg-blue-900 dark:text-blue-300"
-    >
-        <slot />
-</span>
+<div class="flex items-center">
+    <span class="relative inline-flex overflow-hidden rounded-full p-[1px] shadow-md">
+        <span
+            class="absolute inset-[-1000%] animate-[spin_2s_linear_infinite] bg-[conic-gradient(from_90deg_at_50%_50%,#9F091E_0%,#D30BE7_50%,#9F091E_100%)]"
+                   
+        ></span>
+        <div
+            class="inline-flex items-center justify-center w-full px-3 py-2 text-sm text-gray-700 bg-red-100 rounded-full cursor-pointer dark:bg-gray-900 dark:text-white/90 backdrop-blur-3xl whitespace-nowrap"
+        >
+            <slot />
+        </div>
+    </span>
+</div>

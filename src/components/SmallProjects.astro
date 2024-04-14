@@ -32,7 +32,7 @@ const SMALL_PROJECTS = [
 ];
 ---
 
-<div class="grid md:grid-cols-3 gap-2 mt-8">
+<div class="grid grid-cols-2 md:grid-cols-3 gap-2 mt-4">
     {
         SMALL_PROJECTS.map(({ title, tags, image, link, github }) => (
             <div class="group relative overflow-hidden rounded-2xl">
@@ -43,19 +43,19 @@ const SMALL_PROJECTS = [
                 />
                 <div class="absolute inset-0 flex flex-col justify-between p-2 bg-gradient-to-t from-black to-transparent">
                     <div class="flex items-center justify-between">
-                        <PlusIcon class="mr-2 size-3" />
-                        <h3 class="font-semibold text-sm mr-4">{title}</h3>
+                        <ProjectsIcon class="size-4 mr-2"/>
+                        <h3 class="font-bold text-sm mr-4">{title}</h3>
                         <div class="flex gap-1">
                             <LinkButtonSecondary href={github}>
-                                <GitHubIcon stroke="white" class="size-5 " />
+                                <GitHubIcon class="text-black dark:text-white size-6" />
                             </LinkButtonSecondary>
                             <LinkButtonSecondary href={link}>
-                                <Link class="size-4" />
+                                <Link class="size-5" />
                             </LinkButtonSecondary>
                         </div>
                     </div>
                     <div class="flex-grow"></div>
-                    <div class="flex flex-wrap items-center gap-1">
+                    <div class="flex flex-wrap items-center justify-center gap-2">
                         {tags.map((tag) => (
                             <span
                                 class={`inline-block rounded-full text-xs py-1 px-2 ${tag.class}`}

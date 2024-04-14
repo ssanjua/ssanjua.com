@@ -5,6 +5,7 @@ TODO:
 // click "take me to the top"
 // translate EN <-> ES
 // hero 
+// sanjua title transition
 
 ## 🧞 Commands
 
