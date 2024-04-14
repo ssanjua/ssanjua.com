@@ -24,26 +24,44 @@ const { title, description } = Astro.props;
 		<title>{title}</title>
 		<script>
 			// On page load or when changing themes, best to add inline in `head` to avoid FOUC
-			if (localStorage.getItem('color-theme') === 'dark' || (!('color-theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
-				document.documentElement.classList.add('dark');
+			if (
+				localStorage.getItem("color-theme") === "dark" ||
+				(!("color-theme" in localStorage) &&
+					window.matchMedia("(prefers-color-scheme: dark)").matches)
+			) {
+				document.documentElement.classList.add("dark");
 			} else {
-				document.documentElement.classList.remove('dark')
+				document.documentElement.classList.remove("dark");
 			}
 		</script>
 	</head>
 	<body class="relative text-black dark:text-white/85">
-		<div
-			class="absolute top-0 bottom-0 z-[-2] min-h-screen w-full bg-gray-50 dark:bg-gray-950
-  bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(217,216,255,0.5),rgba(255,255,255,0.9))]
-  dark:bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(120,119,198,0.3),rgba(255,255,255,0))]"
-		>
+		<div class="fixed top-0 -z-10 h-full w-full bg-white dark:hidden">
+			<div
+				class="absolute bottom-auto left-auto right-0 top-0 h-[500px] w-[500px] -translate-x-[30%] translate-y-[20%] rounded-full bg-[rgba(173,109,244,0.5)] opacity-50 blur-[80px]"
+			>
+			</div>
 		</div>
-		<div class="mx-auto max-w-[850px] px-4">
-			<Header />
-			<slot />
-			<Footer />
+
+		<!-- Fondo para tema oscuro -->
+		<div
+			class="hidden dark:block dark:fixed dark:top-0 dark:z-[-1] h-full w-full bg-black"
+		>
+			<div
+				class="absolute bottom-0 left-[-20%] right-0 top-[-10%] h-[500px] w-[500px] rounded-full bg-[radial-gradient(circle_farthest-side,rgba(255,0,182,.15),rgba(0,0,0,0.5))]"
+			>
+			</div>
+			<div
+				class="absolute bottom-0 right-[-20%] top-[-10%] h-[500px] w-[500px] rounded-full bg-[radial-gradient(circle_farthest-side,rgba(255,0,182,.15),rgba(0,0,0,0.5))]"
+			>
+			</div>
 		</div>
 	</body>
+	<div class="mx-auto max-w-[850px] px-4">
+		<Header />
+		<slot />
+		<Footer />
+	</div>
 </html>
 
 <style is:global>
