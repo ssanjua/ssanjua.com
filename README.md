@@ -4,8 +4,6 @@ TODO:
 // dark mode and light mode
 // click "take me to the top"
 // translate EN <-> ES
-// contact me
-// finish education
 // hero 
 
 ## 🧞 Commands

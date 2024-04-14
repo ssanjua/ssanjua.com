@@ -22,17 +22,22 @@ const { title, description } = Astro.props;
 		<link rel="icon" type="image/svg+xml" href="/favicon.webp" />
 		<meta name="generator" content={Astro.generator} />
 		<title>{title}</title>
+		<script>
+			// On page load or when changing themes, best to add inline in `head` to avoid FOUC
+			if (localStorage.getItem('color-theme') === 'dark' || (!('color-theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+				document.documentElement.classList.add('dark');
+			} else {
+				document.documentElement.classList.remove('dark')
+			}
+		</script>
 	</head>
-	<body>
-		<div class="relative h-full w-full bg-slate-950">
-			<div
-			  class="absolute bottom-0 left-[-20%] right-0 top-[-10%] h-[500px] w-[500px] rounded-full bg-[radial-gradient(circle_farthest-side,rgba(255,0,182,.15),rgba(255,255,255,0))]"
-			>
-			</div><div
-			  class="absolute bottom-0 right-[-20%] top-[-10%] h-[500px] w-[500px] rounded-full bg-[radial-gradient(circle_farthest-side,rgba(255,0,182,.15),rgba(255,255,255,0))]"
-			>
-			</div>
-		  </div>
+	<body class="relative text-black dark:text-white/85">
+		<div
+			class="absolute top-0 bottom-0 z-[-2] min-h-screen w-full bg-gray-50 dark:bg-gray-950
+  bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(217,216,255,0.5),rgba(255,255,255,0.9))]
+  dark:bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(120,119,198,0.3),rgba(255,255,255,0))]"
+		>
+		</div>
 		<div class="mx-auto max-w-[850px] px-4">
 			<Header />
 			<slot />
@@ -40,6 +45,7 @@ const { title, description } = Astro.props;
 		</div>
 	</body>
 </html>
+
 <style is:global>
 	:root {
 		color-scheme: light dark;
@@ -50,7 +56,6 @@ const { title, description } = Astro.props;
 	}
 
 	body {
-		background-color: black;
 		display: flex;
 		flex-direction: column;
 		min-height: 100vh;

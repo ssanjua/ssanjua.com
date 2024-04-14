@@ -1,8 +1,9 @@
 ---
 import ProfilePicture from "./ProfilePicture.astro";
+import ThemeToggle from "./ThemeToggle.astro"
 ---
 
-<header class="fixed top-0 left-0 w-full z-50 bg-opacity-90 bg-black py-3">
+<header class="fixed top-0 left-0 w-full z-50 py-3">
     <div class="flex justify-between items-center max-w-[850px] mx-auto px-4">
         <a href="#top">
             <ProfilePicture class="size-10" />
@@ -10,15 +11,15 @@ import ProfilePicture from "./ProfilePicture.astro";
 
         <nav class="flex flex-row text-sm gap-x-2 md:gap-x-4 lg:gap-x-6">
             <a
-                class="text-white/80 hover:text-white px-2 md:px-4 py-2 rounded-full transition-colors duration-300"
-                href="#top">Home</a
+                class="dark:text-white/80 text-gray-600 dark:hover:text-white hover:text-gray-200 px-2 md:px-4 py-2 transition-colors duration-300"
+                href="#top">EN</a
             >
             <a
-                class="text-white/80 hover:text-white px-2 md:px-4 py-2 rounded-full transition-colors duration-300"
+                class="text-white/80 hover:text-white px-2 md:px-4 py-2 transition-colors duration-300"
                 href="#tech">Tech</a
             >
             <a
-                class="text-white/80 hover:text-white px-2 md:px-4 py-2 rounded-full transition-colors duration-300"
+                class="text-white/80 hover:text-white px-2 md:px-4 py-2 transition-colors duration-300"
                 href="#projects">Projects</a
             >
             <a
@@ -30,6 +31,7 @@ import ProfilePicture from "./ProfilePicture.astro";
                 class="hover:bg-white/10 px-2 md:px-4 py-2 rounded-full border border-white/50 transition-colors duration-300"
                 href="#contact">Contact me</a
             >
+            <ThemeToggle />
         </nav>
     </div>
 </header>
