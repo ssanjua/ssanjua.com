@@ -5,6 +5,7 @@ import "@fontsource-variable/noto-sans";
 import Footer from "../components/Footer.astro";
 // font-family: 'Noto Sans Variable', sans-serif;
 
+
 interface Props {
 	title: string;
 	description: string;
@@ -23,7 +24,6 @@ const { title, description } = Astro.props;
 		<meta name="generator" content={Astro.generator} />
 		<title>{title}</title>
 		<script>
-			// On page load or when changing themes, best to add inline in `head` to avoid FOUC
 			if (
 				localStorage.getItem("color-theme") === "dark" ||
 				(!("color-theme" in localStorage) &&
@@ -34,6 +34,7 @@ const { title, description } = Astro.props;
 				document.documentElement.classList.remove("dark");
 			}
 		</script>
+		
 	</head>
 	<body class="relative text-black dark:text-white/85">
 		<div class="fixed top-0 -z-10 h-full w-full bg-white dark:hidden">
@@ -56,6 +57,7 @@ const { title, description } = Astro.props;
 			>
 			</div>
 		</div>
+		<script src="../../node_modules/flowbite/dist/flowbite.min.js"></script>
 	</body>
 	<div class="mx-auto max-w-[850px] px-4">
 		<Header />

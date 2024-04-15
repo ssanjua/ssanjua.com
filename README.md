@@ -5,6 +5,8 @@ TODO:
 // translate EN <-> ES
 // sanjua title transition
 
+// color de seleccion
+
 ## 🧞 Commands
 
 All commands are run from the root of the project, from a terminal:

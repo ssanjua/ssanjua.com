@@ -5,6 +5,7 @@ import ProfilePicture from "./ProfilePicture.astro";
 import SectionContainer from "./SectionContainer.astro";
 import SocialButtons from "./SocialButtons.astro";
 import SocialContact from "./SocialContact.astro";
+import CopyButton from "./buttons/CopyButton.astro";
 import DownloadIcon from "./icons/DownloadIcon.astro";
 import GitHubIcon from "./icons/GitHubIcon.astro";
 import InstagramIcon from "./icons/InstagramIcon.astro";
@@ -55,9 +56,10 @@ import XIcon from "./icons/XIcon.astro";
     </div>
     <div class="hidden md:flex flex-col md:flex-row md:justify-between mt-4">
         <nav class="flex justify-start gap-4 py-4 flex-gap">
-            <SocialContact href="mailto:ppaupallares@gmail.com">
+            <CopyButton />
+            <!-- <SocialContact href="mailto:ppaupallares@gmail.com">
                 <span>CONTACT</span>
-            </SocialContact>
+            </SocialContact> -->
             <SocialContact
                 href="https://drive.google.com/file/d/1me7-_HcOuj8stwOJCg11MWzkd-nwmm2-/view?usp=sharing"
             >
@@ -65,7 +67,7 @@ import XIcon from "./icons/XIcon.astro";
                 <span>CV</span>
             </SocialContact>
         </nav>
-        <nav class="md:mt-0 md:ml-auto md:mr-5 flex gap-x-2 py-4">
+        <nav class="flex gap-x-2 py-4">
             <SocialButtons href="https://github.com/ssanjua">
                 <GitHubIcon class="size-6" />
             </SocialButtons>
@@ -83,12 +85,10 @@ import XIcon from "./icons/XIcon.astro";
 
     <div class="md:hidden flex items-center justify-start mt-6">
         <ProfileGif class="size-32" />
-        <div class="pl-6">
-            <nav class="flex gap-2 py-2">
-                <SocialContact href="mailto:ppaupallares@gmail.com">
-                    <MailIcon class="size-4" />
-                    <span>CONTACT</span>
-                </SocialContact>
+        <div class="pl-4">
+            <CopyButton />
+            <nav class="flex gap-1 py-2">
+                
                 <SocialContact
                     href="https://drive.google.com/file/d/1me7-_HcOuj8stwOJCg11MWzkd-nwmm2-/view?usp=sharing"
                 >
