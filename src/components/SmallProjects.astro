@@ -16,7 +16,7 @@ const SMALL_PROJECTS = [
         tags: [TAGS.REACT, TAGS.HTML, TAGS.CSS],
     },
     {
-        title: "Random Quote Machine",
+        title: "Random Quote",
         link: "https://randomquote-beryl.vercel.app/",
         github: "https://github.com/ssanjua/Random-quote-machine",
         image: "/projects/randomQuote.webp",
@@ -39,22 +39,24 @@ const SMALL_PROJECTS = [
                 <img
                     src={image}
                     alt={`Project ${title}`}
-                    class="w-full object-cover rounded-2xl transition-all duration-300 ease-out group-hover:opacity-80 group-hover:scale-110"
+                    class="w-full object-cover rounded-2xl transition-all duration-300 ease-out group-hover:scale-110"
                 />
-                <div class="absolute inset-0 flex flex-col justify-between p-2 bg-gradient-to-t from-black to-transparent">
+                <div class="absolute inset-0 flex flex-col justify-between p-2 bg-gradient-to-t from-white/80 to-transparent hover:gradient-none dark:bg-gradient-to-t dark:from-black dark:to-transparent">
                     <div class="flex items-center justify-between">
-                        <ProjectsIcon class="size-4 mr-2"/>
-                        <h3 class="font-bold text-sm mr-4">{title}</h3>
+                        <div class="flex items-center">
+                            <ProjectsIcon class="size-4 mr-2" />
+                            <h3 class="font-bold text-sm mr-4">{title}</h3>
+                        </div>
                         <div class="flex gap-1">
                             <LinkButtonSecondary href={github}>
-                                <GitHubIcon class="text-black dark:text-white size-6" />
+                                <GitHubIcon class="text-black size-6 stroke-2" />
                             </LinkButtonSecondary>
                             <LinkButtonSecondary href={link}>
                                 <Link class="size-5" />
                             </LinkButtonSecondary>
                         </div>
                     </div>
-                    <div class="flex-grow"></div>
+                    <div class="flex-grow" />
                     <div class="flex flex-wrap items-center justify-center gap-2">
                         {tags.map((tag) => (
                             <span
