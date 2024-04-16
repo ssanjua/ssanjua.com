@@ -2,7 +2,7 @@
 
 TODO:
 // click "take me to the top"
-// translate EN <-> ES
+// translate EN <-> ES 
 // sanjua title transition
 
 // color de seleccion

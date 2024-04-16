@@ -114,7 +114,8 @@ const PROJECTS = [
   },
   {
     title: "ShortURL",
-    description: "A URL shortener is a tool that converts long URLs into abbreviated versions, making them easier to share and manage.",
+    description:
+      "A URL shortener is a tool that converts long URLs into abbreviated versions, making them easier to share and manage.",
     link: "https://'url-shortener-ss.vercel.app/",
     github: "https://github.com/ssanjua/url-shortener",
     image: "/projects/shortURL.webp",
@@ -122,7 +123,8 @@ const PROJECTS = [
   },
   {
     title: "Harveys App",
-    description: "A fun app that uses text-to-speech technology to bring Harvey, Michael's robot from 'The Office,' to life. Make Harvey speak whatever you type!",
+    description:
+      "A fun app that uses text-to-speech technology to bring Harvey, Michael's robot from 'The Office,' to life. Make Harvey speak whatever you type!",
     link: "https://ssanjua.pythonanywhere.com",
     github: "https://github.com/ssanjua/MicaelScott-Harvey_app",
     image: "/projects/harveys.webp",
@@ -131,7 +133,7 @@ const PROJECTS = [
 ];
 ---
 
-<div class="grid md:grid-cols-2 gap-6">
+<div class="grid md:grid-cols-2 gap-2">
   {
     PROJECTS.map(({ title, description, tags, image, link, github }) => (
       <div class="mb-4">
@@ -149,14 +151,16 @@ const PROJECTS = [
             </LinkButton>
           </div>
         </div>
-        <div class="group relative overflow-hidden rounded-2xl">
+        <div class="group relative overflow-hidden">
           <img
             src={image}
             alt={`Project ${title}`}
-            class="w-full object-cover rounded-2xl transition-all duration-300 ease-out group-hover:opacity-70 group-hover:scale-110"
+            class="w-full object-cover transition-all duration-300 ease-out opacity-80 group-hover:opacity-100 group-hover:scale-110"
           />
-          <div class="absolute inset-0 flex flex-col justify-end p-2 bg-gradient-to-t from-black to-transparent">
-            <p class="text-sm mt-3 text-gray-300 p-2">{description}</p>
+          <div class="absolute inset-0 flex flex-col justify-end p-2 bg-gradient-to-t from-white to-transparent dark:bg-gradient-to-t dark:from-black dark:to-transparent">
+            <p class="text-sm font mt-3 text-black dark:text-gray-100 px-8">
+              {description}
+            </p>
           </div>
         </div>
         <div class="flex flex-wrap items-center justify-center gap-2 py-2">
