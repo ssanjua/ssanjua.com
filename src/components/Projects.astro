@@ -15,6 +15,7 @@ import PythonIcon from "./icons/PythonIcon.astro";
 import HTMLIcon from "./icons/HtmlIcon.astro";
 import CssIcon from "./icons/CssIcon.astro";
 import PlusIcon from "./icons/PlusIcon.astro";
+import AstroIcon from "./icons/AstroIcon.astro";
 
 export const TAGS = {
   NEXT: {
@@ -77,6 +78,11 @@ export const TAGS = {
     class: "bg-blue-800 text-white",
     icon: CssIcon,
   },
+  ASTRO: {
+    name: "Astro",
+    class: "bg-red-600 text-white",
+    icon: AstroIcon,
+  }
 };
 
 const PROJECTS = [
@@ -113,13 +119,13 @@ const PROJECTS = [
     ],
   },
   {
-    title: "ShortURL",
+    title: "Audiovisual Portfolio",
     description:
-      "A URL shortener is a tool that converts long URLs into abbreviated versions, making them easier to share and manage.",
-    link: "https://'url-shortener-ss.vercel.app/",
-    github: "https://github.com/ssanjua/url-shortener",
-    image: "/projects/shortURL.webp",
-    tags: [TAGS.JAVASCRIPT, TAGS.REACT, TAGS.NEXT, TAGS.ZOD, TAGS.SQL],
+      "This is my filmmaking portfolio. I merged my two passions here.",
+    link: "https://ppaupallares.vercel.app/",
+    github: "https://github.com/ssanjua/ssanjua-filmmaker-web",
+    image: "/projects/ppaupallares.webp",
+    tags: [TAGS.ASTRO, TAGS.NODE, TAGS.NEXT, TAGS.TAILWIND],
   },
   {
     title: "Harveys App",

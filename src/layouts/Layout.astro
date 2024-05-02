@@ -19,7 +19,7 @@ const { title, description } = Astro.props;
 		<meta charset="UTF-8" />
 		<meta name="description" content={description} />
 		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.webp" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.png" />
 		<meta name="generator" content={Astro.generator} />
 		<title>{title}</title>
 		<script>
@@ -55,12 +55,13 @@ const { title, description } = Astro.props;
 			</div>
 		</div>
 		<script src="../../node_modules/flowbite/dist/flowbite.min.js"></script>
+
+		<div class="mx-auto max-w-[850px] px-4">
+			<Header />
+			<slot />
+			<Footer />
+		</div>
 	</body>
-	<div class="mx-auto max-w-[850px] px-4">
-		<Header />
-		<slot />
-		<Footer />
-	</div>
 </html>
 
 <style is:global>
