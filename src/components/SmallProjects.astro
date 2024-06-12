@@ -30,41 +30,35 @@ const SMALL_PROJECTS = [
 ];
 ---
 
-<div class="grid grid-cols-2 md:grid-cols-3 gap-2 mt-4">
+<div class="grid grid-cols-2 md:grid-cols-3 gap-2">
     {
         SMALL_PROJECTS.map(({ title, tags, image, link, github }) => (
-            <div class="group relative overflow-hidden rounded-2xl">
-                <img
-                    src={image}
-                    alt={`Project ${title}`}
-                    class="w-full object-cover rounded-2xl transition-all duration-300 ease-out group-hover:scale-110"
-                />
-                <div class="absolute inset-0 flex flex-col justify-between p-2 bg-gradient-to-t from-white/80 to-transparent hover:gradient-none dark:bg-gradient-to-t dark:from-black dark:to-transparent">
-                    <div class="flex items-center justify-between">
-                        <div class="flex items-center">
-                            <ProjectsIcon class="size-4 mr-2" />
-                            <h3 class="font-bold text-sm mr-4">{title}</h3>
-                        </div>
-                        <div class="flex gap-1">
-                            <LinkButtonSecondary href={github}>
-                                <GitHubIcon class="text-black dark:text-white size-5" />
-                            </LinkButtonSecondary>
-                            <LinkButtonSecondary href={link}>
-                                <Link class="size-5 text-black dark:text-white" />
-                            </LinkButtonSecondary>
-                        </div>
+            <div class="border-2 border-white">
+                <div class="flex items-center justify-between p-4">
+                    <div class="flex items-center ml-2 bg-background-dark">
+                        <h3 class="font-bold text-base">{title}</h3>
                     </div>
-                    <div class="flex-grow" />
-                    <div class="flex flex-wrap items-center justify-center gap-2">
-                        {tags.map((tag) => (
-                            <span
-                                class={`inline-block rounded-full text-xs py-1 px-2 ${tag.class}`}
-                            >
-                                <tag.icon class="inline-block size-3.5" />
-                                {tag.name}
-                            </span>
-                        ))}
+                    <div class="flex gap-2">
+                        <LinkButtonSecondary href={github}>
+                            <GitHubIcon class="text-black dark:text-white size-6" />
+                        </LinkButtonSecondary>
+                        <LinkButtonSecondary href={link}>
+                            <Link class="size-6 text-black dark:text-white" />
+                        </LinkButtonSecondary>
                     </div>
+                </div>
+                <div class="transition-all duration-300 ease-out group-hover:scale-110">
+                    <img src={image} alt={`Project ${title}`} class="" />
+                </div>
+                <div class="flex flex-wrap my-4 items-center justify-center gap-2">
+                    {tags.map((tag) => (
+                        <span
+                            class={`inline-block text-xs py-1 px-2 ${tag.class}`}
+                        >
+                            <tag.icon class="inline-block size-3.5" />
+                            {tag.name}
+                        </span>
+                    ))}
                 </div>
             </div>
         ))

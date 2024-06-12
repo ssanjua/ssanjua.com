@@ -1,49 +1,95 @@
 ---
-import ExperienceItem from "./ExperienceItem.astro"
+import ExperienceItem from "./ExperienceItem.astro";
+import Line from "../components/buttons/Line.astro"
 
 const EXPERIENCE = [
-    {
-        date: 'July 2023 - April 2024',
-        school: 'freeCodeCamp',
-        title: 'Full Stack Web Developer',
-        description: 'This course offers a comprehensive curriculum designed to learn the skills needed to build complete web applications. The course covers front-end technologies including HTML, CSS, and JavaScript, as well as back-end development with Node.js and Express.  also learned about databases with MongoDB, and Git for version control. The course emphasizes practical, project-based learning.',
-        link: "https://drive.google.com/file/d/1CwN9I1iuWur4IqDqhc9oMv43nLTriP4o/view?usp=drive_link",
-        logo: "/logos/free_code_camp.jpeg",
-    },
-    {
-        date: 'July 2023 - December 2023',
-        school: 'HardvardX',
-        title: 'CS50 Computer Science',
-        description: 'Led by Professor David Malan, the course covered a broad range of topics including algorithms, data structures, encapsulation, resource management, security, software engineering, and web development. It introduced languages such as C, Python, SQL, JavaScript, CSS, and HTML. Emphasizing problem-solving, the course challenged me to think algorithmically and develop efficient code solutions.',
-        link: "https://drive.google.com/file/d/1P9EOFT_Nef4XX35xnRXP0DxpKRCw-d6K/view?usp=drive_link",
-        logo: "/logos/harvard.webp",
-    },
-    {
-        date: 'June 2023 - September 2023',
-        school: 'Coursera',
-        title: 'IBM Data Engineer',
-        description: ' The program covered key areas including data integration, building data warehouses, data lakes, big data processing using Hadoop and Spark, and automating data pipelines with Python and SQL. The course emphasized practical, hands-on learning with tools and technologies essential for managing large data sets effectively. It prepared me to design and maintain robust data systems, enabling efficient data collection, storage, and analysis processes.',
-        link: "https://drive.google.com/file/d/1TFg0uQPCtCfGC9EipWDhb-n0iW2PLSEM/view?usp=drive_link",
-        logo: "/logos/courseralearning_logo.jpeg",
-    },
-    {
-        date: 'February 2023 - July 2023',
-        school: 'SoyHenry',
-        title: 'Data Science',
-        description: 'An intensive 900-hour Data Science bootcamp. The program was designed in collaboration with industry experts, providing a deep dive into the full data lifecycle, including data analysis, engineering, and science with a focus on real-world applications. Key skills developed:  Python, working with large datasets, and implementing machine learning algorithms.',
-        link: "https://drive.google.com/file/d/1zVGTMlklAiVa0LwTCqiw-Ip4LzxAipOC/view?usp=drive_link",
-        logo: "/logos/henryok_logo.jpeg",
-    },
-]
+{
+    date: "March 2024 ~",
+    school: "Helsinki University",
+    title: "Full Stack Open",
+    description:
+      "js | react | typescript | node | express | graphQL | e2e | react native | docker",
+    link: "https://fullstackopen.com/",
+    logo: "/logos/helsinski.webp",
+  },
+  {
+    date: "July 2023 - May 2024",
+    school: "freeCodeCamp",
+    title: "Full Stack Web Developer",
+    description:
+      "frontend | backend | databases | testing | web security",
+    link: "https://www.freecodecamp.org/espanol/certification/ssanjua/full-stack",
+    logo: "/logos/free_code_camp.jpeg",
+  },
+  {
+    date: "July 2023 - December 2023",
+    school: "HardvardX",
+    title: "CS50 Computer Science",
+    description:
+      "logic | algorithms | c | python | sql & noSql",
+    link: "https://courses.edx.org/certificates/6956d84d08f74fb082bb4b7be62f6a7b?_gl=1*1fu5ao5*_ga*Mzk2MzE1MTcwLjE2OTE2NjA1MzY.*_ga_D3KS4KMDT0*MTcwNjgxMTYyMC4xOS4xLjE3MDY4MTE2MzQuNDYuMC4w",
+    logo: "/logos/harvard.webp",
+  },
+  {
+    date: "June 2023 - September 2023",
+    school: "Coursera",
+    title: "IBM Data Engineer",
+    description: "crud | pipelines | ",
+    link: "https://www.coursera.org/account/accomplishments/specialization/certificate/5F78DFXU8CRF",
+    logo: "/logos/courseralearning_logo.jpeg",
+  },
+  {
+    date: "February 2023 - July 2023",
+    school: "SoyHenry",
+    title: "Data Science",
+    description: "databases | machine learning | python | maths | data analysis",
+    link: "https://certificates.soyhenry.com/new-cert?id=a99a7015e911f55e0c11947392b6f03b3ee0180e7d88e5831c53652946a34eef",
+    logo: "/logos/henryok_logo.jpeg",
+  },
+  {
+    date: "June 2023",
+    school: "EF SET ",
+    title: "C2 Proficent",
+    description: "English level Certificate",
+    link: "https://cert.efset.org/CaWU7w",
+    logo: "/logos/efset.jpeg",
+  },
+];
 ---
 
-<ol class="relative border-s border-gray-300 dark:border-gray-700">                  
-    {
-        EXPERIENCE.map(experience => (
-        <li class="mb-10 ms-4">
-            <ExperienceItem {...experience} />
-        </li>
-        ))
-    }
-</ol>
 
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 ">
+  {
+    EXPERIENCE.map(({ date, school, title, description, link, logo }) => (
+      <div class="flex flex-col gap-2 border-2 border-lightgray dark:border-white custom-shadow-ex bg-light dark:bg-gris p-10">
+        <div class="flex justify-start items-center">
+          <img
+            src={logo}
+            alt={`${school} logo`}
+            class=" rounded-lg size-14"
+          />
+          <div class=" ml-4">
+            <h4 class="text-xs text-gray-900 dark:text-gray-300 mb-1">{date}</h4>
+            <h2 class="font-bold font-xl">{school}</h2>
+          </div>
+        </div>
+        <Line />
+        <h3 id="description" class="font-bold text-xl">
+          {title}
+        </h3>
+        <p id="description" class="font-semibold">
+          {description}
+        </p>
+        <a
+          href={link}
+          role="link"
+          target="_blank"
+          class="flex justify-center"
+        > <span class="border-2 font-bold mt-4 border-lightgray dark:border-white dark:hover:bg-white dark:hover:text-black p-2 custom-shadow-yellow transition-all duration-300 ease-in-out hover:scale-105">
+            CERTIFICATE
+          </span>
+        </a>
+      </div>
+    ))
+  }
+</div>

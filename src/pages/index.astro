@@ -12,6 +12,11 @@ import SmallProjects from "../components/SmallProjects.astro";
 import Contact from "../components/Contact.astro";
 import ContactIcon from "../components/icons/ContactIcon.astro";
 
+import { getLangFromUrl, useTranslations } from "../i18n/utils.ts";
+import Terminal from "../components/Terminal.astro";
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
 ---
 
 <Layout
@@ -20,32 +25,59 @@ import ContactIcon from "../components/icons/ContactIcon.astro";
 >
 	<main>
 		<Hero />
-		<SectionContainer id="tech">
-			<h2 class="flex gap-x-2 text-gray-700 items-center dark:text-white text-3xl font-bold mb-10 pt-20">
-				<TechStackIcon class="size-8" />
-				TECH STACK
+		<SectionContainer
+			id="tech"
+			class="bg-background-light dark:bg-background-dark px-5 pb-20 md:px-10 lg:px-20">
+			<h2
+				class="flex mb-20 text-white items-center justify-center dark:text-white text-3xl font-bold pt-20"
+			>
+				<span class="flex items-center bg-lightgray dark:bg-white dark:text-black p-2 custom-shadow-pink">
+					<TechStackIcon class="size-8 mr-2" />
+					{t("index.tech")}
+				</span>
 			</h2>
 			<TechStack />
 		</SectionContainer>
-		<SectionContainer id="projects">
-			<h2 class="flex gap-x-2 text-gray-700 items-center dark:text-white text-3xl font-bold mb-10 pt-20">
-				<ProjectsIcon class="size-6" />
-				PROYECTS
+		<SectionContainer  class="bg-white dark:bg-gris py-10 px-5 md:px-10 lg:px-20">
+			<Terminal />
+		</SectionContainer>
+		<SectionContainer 
+			id="projects" 
+			class="pb-20 px-5 md:px-10 lg:px-20">
+			<h2
+				class="flex mb-20 text-white items-center justify-center dark:text-white text-3xl font-bold pt-20"
+			>
+				<span class="flex items-center bg-lightgray dark:bg-white dark:text-black p-2 custom-shadow-pink">
+					<ProjectsIcon class="size-6 mr-2" />
+					{t("index.projects")}
+				</span>
 			</h2>
 			<Projects />
-			<SmallProjects />
+			<!-- <SmallProjects /> -->
 		</SectionContainer>
-		<SectionContainer id="education">
-			<h2 class="flex gap-x-2 text-gray-700 items-center dark:text-white text-3xl font-bold mb-10 pt-20">
-				<EducationIcon class="size-8" />
-				EDUCATION
+		<SectionContainer 
+			id="education" 
+			class="py-5 bg-white dark:bg-lightgray px-5 md:px-10 lg:px-20 pb-20">
+			<h2
+				class="flex mb-20 text-white items-center justify-center dark:text-white text-3xl font-bold pt-20"
+			>
+				<span class="flex items-center bg-lightgray dark:bg-white dark:text-black p-2 custom-shadow-pink">
+					<EducationIcon class="size-8 mr-2" />
+					{t("index.education")}
+				</span>
 			</h2>
 			<Experience />
 		</SectionContainer>
-		<SectionContainer id="contact">
-			<h2 class="flex gap-x-2 text-gray-700 items-center dark:text-white text-3xl font-bold mb-10 pt-20">
-				<ContactIcon class="size-8" />
-				CONTACT
+		<SectionContainer id="contact" class="py-5 bg-white dark:bg-gris px-5 md:px-10 lg:px-20 pb-20">
+			<h2
+				class="flex mb-20 text-white items-center justify-center dark:text-white text-3xl font-bold pt-20"
+			>
+				<span
+					class="flex items-center bg-lightgray dark:bg-white dark:text-black p-2 custom-shadow-pink"
+				>
+					<ContactIcon class="size-8 mr-2" />
+					{t("index.contact")}
+				</span>
 			</h2>
 			<Contact />
 		</SectionContainer>

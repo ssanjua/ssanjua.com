@@ -8,13 +8,12 @@ import MongoDBIcon from "./icons/MongoDBIcon.astro";
 import MySQLIcon from "./icons/MySQLIcon.astro";
 import TypeScriptIcon from "./icons/TypeScriptIcon.astro";
 import PythonIcon from "./icons/PythonIcon.astro";
-import AngularIcon from "./icons/AngularIcon.astro"
 import AstroIcon from '../components/icons/AstroIcon.astro';
 import HtmlIcon from '../components/icons/HtmlIcon.astro';
 import CssIcon from '../components/icons/CssIcon.astro';
 import GitIcon from '../components/icons/GitIcon.astro';
 import GitHubIcon from '../components/icons/GitHubIconFull.astro';
-import MySqlIcon2 from "./icons/MySqlIcon2.astro";
+
 
 const TAGS = [
     {
@@ -55,10 +54,6 @@ const TAGS = [
         icon: NextjsIcon,
     },
     {
-        name: "Angular",
-        icon: AngularIcon,
-    },
-    {
         name: "Node",
         icon: NodeJsIcon,
     },
@@ -69,10 +64,6 @@ const TAGS = [
     {
         name: "PostgreSQL",
         icon: MySQLIcon,
-    },
-    {
-        name: "MySQL",
-        icon: MySqlIcon2,
     },
     {
         name: "Git",
@@ -86,21 +77,24 @@ const TAGS = [
 ];
 ---
 
-    <div  id="tech" class="grid grid-cols-3 md:grid-cols-8 gap-4">
+    <div  id="tech" class="grid grid-cols-3 md:grid-cols-5 lg:grid-cols-7 gap-3 md:gap-4 lg:gap-6">
         {
             TAGS.map(({ name, icon: Icon }) => (
-                <div class="flex flex-col items-center justify-center text-center p-4 rounded-lg shadow-md transition-all duration-300 hover:shadow-2xl hover:scale-110
-                            bg-white/20 border border-gray-200 hover:bg-white/15
-                            dark:bg-white/10 dark:border-none dark:hover:bg-white/15"
+                <div class="flex flex-col items-center justify-center text-center p-4 transition-all duration-100 ease-out hover:scale-105
+                            border-2 border-background-dark bg-background-light
+                            dark:border-white custom-shadow-sm dark:bg-background-dark dark:hover:text-black dark:hover:bg-white
+                            hover:bg-background-dark hover:text-white"
                 >
-                    <div class="mb-2 transition-all duration-300 hover:scale-110">
-                        <Icon class="size-8" />
+                    <div class="mb-3 transition-all duration-300 hover:scale-110">
+                        <Icon class="size-10" />
                     </div>
-                    <span class="text-xs font-medium text-gray-900 dark:text-white/80">
+                    <span class="text-base font-bold">
                         {name}
                     </span>
                 </div>
             ))
         }
     </div>
+
+
 

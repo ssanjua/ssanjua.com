@@ -3,68 +3,27 @@ import LinkInline from "./LinkInline.astro";
 import GoIcon from "./icons/GoIcon.astro";
 
 export interface Props {
-    title: string;
-    school: string;
-    description: string;
-    link?: string;
-    date: string;
-    logo: string;
+  title: string;
+  school: string;
+  description: string;
+  link?: string;
+  date: string;
+  logo: string;
 }
 const { title, school, description, link, date, logo } = Astro.props;
 ---
 
-<div
-    class="relative pb-4 grid before:absolute before:left-[-35px] before:block before:h-full before:border-l-1 before:border-gray-400 dark:before:border-gray-400 before:content-[''] md:grid-cols-9 md:space-x-4"
->
-    <div class="relative md:col-span-1">
-        <div class="sticky top-0">
-            <span
-                class="text-gray-400 dark:text-white/80 -left-[26px] absolute rounded-full text-5xl"
-                >&bull;</span
-            >
-
-            {
-                logo && (
-                    <div class="flex justify-start pl-2 pb-2 md:pl-4 ">
-                        <img
-                            src={logo}
-                            alt={`${school} logo`}
-                            class="rounded-full size-16 border border-gray-200 dark:border-none opacity-90 shadow-md"
-                        />
-                    </div>
-                )
-            }
-        </div>
+<div class="flex flex-col gap-2 border">
+  <div class="grid grid-cols-3 items-start">
+    <img src={logo} alt={`${school} logo`} class="rounded-full size-16" />
+    <div class="col-span-2 flex flex-col justify-start">
+      <time class="">{date}</time>
+       <h3 class="font-bold text-xl">
+    {title}
+  </h3>
     </div>
-
-    <div class="relative md:col-span-3">
-        <div class="mb-1 pl-2 md:pl-0">
-            <h3 class="text-xl font-bold pb-2">{title}</h3>
-            <h4 class="font-semibold text text-gray-900 dark:text-white">
-                {school}
-            </h4>
-            <time class="p-0 m-0 text-sm text-gray-700 dark:text-gray-200"
-                >{date}</time
-            >
-        </div>
-        
-        <div class="pl-2 md:pl-0">
-        {
-            link && (
-                <LinkInline href={link}>
-                    Certificate
-                    <GoIcon class="size-4" />
-                </LinkInline>
-            )
-        }
-        </div>
-    </div>
-
-    <div
-        class="relative flex flex-col pb-4 text-gray-600 gap-x-2 dark:text-gray-300 md:col-span-5 pl-2 md:pl-0"
-    >
-        <p class="text-sm font-normal dark:text-gray-300">
-            {description}
-        </p>
-    </div>
+  </div>
+  <h4 class="">{school}</h4>
+  <p class="text-gray-200">{description}</p>
+  <LinkInline href={link}> Certificate </LinkInline>
 </div>
