@@ -1,0 +1,76 @@
+---
+import ReactIcon from "./icons/ReactIcon.astro";
+import TypeScriptIcon from "./icons/TypeScriptIcon.astro";
+import CssIcon from "./icons/CssIcon.astro";
+import ViteIcon from "./icons/ViteIcon.astro";
+
+
+export const TAGS = {
+  REACT: {
+    name: "React",
+    class: "bg-blue text-white",
+    icon: ReactIcon,
+  },
+  TYPESCRIPT: {
+    name: "TypeScript",
+    class: "bg-sky-600 text-white",
+    icon: TypeScriptIcon,
+  },
+  CSS: {
+    name: "CSS",
+    class: "bg-green text-white",
+    icon: CssIcon,
+  },
+  VITE: {
+    name: "Vite",
+    class: "bg-purple text-white",
+    icon: ViteIcon,
+  },
+};
+---
+
+<div class="flex p-4 justify-center items-center">
+  <a
+    target="_blank"
+    class="cursor-pointer"
+    href="https://ssanjuaterminal.vercel.app/"
+  >
+    <img
+      class="w-96 object-cover transition-all duration-300 ease-out hover:scale-105"
+      src="/projects/ssanjua_terminal_ipad.webp"
+      alt="ssanjua terminal portfolio"
+    />
+  </a>
+  <div class='gap-10'>
+    <p class="text-xl font-semibold">
+      check my
+    </p>
+    <p class="my-1">
+      <span class="descripcion-text-noline p-1 text-xl bg-yellow custom-shadow-sm font-semibold hover:text-white text-black dark:hover:text-white">
+        >_terminal</span>
+    </p>
+    <p class="text-xl font-semibold">
+      portfolio
+    </p>
+    <div class="flex items-center my-10 gap-2">
+      <img class="size-8" src="/logos/favicon_terminal.webp" />
+      <a
+        class="transition-all ease-out hover:bg-pink p-2 hover:text-white font-semibold hover:font-bold"
+        href="https://ssanjuaterminal.vercel.app/"
+        target="_blank"
+        >ssanjuaterminal.com
+      </a>
+    </div>
+    <div class="flex flex-wrap items-center justify-center gap-2 py-2">
+      {
+        Object.entries(TAGS).map(([key, tag]) => (
+          <span class={`inline-block text-xs py-2 px-3 ${tag.class}`}>
+            <tag.icon class="inline-block size-3.5" />
+            {tag.name}
+          </span>
+        ))
+      }
+    </div>
+  </div>
+  
+</div>

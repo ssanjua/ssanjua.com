@@ -1,7 +1,6 @@
 ---
 import Badge from "./Badge.astro";
 import ProfileGif from "./ProfileGif.astro";
-import ProfilePicture from "./ProfilePicture.astro";
 import SectionContainer from "./SectionContainer.astro";
 import SocialButtons from "./SocialButtons.astro";
 import SocialContact from "./SocialContact.astro";
@@ -10,112 +9,210 @@ import DownloadIcon from "./icons/DownloadIcon.astro";
 import GitHubIcon from "./icons/GitHubIcon.astro";
 import InstagramIcon from "./icons/InstagramIcon.astro";
 import LinkedinIcon from "./icons/LinkedinIcon.astro";
-import MailIcon from "./icons/MailIcon.astro";
 import XIcon from "./icons/XIcon.astro";
 ---
 
-<SectionContainer class="py-44 pb-24">
-    <div class="flex flex-row mb-4">
-        <div class="flex flex-col gap-5">
-            <h3
-                class="text-gray-800 dark:text-white text-6xl font-bold gap-x-4 flex items-center"
-            >
-                SSANJUA
-                <a
-                    href="https://linkedin.com/in/paupallares"
-                    target="_blank"
-                    rel="nonopener"
-                    class="flex items-center transition duration-300 ease-in-out md:justify-center hover:scale-105"
-                >
-                    <Badge>Full Stack Developer</Badge>
-                </a>
-            </h3>
-            <h2 class="descripcion-text max-w-[700px] text-pretty">
-                <span class="font-bold dark:font-semibold dark:text-white"
-                    >Hi! I'm Paula,</span
-                >
-                <span class="dark:font-thin"
-                    >also known as ssanjua. Passionate about technology and
-                    committed to creating products that make a difference, my
-                    experience in the multimedia sector has shaped me in
-                    leadership and collaborative work. Specialized in
-                    technologies such as</span
-                >
-                <span class="font-bold dark:font-semibold dark:text-white"
-                    >JavaScript, React, Node.js, and SQL/NoSQL databases,</span
-                >
-                <span class="dark:font-thin"
-                    >my projects include applications like</span
-                >
-                <span class="dark:text-white font-bold dark:font-semibold"
-                    >Bookeando and YarcoDelivery,</span
-                >
-                <span class="dark:font-thin"
-                    >covering both backend and frontend. My colleagues highlight
-                    my technical skills as well as my</span
-                >
-                <span class="dark:text-white font-bold dark:font-semibold"
-                    >creative thinking and problem-solving abilities.</span
-                >
-            </h2>
-        </div>
-        <ProfileGif class="hidden md:flex md:items-center md:justify-center size-52 mt-10" />
+<SectionContainer
+  class="pt-40 pb-40 md:py-50 px-4 bg-white dark:bg-gris"
+>
+  <div class="flex justify-center flex-row gap-4">
+    <div class="hidden lg:block">
+      <ProfileGif class="max-w-[250px] mt-14" />
     </div>
-    <div class="hidden md:flex flex-col md:flex-row md:justify-between mt-4">
-        <nav class="flex justify-start gap-4 py-4 flex-gap">
-            <CopyButton />
-            <!-- <SocialContact href="mailto:ppaupallares@gmail.com">
-                <span>CONTACT</span>
-            </SocialContact> -->
-            <SocialContact
-                href="https://drive.google.com/file/d/1me7-_HcOuj8stwOJCg11MWzkd-nwmm2-/view?usp=sharing"
-            >
-                <DownloadIcon class="size-6" />
-                <span>CV</span>
-            </SocialContact>
+    <div class="flex flex-col">
+      <p>
+        <span class="text-pink font-bold text-xl">PAU PALLARES</span> aka
+      </p>
+      <div class="flex flex-col sm:flex-row my-4 md:items-center gap-y-2">
+        <h3
+          id="ssanjua"
+          class="ss-title text-6xl font-bold flex transition-colors"
+        >
+          SSANJUA
+        </h3>
+        <a
+          href="https://linkedin.com/in/paupallares"
+          target="_blank"
+          rel="nonopener"
+          class="flex text-lg font-bold ml-0 sm:ml-4"
+        >
+          <span
+            class="border-2 p-2 text-base custom-shadow-pink border-yellow hover:bg-background-dark hover:text-white bg-background-light dark:hover:bg-background-light dark:bg-background-dark dark:hover:text-background-dark transition duration-300 ease-in-out hover:scale-105"
+            >FULL STACK DEVELOPER</span
+          >
+        </a>
+      </div>
+      <h2 class="descripcion-text max-w-[800px] text-pretty">
+        <span
+          class="font-bold text-base hover:text-yellow dark:hover:text-yellow dark:font-semibold dark:text-white"
+          >Hi! I'm Paula,</span
+        >
+        <span class="dark:font"
+          >also known as ssanjua. Passionate about technology and committed to
+          creating products that make a difference, my experience in the
+          multimedia sector has shaped me in leadership and collaborative work.
+          Specialized in technologies such as</span
+        >
+        <span
+          class="font-bold dark:text:white hover:text-yellow dark:font-semibold text-base underline"
+          >JavaScript, React, Node.js, and SQL/NoSQL databases,</span
+        >
+        <span class="dark:font">my projects include applications like</span>
+        <span class="dark:text-white font-bold dark:font-semibold"
+          >Bookeando and YarcoDelivery,</span
+        >
+        <span class="dark:font"
+          >covering both backend and frontend. My colleagues highlight my
+          technical skills as well as my</span
+        >
+        <span class="dark:text-white font-bold dark:font-semibold"
+          >creative thinking and problem-solving abilities.</span
+        >
+      </h2>
+      <div
+        class="hidden lg:flex font-bold justify-center items-center gap-6 mt-10"
+      >
+        <SocialContact
+          href="https://drive.google.com/file/d/1me7-_HcOuj8stwOJCg11MWzkd-nwmm2-/view?usp=sharing"
+        >
+          <span class="py-3 px-10 text-white bg-pink custom-shadow-yellow"
+            >CV</span
+          >
+        </SocialContact>
+        <a
+          class="transition duration-300 ease-in-out hover:scale-105"
+          href="mailto:ejemplo@dominio.com"
+        >
+          <span
+            class="py-3 px-5 dark:bg-white custom-shadow-pink text-white bg-lightgray dark:text-black"
+          >
+            EMAIL
+          </span></a
+        >
+        <nav class="flex gap-x-2 dark:text-white">
+          <a
+            class="flex hover:bg-orange hover:text-white justify-center items-center transition-all duration-300 ease-in-out hover:scale-105 size-12"
+            href="https://github.com/ssanjua"
+            target="_blank"
+            rel="nonopener noreferrer"
+          >
+            <GitHubIcon class="size-7" />
+          </a>
+          <a
+            class="flex hover:bg-blue justify-center hover:text-white items-center transition-all duration-300 ease-in-out hover:scale-105 size-12"
+            href="https://www.linkedin.com/in/paupallares/"
+            target="_blank"
+            rel="nonopener noreferrer"
+          >
+            <LinkedinIcon class="size-7" />
+          </a>
+          <a
+            class="flex hover:bg-green justify-center hover:text-white items-center transition-all duration-300 ease-in-out hover:scale-105 size-12"
+            href="https://twitter.com/pupipallares"
+            target="_blank"
+            rel="nonopener noreferrer"
+          >
+            <XIcon class="size-7" />
+          </a>
+          <a
+            class="flex hover:bg-red justify-center items-center hover:text-white transition-all duration-300 ease-in-out hover:scale-105 size-12"
+            href="https://www.instagram.com/ppupipallares/s"
+            target="_blank"
+            rel="nonopener noreferrer"
+          >
+          <InstagramIcon class="size-7" />
+          </a>
         </nav>
-        <nav class="flex gap-x-2 py-4">
-            <SocialButtons href="https://github.com/ssanjua">
-                <GitHubIcon class="text-black size-6" />
-            </SocialButtons>
-            <SocialButtons href="https://www.linkedin.com/in/paupallares/">
-                <LinkedinIcon class="size-6" />
-            </SocialButtons>
-            <SocialButtons href="https://twitter.com/pupipallares">
-                <XIcon class="size-6" />
-            </SocialButtons>
-            <SocialButtons href="https://www.instagram.com/ppupipallares/">
-                <InstagramIcon class="size-6" />
-            </SocialButtons>
-        </nav>
+      </div>
     </div>
+  </div>
 
-    <div class="md:hidden flex items-center justify-start mt-6">
-        <ProfileGif class="size-32" />
-        <div class="pl-4">
-            <CopyButton />
-            <nav class="flex gap-1 pt-2">
-                <SocialContact
-                    href="https://drive.google.com/file/d/1me7-_HcOuj8stwOJCg11MWzkd-nwmm2-/view?usp=sharing"
-                >
-                    <DownloadIcon class="size-4" />
-                    <span>CV</span>
-                </SocialContact>
-            </nav>
-            <nav class="flex gap-x-2 py-2">
-                <SocialButtons href="https://github.com/ssanjua">
-                    <GitHubIcon class="text-black dark:text-black size-6" />
-                </SocialButtons>
-                <SocialButtons href="https://www.linkedin.com/in/paupallares/">
-                    <LinkedinIcon class="size-6" />
-                </SocialButtons>
-                <SocialButtons href="https://twitter.com/pupipallares">
-                    <XIcon class="size-6" />
-                </SocialButtons>
-                <SocialButtons href="https://www.instagram.com/ppupipallares/">
-                    <InstagramIcon class="size-6" />
-                </SocialButtons>
-            </nav>
-        </div>
+  <div class="flex justify-center items-center lg:hidden mt-10">
+    <ProfileGif class="max-w-[150px]" />
+    <div>
+      <div class="flex justify-center items-center mb-8">
+        <SocialContact
+          href="https://drive.google.com/file/d/1me7-_HcOuj8stwOJCg11MWzkd-nwmm2-/view?usp=sharing"
+        >
+          <span
+            class="py-2 px-8 text-white font-bold bg-pink custom-shadow-yellow"
+            >CV</span
+          >
+        </SocialContact>
+      </div>
+      <div class="flex justify-center font-bold items-center mb-5">
+        <a
+          class="transition duration-300 ease-in-out hover:scale-105"
+          href="mailto:ejemplo@dominio.com"
+        >
+          <span
+            class="py-2 px-5 dark:bg-white custom-shadow-pink text-white bg-lightgray dark:text-black"
+          >
+            EMAIL
+          </span></a
+        >
+      </div>
+      <nav class="flex gap-x-1 dark:text-white">
+        <a
+          class="flex hover:bg-orange hover:text-white justify-center items-center transition-all duration-300 ease-in-out hover:scale-105 size-12"
+          href="https://github.com/ssanjua"
+          target="_blank"
+          rel="nonopener noreferrer"
+        >
+          <GitHubIcon class="size-7" />
+        </a>
+        <a
+          class="flex hover:bg-blue justify-center hover:text-white items-center transition-all duration-300 ease-in-out hover:scale-105 size-12"
+          href="https://www.linkedin.com/in/paupallares/"
+          target="_blank"
+          rel="nonopener noreferrer"
+        >
+          <LinkedinIcon class="size-7" />
+        </a>
+        <a
+          class="flex hover:bg-green justify-center hover:text-white items-center transition-all duration-300 ease-in-out hover:scale-105 size-12"
+          href="https://twitter.com/pupipallares"
+          target="_blank"
+          rel="nonopener noreferrer"
+        >
+          <XIcon class="size-7" />
+        </a>
+        <a
+          class="flex hover:bg-red justify-center items-center hover:text-white transition-all duration-300 ease-in-out hover:scale-105 size-12"
+          href="https://www.instagram.com/ppupipallares/s"
+          target="_blank"
+          rel="nonopener noreferrer"
+        >
+        <InstagramIcon class="size-7" />
+        </a>
+      </nav>
     </div>
+  </div>
 </SectionContainer>
+
+<script type="module" is:inline>
+  const colors = [
+    "#0a996f",
+    "#0a6789",
+    "#cf0638",
+    "#fa6632",
+    "#fecd23",
+    "#E54980",
+  ];
+  const h3Element = document.getElementById("ssanjua");
+
+  h3Element.addEventListener("mouseover", () => {
+    const randomColor = colors[Math.floor(Math.random() * colors.length)];
+    h3Element.style.color = randomColor;
+  });
+
+  h3Element.addEventListener("mouseout", () => {
+    h3Element.style.color = "";
+  });
+</script>
+
+<style>
+  .ss-title {
+    font-family: "Press Start 2P", system-ui;
+  }
+</style>

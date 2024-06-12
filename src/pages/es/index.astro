@@ -1,0 +1,53 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import Experience from "../../components/Experience.astro";
+import SectionContainer from "../../components/SectionContainer.astro";
+import EducationIcon from "../../components/icons/EducationIcon.astro";
+import ProjectsIcon from "../../components/icons/ProjectsIcon.astro";
+import Projects from "../../components/Projects.astro";
+import TechStackIcon from "../../components/icons/TechStackIcon.astro";
+import TechStack from "../../components/TechStack.astro";
+import Hero from "../../components/Hero.astro";
+import SmallProjects from "../../components/SmallProjects.astro";
+import Contact from "../../components/Contact.astro";
+import ContactIcon from "../../components/icons/ContactIcon.astro";
+
+---
+
+<Layout
+	title="ssanjua - full stack web developer - portfolio "
+	description="full stack web developer based in spain, seeking work"
+>
+	<main>
+		<Hero />
+		<SectionContainer id="tech">
+			<h2 class="flex gap-x-2 text-gray-700 items-center dark:text-white text-3xl font-bold mb-10 pt-20">
+				<TechStackIcon class="size-8" />
+				TECH STACK
+			</h2>
+			<TechStack />
+		</SectionContainer>
+		<SectionContainer id="projects">
+			<h2 class="flex gap-x-2 text-gray-700 items-center dark:text-white text-3xl font-bold mb-10 pt-20">
+				<ProjectsIcon class="size-6" />
+				PROYECTS
+			</h2>
+			<Projects />
+			<SmallProjects />
+		</SectionContainer>
+		<SectionContainer id="education">
+			<h2 class="flex gap-x-2 text-gray-700 items-center dark:text-white text-3xl font-bold mb-10 pt-20">
+				<EducationIcon class="size-8" />
+				EDUCATICIÓN
+			</h2>
+			<Experience />
+		</SectionContainer>
+		<SectionContainer id="contact">
+			<h2 class="flex gap-x-2 text-gray-700 items-center dark:text-white text-3xl font-bold mb-10 pt-20">
+				<ContactIcon class="size-8" />
+				CONTACT
+			</h2>
+			<Contact />
+		</SectionContainer>
+	</main>
+</Layout>

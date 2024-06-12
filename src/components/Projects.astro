@@ -14,7 +14,6 @@ import TypeScriptIcon from "./icons/TypeScriptIcon.astro";
 import PythonIcon from "./icons/PythonIcon.astro";
 import HTMLIcon from "./icons/HtmlIcon.astro";
 import CssIcon from "./icons/CssIcon.astro";
-import PlusIcon from "./icons/PlusIcon.astro";
 import AstroIcon from "./icons/AstroIcon.astro";
 
 export const TAGS = {
@@ -30,12 +29,12 @@ export const TAGS = {
   },
   REACT: {
     name: "React",
-    class: "bg-blue-800 text-white",
+    class: "bg-blue text-white",
     icon: ReactIcon,
   },
   JAVASCRIPT: {
     name: "JavaScript",
-    class: "bg-yellow-600 text-white",
+    class: "bg-yellowsm text-white",
     icon: JavaScriptIcon,
   },
   NODE: {
@@ -70,37 +69,31 @@ export const TAGS = {
   },
   HTML: {
     name: "HTML",
-    class: "bg-red-900 text-white",
+    class: "bg-orange text-white",
     icon: HTMLIcon,
   },
   CSS: {
     name: "CSS",
-    class: "bg-blue-800 text-white",
+    class: "bg-blue text-white",
     icon: CssIcon,
   },
   ASTRO: {
     name: "Astro",
-    class: "bg-red-600 text-white",
+    class: "bg-red text-white",
     icon: AstroIcon,
-  }
+  },
 };
 
 const PROJECTS = [
   {
-    title: "Bookeando",
+    title: "bookeando",
     description:
       "Complete project, from the conception of the backend and frontend. Features Stripe, authentication, and end-to-end testing. Users can book a hotel and manage the reservation as a hospitality owner as well.",
     link: "https://bookeando.onrender.com/",
     github: "https://github.com/ssanjua/booking-web",
     image: "/projects/bookeando.webp",
-    tags: [
-      TAGS.REACT,
-      TAGS.TYPESCRIPT,
-      TAGS.NEXT,
-      TAGS.NODE,
-      TAGS.TAILWIND,
-      TAGS.MONGODB,
-    ],
+    tags: [TAGS.REACT, TAGS.TYPESCRIPT, TAGS.NODE, TAGS.TAILWIND, TAGS.MONGODB],
+    color: "bg-pink",
   },
   {
     title: "YarcoDelivery",
@@ -109,79 +102,72 @@ const PROJECTS = [
     link: "https://sanjuan-delivery-app-frontend.onrender.com/",
     github: "https://github.com/ssanjua/sanjuan-delivery-app",
     image: "/projects/yarcoDelivery.webp",
-    tags: [
-      TAGS.REACT,
-      TAGS.TYPESCRIPT,
-      TAGS.NEXT,
-      TAGS.NODE,
-      TAGS.TAILWIND,
-      TAGS.MONGODB,
-    ],
+    tags: [TAGS.REACT, TAGS.TYPESCRIPT, TAGS.NODE, TAGS.TAILWIND, TAGS.MONGODB],
+    color: "bg-orange",
   },
   {
-    title: "Audiovisual Portfolio",
+    title: "Filmmaker",
     description:
       "This is my filmmaking portfolio. I merged my two passions here.",
     link: "https://ppaupallares.vercel.app/",
     github: "https://github.com/ssanjua/ssanjua-filmmaker-web",
     image: "/projects/ppaupallares.webp",
     tags: [TAGS.ASTRO, TAGS.NODE, TAGS.NEXT, TAGS.TAILWIND],
+    color: "bg-yellow"
   },
   {
-    title: "Harveys App",
+    title: "Harvey's App",
     description:
       "A fun app that uses text-to-speech technology to bring Harvey, Michael's robot from 'The Office,' to life. Make Harvey speak whatever you type!",
     link: "https://ssanjua.pythonanywhere.com",
     github: "https://github.com/ssanjua/MicaelScott-Harvey_app",
     image: "/projects/harveys.webp",
     tags: [TAGS.PYTHON, TAGS.HTML, TAGS.CSS, TAGS.JAVASCRIPT],
+    color: "bg-red"
   },
 ];
 ---
 
-<div class="grid md:grid-cols-2 gap-2">
+<div class="grid md:grid-cols-2 gap-2 md:gap-4">
   {
-    PROJECTS.map(({ title, description, tags, image, link, github }) => (
-      <div class="mb-4">
-        <div class="flex items-center">
-          <PlusIcon class="size-4 mr-2" />
-          <h3 class="text-xl font-semibold mr-4">{title}</h3>
+    PROJECTS.map(({ title, description, tags, image, link, github, color }) => (
+      <div class="p-8 bg-white dark:bg-gris">
+        <div class="flex items-center justify-between">
+          <h3 class={`descripcion-text-noline ${color} text-background-dark custom-shadow-ex p-1 text-xl font-bold mr-4`}>
+            {title}
+          </h3>
           <div class="flex gap-3">
             <LinkButton href={github}>
-              <GitHubIcon class="stroke-current text-black dark:text-white size-4" />
-              Code
+              <GitHubIcon class="size-6" />
             </LinkButton>
             <LinkButton href={link}>
-              <Link class="size-4" />
-              Demo
+              <Link class="size-6" />
             </LinkButton>
           </div>
         </div>
-        <div class="group relative overflow-hidden rounded-2xl">
-          <img
-            src={image}
-            alt={`Project ${title}`}
-            class="w-full object-cover transition-all duration-300 ease-out opacity-80 group-hover:opacity-100 group-hover:scale-110"
-          />
-          <div class="absolute inset-0 flex flex-col justify-end p-2 bg-gradient-to-t from-white to-transparent dark:bg-gradient-to-t dark:from-black dark:to-transparent">
-            <p class="text-sm font mt-3 text-black dark:text-gray-100 px-8">
-              {description}
-            </p>
+        <div class="flex items-center mt-5">
+          <a role="link" target="_blank" href={link}>
+            <img
+              src={image}
+              alt={`Project ${title}`}
+              class="w-full max-w-[600px] object-cover transition-all duration-300 ease-out hover:scale-105"
+            />
+          </a>
+          <div class="mt-5">
+            {tags.map((tag) => (
+              <span class={`inline-flex m-1 text-xs p-2 ${tag.class}`}>
+                <tag.icon class="size-3.5 mr-1" />
+                {tag.name}
+              </span>
+            ))}
           </div>
         </div>
-        <div class="flex flex-wrap items-center justify-center gap-2 py-2">
-          {tags.map((tag) => (
-            <span
-              class={`inline-block rounded-full text-xs py-2 px-3 ${tag.class}`}
-            >
-              <tag.icon class="inline-block size-3.5" />
-              {tag.name}
-            </span>
-          ))}
+        <div class="flex flex-col justify-end p-2 ">
+          <p class="text-sm mt-3 font-semibold text-black dark:text-gray-100">
+            {description}
+          </p>
         </div>
       </div>
     ))
   }
 </div>
-
-

@@ -2,16 +2,13 @@
 import SunIcon from "./icons/SunIcon.astro";
 import MoonIcon from "./icons/MoonIcon.astro";
 ---
-
 <button
     id="theme-toggle"
     type="button"
-    class="rounded-full text-sm p-2 shadow-md hover:scale-110 transition
-        text-gray-500 border border-gray-300 hover:bg-gray-100  hover:border-gray-100 
-        dark:text-white/90 dark:border-white/20 dark:hover:bg-white/20 dark:hover:border-white/0"
+    class="border-2 border-background-dark hover:bg-background-dark hover:text-white dark:border-white dark:hover:bg-white dark:hover:text-yellow px-2 custom-shadow-pink hover:scale-105 transition"
 >
-    <MoonIcon id="theme-toggle-dark-icon" class="hover:fill-gray-600 hover:stroke-gray-600 hidden size-5" />
-    <SunIcon id="theme-toggle-light-icon" class="hover:fill-yellow-500 hover:stroke-yellow-500 hidden size-5" />
+    <MoonIcon id="theme-toggle-dark-icon" class="hidden size-5" />
+    <SunIcon id="theme-toggle-light-icon" class="hidden size-5" />
 </button>
 
 <script is:inline>
@@ -60,14 +57,3 @@ import MoonIcon from "./icons/MoonIcon.astro";
         }
     });
 </script>
-
-<!-- <div class="flex items-center relative ml-1 mr-1">
-    <button
-        id="theme-toggle-btn"
-        class="appearance-none border-none flex hover:scale-125 transition"
-        aria-label="Toggle theme"
-    >
-        <SunIcon id="light" class="size-5 transition-all" />
-        <MoonIcon id="dark" class="size-5 transition-all hidden" />
-    </button>
-</div> -->

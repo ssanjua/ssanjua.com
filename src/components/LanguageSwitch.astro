@@ -4,10 +4,37 @@ import ItaliaIcon from "./icons/ItaliaIcon.astro";
 import SpainIcon from "./icons/SpainIcon.astro";
 ---
 
-<div class="relative group">
-    <a
-        class="flex items-center rounded-full text-gray-700 hover:text-gray-600 hover:bg-gray-100 hover:font-bold dark:text-white/80 dark:hover:text-white dark:hover:bg-white/20 px-2 md:px-4 py-2 transition-all duration-300 ease-in-out"
-    >
-        <EnglishIcon class="size-3 mr-2"/>EN</a
-    >
-</div>
+<button
+    id="lang-toggle"
+    type="button"
+    class="border-2 text-sm border-background-dark hover:bg-background-dark hover:text-white dark:border-white dark:hover:bg-white dark:hover:text-background-dark p-2 custom-shadow-pink hover:scale-105 flex items-center"
+>
+    <EnglishIcon id="lang-en" class="size-5" />
+    <span id="text-en" class="ml-2">EN</span>
+    <SpainIcon id="lang-es" class="hidden size-5" />
+    <span id="text-es" class="hidden ml-2">ES</span>
+    <ItaliaIcon id="lang-it" class="hidden size-5" />
+    <span id="text-it" class="hidden ml-2">IT</span>
+</button>
+
+<script is:inline>
+    var toggleButton = document.getElementById("lang-toggle");
+    var toggleSpanishIcon = document.getElementById("lang-es");
+    var toggleEnglishIcon = document.getElementById("lang-en");
+    // var toggleItalianIcon = document.getElementById("lang-it");
+    var toggleSpanishText = document.getElementById("text-es");
+    var toggleEnglishText = document.getElementById("text-en");
+    // var toggleItalianText = document.getElementById("text-it");
+
+
+    toggleButton.addEventListener("click", function() {
+        toggleEnglishIcon.classList.toggle("hidden");
+        toggleSpanishIcon.classList.toggle("hidden");
+        toggleSpanishText.classList.toggle("hidden");
+        toggleEnglishText.classList.toggle("hidden");
+        // toggleItalianText.classList.toggle("hidden");
+        // toggleItalianIcon.classList.toggle("hidden");
+
+    });
+</script>
+

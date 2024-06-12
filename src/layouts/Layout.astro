@@ -2,6 +2,7 @@
 import Header from "../components/Header.astro";
 import "@fontsource-variable/martian-mono";
 import "@fontsource-variable/noto-sans";
+import "@fontsource/press-start-2p";
 import Footer from "../components/Footer.astro";
 // font-family: 'Noto Sans Variable', sans-serif;
 
@@ -19,13 +20,13 @@ const { title, description } = Astro.props;
 		<meta charset="UTF-8" />
 		<meta name="description" content={description} />
 		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.png" />
+		<link rel="icon" type="webp" href="/favicon.webp" />
 		<meta name="generator" content={Astro.generator} />
 		<title>{title}</title>
 		<script>
 			if (!localStorage.getItem("color-theme")) {
 				document.documentElement.classList.add("dark");
-				localStorage.setItem("color-theme", "dark"); // Guarda el tema oscuro como preferencia
+				localStorage.setItem("color-theme", "dark");
 			} else if (localStorage.getItem("color-theme") === "dark") {
 				document.documentElement.classList.add("dark");
 			} else {
@@ -33,30 +34,10 @@ const { title, description } = Astro.props;
 			}
 		</script>
 	</head>
-	<body class="relative text-black dark:text-white/85">
-		<div class="fixed top-0 -z-10 h-full w-full bg-white">
-			<div
-				class="absolute bottom-auto left-auto right-0 top-0 h-[500px] w-[500px] -translate-x-[30%] translate-y-[20%] rounded-full bg-[rgba(255,0,182,.15)] opacity-50 blur-[80px]"
-			>
-			</div>
-		</div>
-
-		<!-- Fondo para tema oscuro -->
-		<div
-			class="hidden dark:block dark:fixed dark:top-0 dark:z-[-1] h-full w-full bg-black"
-		>
-			<div
-				class="absolute bottom-0 left-[-20%] right-0 top-[-10%] h-[500px] w-[500px] rounded-full bg-[radial-gradient(circle_farthest-side,rgba(255,0,182,.15),rgba(0,0,0,0.5))]"
-			>
-			</div>
-			<div
-				class="absolute bottom-0 right-[-20%] top-[-10%] h-[500px] w-[500px] rounded-full bg-[radial-gradient(circle_farthest-side,rgba(255,0,182,.15),rgba(0,0,0,0.5))]"
-			>
-			</div>
-		</div>
+	<body class="relative bg-white dark:bg-black text-black dark:text-white/95">
 		<script src="../../node_modules/flowbite/dist/flowbite.min.js"></script>
 
-		<div class="mx-auto max-w-[850px] px-4">
+		<div class="mx-auto">
 			<Header />
 			<slot />
 			<Footer />
@@ -83,11 +64,47 @@ const { title, description } = Astro.props;
 	.descripcion-text {
 		font-family: "Martian Mono Variable", monospace;
 		font-size: 14px;
-		line-height: 1.6;
+		line-height: 1.5;
+	}
+
+	.descripcion-text-noline {
+		font-family: "Martian Mono Variable", monospace;
 	}
 
 	.on-scroll {
-		@apply bg-white/80 dark:bg-black/80 backdrop-blur;
+		@apply bg-background-light/90 dark:bg-background-dark/90;
+	}
+
+	.custom-shadow-sm {
+		box-shadow: 2px 2px 0px 0px rgb(19, 19, 19);
+	}
+
+	.custom-shadow-ex {
+		box-shadow: 4px 4px 0px 0px rgba(255, 255, 255, 1);
+	}
+
+	.custom-shadow-small {
+		box-shadow: 2px 2px 0px 0px rgba(255, 255, 255, 1);
+	}
+
+	.custom-shadow-pink {
+		box-shadow: 4px 4px 0px 0px #e54980;
+	}
+
+	.custom-shadow-yellow {
+		box-shadow: 4px 4px 0px 0px rgba(254, 205, 35, 1);
+	}
+
+	.custom-shadow-blue {
+		box-shadow: 4px 4px 0px 0px #0a6789;
+	}
+
+	.custom-shadow-red {
+		box-shadow: 4px 4px 0px 0px #cf0638;
+	}
+
+	.custom-shadow-dark {
+		box-shadow: 4px 4px 0px 0px #33332d;
 	}
 
 	@media (prefers-color-scheme: dark) {

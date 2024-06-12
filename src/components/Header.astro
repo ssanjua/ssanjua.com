@@ -2,47 +2,57 @@
 import LanguageSwitch from "./LanguageSwitch.astro";
 import ProfilePicture from "./ProfilePicture.astro";
 import ThemeToggle from "./ThemeToggle.astro";
-import EnglishIcon from "./icons/EnglishIcon.astro";
-import SpainIcon from "./icons/SpainIcon.astro";
 ---
 
-<header class="fixed top-0 left-0 w-full z-50 py-2 bg-transparent backdrop-filter backdrop-blur-none transition-all duration-300 ease-in-out on-scroll">
-    <div class="flex justify-between items-center max-w-[850px] mx-auto px-4">
-        <a href="#top">
-            <ProfilePicture class="size-10 shadow-md" />
-        </a>
+<header
+    class="fixed top-0 left-0 w-full z-50 py-4 bg-background-light dark:bg-background-dark transition-all duration-300 ease-in-out on-scroll  border-background-dark dark:border-white"
+>
+    <div
+        class="flex justify-between items-center mx-auto md:mx-6 lg:mx-16 px-4 md:px-6 lg:px-15 descripcion-text"
+    >
+        <div>
+            <nav
+                class="flex dark:text-white items-center flex-row md:gap-x-4 lg:gap-x-6"
+            >
+                <a href="#top">
+                    <!-- <ProfilePicture class="border-2 border-pink hidden md:block md:size-14 shadow-md" /> -->
+                    <img class="size-12 hidden md:block" src="favicon.webp" />
+                </a>
 
-        <nav class="flex flex-row text-sm gap-x-2 md:gap-x-4 lg:gap-x-6">
-            <LanguageSwitch />
-            <a
-                class="text-gray-700 hover:text-gray-600 hover:font-bold dark:text-white/80 dark:hover:text-white px-2 md:px-4 py-2 rounded-full transition-all duration-300 ease-in-out"
-                href="#tech">Tech</a
-            >
-            <a
-                class="text-gray-700 hover:text-gray-600 hover:font-bold dark:text-white/80 dark:hover:text-white px-2 md:px-4 py-2 rounded-full transition-all duration-300 ease-in-out"
-                href="#projects">Projects</a
-            >
-            <a
-                class="text-gray-700 hover:text-gray-600 hover:font-bold dark:text-white/80 dark:hover:text-white px-2 md:px-4 py-2 rounded-full transition-all duration-300 ease-in-out"
-                href="#education">Education</a
-            >
+                <a
+                    class="font-bold hover:bg-orange hover:text-white dark:hover:text-background-dark px-2 md:px-4 py-2"
+                    href="#tech">Tech</a
+                >
+                <a
+                    class="font-bold hover:bg-yellow hover:text-white dark:hover:text-background-dark px-2 md:px-4 py-2"
+                    href="#projects">Projects</a
+                >
+                <a
+                    class="font-bold hover:bg-blue hover:text-white dark:hover:text-background-dark px-2 md:px-4 py-2"
+                    href="#education">Education</a
+                >
 
-            <a
-                class="text-gray-700 hover:text-gray-600 hover:font-bold dark:text-white/80 dark:hover:text-white px-2 md:px-4 py-2 rounded-full transition-all duration-300 ease-in-out"
-                href="#contact">Contact</a
-            >
+                <a
+                    class="font-bold hover:bg-green hover:text-white dark:hover:text-background-dark px-2 md:px-4 py-2"
+                    href="#contact">Contact</a
+                >
+            </nav>
+        </div>
+        <div class="flex gap-2 md:gap-4">
             <ThemeToggle />
-        </nav>
+            <LanguageSwitch />
+        </div>
     </div>
 </header>
 
 <script is:inline>
-    document.addEventListener("scroll", function() {
-  const header = document.querySelector('header');
-  if (window.scrollY > 20) { // Ajusta el '10' a la cantidad de px que prefieras antes de cambiar el estilo
-    header.classList.add('on-scroll');
-  } else {
-    header.classList.remove('on-scroll');
-  }
-});
+    document.addEventListener("scroll", function () {
+        const header = document.querySelector("header");
+        if (window.scrollY > 20) {
+            // Ajusta el '10' a la cantidad de px que prefieras antes de cambiar el estilo
+            header.classList.add("on-scroll");
+        } else {
+            header.classList.remove("on-scroll");
+        }
+    });
 </script>
