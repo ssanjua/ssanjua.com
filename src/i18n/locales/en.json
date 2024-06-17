@@ -1,0 +1,24 @@
+{
+  "HERO": {
+    "HELLO": "Hi! I'm Paula,",
+    "DESCRIPTION1": "also known as ssanjua. Passionate about technology and committed to creating products that make a difference, my experience in the multimedia sector has shaped me in leadership and collaborative work. Specialized in technologies such as",
+    "TECH": "JavaScript, React, Node.js, and SQL/NoSQL databases,",
+    "PROJ": "my projects include applications like",
+    "PROJNAMES": "Bookeando and YarcoDelivery,",
+    "PROJEXPLAIN": "covering both backend and frontend. My colleagues highlight my technical skills as well as my",
+    "SKILLS": "creative thinking and problem-solving abilities."
+  },
+  "CONTACT": {
+    "SHORT_DESCRIPTION": "I am eager to connect and explore how we can thrive together. If you're looking for dedication and creativity, I invite you to reach out. Let’s discuss how I can contribute to your team’s success.",
+    "CURRENTLY": "I'm currently working in :",
+    "WORKINPROGRESS": "a GAME purely with Typescript and React.",
+    "BASED": "Currently based in",
+    "COUNTRY": "Barcelona, Spain"
+  },
+  "TERMINAL": {
+    "CHECK": "Check my"
+  },
+  "BUTTON": {
+    "DOWNLOAD": "DOWNLOAD CV"
+  }
+}

@@ -1,7 +1,13 @@
 ---
-import LanguageSwitch from "./LanguageSwitch.astro";
-import ProfilePicture from "./ProfilePicture.astro";
-import ThemeToggle from "./ThemeToggle.astro";
+
+import LanguageSwitch from "./LanguageSwitch.astro"
+import ThemeToggle from "./ThemeToggle.astro"
+
+import { getLangFromUrl, useTranslations } from "../i18n/utils.ts"
+
+const lang = getLangFromUrl(Astro.url)
+const t = useTranslations(lang)
+
 ---
 
 <header
@@ -21,20 +27,20 @@ import ThemeToggle from "./ThemeToggle.astro";
 
                 <a
                     class="font-bold hover:bg-orange hover:text-white dark:hover:text-background-dark px-2 md:px-4 py-2"
-                    href="#tech">Tech</a
+                    href="#tech">{t("nav.tech")}</a
                 >
                 <a
                     class="font-bold hover:bg-yellow hover:text-white dark:hover:text-background-dark px-2 md:px-4 py-2"
-                    href="#projects">Projects</a
+                    href="#projects">{t("nav.proj")}</a
                 >
                 <a
                     class="font-bold hover:bg-blue hover:text-white dark:hover:text-background-dark px-2 md:px-4 py-2"
-                    href="#education">Education</a
+                    href="#education">{t("nav.edu")}</a
                 >
 
                 <a
                     class="font-bold hover:bg-green hover:text-white dark:hover:text-background-dark px-2 md:px-4 py-2"
-                    href="#contact">Contact</a
+                    href="#contact">{t("nav.contact")}</a
                 >
             </nav>
         </div>

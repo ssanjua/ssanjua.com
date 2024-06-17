@@ -1,15 +1,18 @@
 ---
-import Badge from "./Badge.astro";
-import ProfileGif from "./ProfileGif.astro";
-import SectionContainer from "./SectionContainer.astro";
-import SocialButtons from "./SocialButtons.astro";
-import SocialContact from "./SocialContact.astro";
-import CopyButton from "./buttons/CopyButton.astro";
-import DownloadIcon from "./icons/DownloadIcon.astro";
-import GitHubIcon from "./icons/GitHubIcon.astro";
-import InstagramIcon from "./icons/InstagramIcon.astro";
-import LinkedinIcon from "./icons/LinkedinIcon.astro";
-import XIcon from "./icons/XIcon.astro";
+import ProfileGif from "./ProfileGif.astro"
+import SectionContainer from "./SectionContainer.astro"
+import SocialContact from "./SocialContact.astro"
+import GitHubIcon from "./icons/GitHubIcon.astro"
+import InstagramIcon from "./icons/InstagramIcon.astro"
+import LinkedinIcon from "./icons/LinkedinIcon.astro"
+import XIcon from "./icons/XIcon.astro"
+
+
+import { getI18N } from "../i18n"
+const { currentLocale } = Astro;
+const i18n = getI18N({ currentLocale })
+
+
 ---
 
 <SectionContainer
@@ -45,28 +48,25 @@ import XIcon from "./icons/XIcon.astro";
       <h2 class="descripcion-text max-w-[800px] text-pretty">
         <span
           class="font-bold text-base hover:text-yellow dark:hover:text-yellow dark:font-semibold dark:text-white"
-          >Hi! I'm Paula,</span
+          >{i18n.HERO.HELLO}</span
         >
         <span class="dark:font"
-          >also known as ssanjua. Passionate about technology and committed to
-          creating products that make a difference, my experience in the
-          multimedia sector has shaped me in leadership and collaborative work.
-          Specialized in technologies such as</span
+        
+          >{i18n.HERO.DESCRIPTION1}</span
         >
         <span
           class="font-bold dark:text:white hover:text-yellow dark:font-semibold text-base underline"
-          >JavaScript, React, Node.js, and SQL/NoSQL databases,</span
+          >{i18n.HERO.TECH}</span
         >
-        <span class="dark:font">my projects include applications like</span>
+        <span class="dark:font">{i18n.HERO.PROJ}</span>
         <span class="dark:text-white font-bold dark:font-semibold"
-          >Bookeando and YarcoDelivery,</span
+          >{i18n.HERO.PROJNAMES}</span
         >
         <span class="dark:font"
-          >covering both backend and frontend. My colleagues highlight my
-          technical skills as well as my</span
+          >{i18n.HERO.PROJEXPLAIN}</span
         >
         <span class="dark:text-white font-bold dark:font-semibold"
-          >creative thinking and problem-solving abilities.</span
+          >{i18n.HERO.SKILLS}</span
         >
       </h2>
       <div

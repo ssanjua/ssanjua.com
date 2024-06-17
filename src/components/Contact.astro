@@ -1,10 +1,16 @@
 ---
-import ProfilePicture from "./ProfilePicture.astro";
-import EmailIcon from "./icons/EmailIcon.astro";
-import MailIcon from "./icons/MailIcon.astro";
-import MapIcon from "./icons/MapIcon.astro";
-import MobileIcon from "./icons/MobileIcon.astro";
-import DownloadButton from "./buttons/DownloadButton.astro";
+
+import EmailIcon from "./icons/EmailIcon.astro"
+import MapIcon from "./icons/MapIcon.astro"
+import MobileIcon from "./icons/MobileIcon.astro"
+import DownloadButton from "./buttons/DownloadButton.astro"
+
+
+import { getI18N } from "../i18n"
+const { currentLocale } = Astro;
+const i18n = getI18N({ currentLocale })
+
+
 ---
 
 
@@ -21,17 +27,18 @@ import DownloadButton from "./buttons/DownloadButton.astro";
       <div class="m-5">
         <p class="descripcion-text text-wrap my-4">
           <span class=""
-            >I am eager to connect and explore how we can thrive together.
-            If you're looking for dedication and creativity, I invite you to reach out. Let’s discuss how I can contribute
-            to your team’s success.
+            >
+            {i18n.CONTACT.SHORT_DESCRIPTION}
           </span>
         </p>
         <p>
           <span class=""
-            >I'm currently working in :<br /></span
+            >{i18n.CONTACT.CURRENTLY}
+            <br /></span
           >
           <span class="font-bold text-myPink">
-            a GAME purely with Typescript and React.
+            {i18n.CONTACT.WORKINPROGRESS}
+            
           </span>
         </p>
         <p class="flex items-center my-2">
@@ -55,7 +62,8 @@ import DownloadButton from "./buttons/DownloadButton.astro";
         <div class="flex items-center mb-5">
           <MapIcon class="size-4 mr-1" />
           <p class="text-sm dark:text-gray-200">
-            Currently based in <span class="font-bold">Barcelona, Spain</span>
+            {i18n.CONTACT.BASED}
+            <span class="font-bold">{i18n.CONTACT.COUNTRY}</span>
           </p>
         </div>
         <div class="flex justify-center m-5">
