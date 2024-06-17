@@ -9,10 +9,11 @@ export default defineConfig({
   [
     tailwind(), 
   ],
-  // i18n: {
-  //   defaultLocale: 'en',
-  //   locales: [ 'es', 'en' ],
-  //   routing: {
-  //     prefixDefaultLocale: 'en'
-  //   }
+  i18n: {
+    defaultLocale: 'en',
+    locales: [ 'es', 'en' ],
+    routing: {
+      prefixDefaultLocale: false
+    }
+  }
 });
