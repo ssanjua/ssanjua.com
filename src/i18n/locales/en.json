@@ -8,6 +8,28 @@
     "PROJEXPLAIN": "covering both backend and frontend. My colleagues highlight my technical skills as well as my",
     "SKILLS": "creative thinking and problem-solving abilities."
   },
+  "PROJECTS": {
+    "bookeando": {
+      "description": "Complete project, from the conception of the backend and frontend. Features Stripe, authentication, and end-to-end testing. Users can book a hotel and manage the reservation as a hospitality owner as well."
+    },
+    "yarcoDelivery": {
+      "description": "Full stack food delivery app featuring auth0, Stripe for handling payments, user profiles, and advanced management. Includes order tracking, order management, and menu options."
+    },
+    "filmmaker": {
+      "description": "This is my filmmaking portfolio. I merged my two passions here."
+    },
+    "harveysApp": {
+      "description": "A fun app that uses text-to-speech technology to bring Harvey, Michael's robot from 'The Office,' to life. Make Harvey speak whatever you type."
+    }
+  },
+  "EDUCATION": {
+    "helsinki": "js | react | typescript | node | express | graphQL | e2e | react native | docker",
+    "fcc": "frontend | backend | databases | testing | web security",
+    "harvard": "css | html | logic | algorithms | c | python | sql & noSql",
+    "henry": "databases | machine learning | python | maths | data analysis",
+    "efset": "english level certificate",
+    "coursera": "big data | apache | spark | etl | crud | data pipelines"
+  },
   "CONTACT": {
     "SHORT_DESCRIPTION": "I am eager to connect and explore how we can thrive together. If you're looking for dedication and creativity, I invite you to reach out. Let’s discuss how I can contribute to your team’s success.",
     "CURRENTLY": "I'm currently working in :",
@@ -19,6 +41,10 @@
     "CHECK": "Check my"
   },
   "BUTTON": {
-    "DOWNLOAD": "DOWNLOAD CV"
+    "DOWNLOAD": "DOWNLOAD CV",
+    "CERTIFICATE": "CERTIFICATE"
+  },
+  "FOOTER": {
+    "SIGN": "made with ❤️ by "
   }
 }
