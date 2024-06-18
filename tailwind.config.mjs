@@ -17,7 +17,7 @@ export default {
 				gris: '#1B1B1D',
 				yellowsm: '#cfa334',
 				purple: '#B43EFE',
-				lightgray: '#33332D',
+				lightgray: '#222222',
 				light: '#E1E1E1'
       }
 		},
