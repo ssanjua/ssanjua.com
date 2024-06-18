@@ -1,0 +1,20 @@
+---
+
+import { getI18N } from "../i18n"
+const { currentLocale } = Astro;
+const i18n = getI18N({ currentLocale })
+
+---
+
+<html lang={currentLocale}>
+  <head>
+    <meta charset="UTF-8">
+    <title>{i18n.ERROR.TITLE}</title>
+    <link rel="icon" type="webp" href="/favicon.webp" />
+  </head>
+  <body class="min-h-screen flex flex-col items-center justify-center bg-background-dark">
+    <h1 class="text-3xl font-bold mb-4 p-4 text-white bg-pink">{i18n.ERROR.MESSAGE}</h1>
+    <img src="https://http.cat/404" alt="404 Cat" class="size-72">
+    <a href="/" class="text-2xl border-2 text-white mt-4 px-2 py-1">{i18n.ERROR.HOME}</a>
+  </body>
+</html>

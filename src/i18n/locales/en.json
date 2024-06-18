@@ -46,5 +46,10 @@
   },
   "FOOTER": {
     "SIGN": "made with ❤️ by "
+  },
+  "ERROR": {
+  "TITLE": "404 error",
+  "MESSAGE": "where are you going?",
+  "HOME": "back to site"
   }
 }
