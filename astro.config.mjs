@@ -1,7 +1,6 @@
-import { defineConfig } from 'astro/config';
-import astroI18next from "astro-i18next";
+import { defineConfig } from 'astro/config'
 
-import tailwind from "@astrojs/tailwind";
+import tailwind from "@astrojs/tailwind"
 
 // https://astro.build/config
 export default defineConfig({
@@ -15,5 +14,23 @@ export default defineConfig({
     routing: {
       prefixDefaultLocale: false
     }
+  },
+  vite: {
+    plugins: [
+      {
+        name: 'vite-astro-404',
+        configureServer(server) {
+          server.middlewares.use((req, res, next) => {
+            if (req.method === 'GET' && res.statusCode === 404) {
+              req.url = '/404';
+              next();
+            } else {
+              next();
+            }
+          });
+        }
+      }
+    ]
   }
-});
+  
+})

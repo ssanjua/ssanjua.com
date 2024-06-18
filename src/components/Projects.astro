@@ -1,20 +1,24 @@
 ---
-import NextjsIcon from "./icons/NextjsIcon.astro";
-import TailwindIcon from "./icons/TailwindIcon.astro";
-import ReactIcon from "./icons/ReactIcon.astro";
-import JavaScriptIcon from "./icons/JavaScriptIcon.astro";
-import NodeJsIcon from "./icons/NodeJsIcon.astro";
-import MongoDBIcon from "./icons/MongoDBIcon.astro";
-import ZodIcon from "./icons/ZodIcon.astro";
-import MySQLIcon from "./icons/MySQLIcon.astro";
-import GitHubIcon from "./icons/GitHubIcon.astro";
-import LinkButton from "./LinkButton.astro";
-import Link from "./icons/Link.astro";
-import TypeScriptIcon from "./icons/TypeScriptIcon.astro";
-import PythonIcon from "./icons/PythonIcon.astro";
-import HTMLIcon from "./icons/HtmlIcon.astro";
-import CssIcon from "./icons/CssIcon.astro";
-import AstroIcon from "./icons/AstroIcon.astro";
+import NextjsIcon from "./icons/NextjsIcon.astro"
+import TailwindIcon from "./icons/TailwindIcon.astro"
+import ReactIcon from "./icons/ReactIcon.astro"
+import JavaScriptIcon from "./icons/JavaScriptIcon.astro"
+import NodeJsIcon from "./icons/NodeJsIcon.astro"
+import MongoDBIcon from "./icons/MongoDBIcon.astro"
+import ZodIcon from "./icons/ZodIcon.astro"
+import MySQLIcon from "./icons/MySQLIcon.astro"
+import GitHubIcon from "./icons/GitHubIcon.astro"
+import LinkButton from "./LinkButton.astro"
+import Link from "./icons/Link.astro"
+import TypeScriptIcon from "./icons/TypeScriptIcon.astro"
+import PythonIcon from "./icons/PythonIcon.astro"
+import HTMLIcon from "./icons/HtmlIcon.astro"
+import CssIcon from "./icons/CssIcon.astro"
+import AstroIcon from "./icons/AstroIcon.astro"
+
+import { getI18N } from "../i18n"
+const { currentLocale } = Astro;
+const i18n = getI18N({ currentLocale })
 
 export const TAGS = {
   NEXT: {
@@ -82,13 +86,14 @@ export const TAGS = {
     class: "bg-red text-white",
     icon: AstroIcon,
   },
-};
+}
+
+type ProjectKey = 'bookeando' | 'yarcoDelivery' | 'filmmaker' | 'harveysApp'
 
 const PROJECTS = [
   {
     title: "bookeando",
-    description:
-      "Complete project, from the conception of the backend and frontend. Features Stripe, authentication, and end-to-end testing. Users can book a hotel and manage the reservation as a hospitality owner as well.",
+    key: "bookeando",
     link: "https://bookeando.onrender.com/",
     github: "https://github.com/ssanjua/booking-web",
     image: "/projects/bookeando.webp",
@@ -97,8 +102,7 @@ const PROJECTS = [
   },
   {
     title: "YarcoDelivery",
-    description:
-      "Full stack food delivery app featuring auth0, Stripe for handling payments, user profiles, and advanced management. Includes order tracking, order management, and menu options.",
+    key: "yarcoDelivery",
     link: "https://sanjuan-delivery-app-frontend.onrender.com/",
     github: "https://github.com/ssanjua/sanjuan-delivery-app",
     image: "/projects/yarcoDelivery.webp",
@@ -107,8 +111,7 @@ const PROJECTS = [
   },
   {
     title: "Filmmaker",
-    description:
-      "This is my filmmaking portfolio. I merged my two passions here.",
+    key: "filmmaker",
     link: "https://ppaupallares.vercel.app/",
     github: "https://github.com/ssanjua/ssanjua-filmmaker-web",
     image: "/projects/ppaupallares.webp",
@@ -117,23 +120,23 @@ const PROJECTS = [
   },
   {
     title: "Harvey's App",
-    description:
-      "A fun app that uses text-to-speech technology to bring Harvey, Michael's robot from 'The Office,' to life. Make Harvey speak whatever you type!",
+    key: "harveysApp",
     link: "https://ssanjua.pythonanywhere.com",
     github: "https://github.com/ssanjua/MicaelScott-Harvey_app",
     image: "/projects/harveys.webp",
     tags: [TAGS.PYTHON, TAGS.HTML, TAGS.CSS, TAGS.JAVASCRIPT],
     color: "bg-red"
   },
-];
+]
+
 ---
 
 <div class="grid md:grid-cols-2 gap-2 md:gap-4">
   {
-    PROJECTS.map(({ title, description, tags, image, link, github, color }) => (
+    PROJECTS.map(({ title, key, tags, image, link, github, color }) => (
       <div class="p-8 bg-white dark:bg-gris">
         <div class="flex items-center justify-between">
-          <h3 class={`descripcion-text-noline ${color} text-background-dark custom-shadow-ex p-1 text-xl font-bold mr-4`}>
+          <h3 class={`descripcion-text-noline ${color} text-white dark:font-semibold custom-shadow-dark p-2 text-xl font-bold mr-4`}>
             {title}
           </h3>
           <div class="flex gap-3">
@@ -164,7 +167,7 @@ const PROJECTS = [
         </div>
         <div class="flex flex-col justify-end p-2 ">
           <p class="text-sm mt-3 font-semibold text-black dark:text-gray-100">
-            {description}
+            {i18n.PROJECTS[key as ProjectKey].description}
           </p>
         </div>
       </div>

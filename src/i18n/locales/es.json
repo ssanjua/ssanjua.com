@@ -9,6 +9,28 @@
     "SKILLS": "pensamiento creativo y hablidades de resolución de problemas."
 
   },
+  "PROJECTS": {
+    "bookeando": {
+      "description": "Proyecto completo, backend y frontend. Incluye Stripe para transacciones, autenticación y pruebas end-to-end. Los usuarios pueden reservar un hotel y los propietarios de hotel pueden gestionar las mismas."
+    },
+    "yarcoDelivery": {
+      "description": "Aplicación full stack de delivery de comida con auth0, Stripe para manejar pagos, perfiles de usuario y gestión avanzada. Incluye seguimiento de pedidos, gestión de pedidos y opciones de menú."
+    },
+    "filmmaker": {
+      "description": "Este es mi portafolio de cineasta. Aquí fusioné mis dos pasiones."
+    },
+    "harveysApp": {
+      "description": "Una aplicación divertida que utiliza tecnología 'text to speak' para dar vida a Harvey, el robot de Michael de 'The Office'."
+    }
+  },
+  "EDUCATION": {
+    "helsinki": "js | react | typescript | node | express | graphQL | e2e | react native | docker",
+    "fcc": "frontend | backend | bases de datos | testing | seguridad web",
+    "harvard": "css | html | lógica | algoritmos | c | python | sql & noSql",
+    "henry": "base de datos | machine learning | python | matemática | análisis de datos",
+    "efset": "certificado de nivel de inglés",
+    "coursera": "big data | apache | spark | etl | crud | data pipelines"
+  },
   "CONTACT": {
     "SHORT_DESCRIPTION": "Me encantaría saber de tí, tengo muchas ganas de seguir mejorando y creciendo así que cualquier feedback es más que bienvenido. Si estás buscando para tu equipo alguien con dedicación, creatividad y frezcura no dudes en contactarme.",
     "CURRENTLY": "Actualmente estoy trabajando en :",
@@ -20,6 +42,15 @@
     "CHECK": "Explora mi"
   },
   "BUTTON": {
-    "DOWNLOAD": "DESCARGAR CV"
-  }
+    "DOWNLOAD": "DESCARGAR CV",
+    "CERTIFICATE": "CERTIFICADO"
+  },
+  "FOOTER": {
+    "SIGN": "hecho con ❤️ por "
+  },
+  "ERROR": {
+    "TITLE": "404 error",
+    "MESSAGE": "¿dónde crees que vas?",
+    "HOME": "volver al sitio"
+    }
 }

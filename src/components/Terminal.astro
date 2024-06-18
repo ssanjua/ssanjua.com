@@ -32,7 +32,6 @@ import { getI18N } from "../i18n"
 const { currentLocale } = Astro;
 const i18n = getI18N({ currentLocale })
 
-
 ---
 
 <div class="flex p-4 justify-center items-center">
@@ -59,7 +58,7 @@ const i18n = getI18N({ currentLocale })
       portfolio
     </p>
     <div class="flex items-center my-10 gap-2">
-      <img class="size-8" src="/logos/favicon_terminal.webp" />
+      <img class="size-8" alt="terminal favicon" src="/logos/favicon_terminal.webp" />
       <a
         class="transition-all ease-out hover:bg-pink p-2 hover:text-white font-semibold hover:font-bold"
         href="https://ssanjuaterminal.vercel.app/"

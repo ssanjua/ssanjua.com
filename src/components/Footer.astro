@@ -1,9 +1,16 @@
 ---
-import SocialButtons from "./SocialButtons.astro";
-import GitHubIcon from "./icons/GitHubIcon.astro";
-import InstagramIcon from "./icons/InstagramIcon.astro";
-import LinkedinIcon from "./icons/LinkedinIcon.astro";
-import XIcon from "./icons/XIcon.astro";
+
+import SocialButtons from "./SocialButtons.astro"
+import GitHubIcon from "./icons/GitHubIcon.astro"
+import InstagramIcon from "./icons/InstagramIcon.astro"
+import LinkedinIcon from "./icons/LinkedinIcon.astro"
+import XIcon from "./icons/XIcon.astro"
+
+
+import { getI18N } from "../i18n"
+const { currentLocale } = Astro;
+const i18n = getI18N({ currentLocale })
+
 ---
 
 <footer
@@ -14,7 +21,7 @@ import XIcon from "./icons/XIcon.astro";
     >
         <span
             class="text-sm text-gris dark:text-white"
-            >made with ❤️ by <span class="font-bold">ssajua ©</span> - 2024
+            >{i18n.FOOTER.SIGN}<span class="font-bold">ssajua ©</span> - 2024
         </span>
         <ul class="flex flex-wrap items-center mt-3 md:gap-x-2 sm:mt-0">
             <li>
