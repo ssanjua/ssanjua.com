@@ -13,6 +13,7 @@ import ContactIcon from "../../components/icons/ContactIcon.astro"
 import Terminal from "../../components/Terminal.astro"
 
 import { getLangFromUrl, useTranslations } from "../../i18n/utils.ts"
+import LinkTree from "../../components/LinkTree.astro"
 
 const lang = getLangFromUrl(Astro.url)
 const t = useTranslations(lang)
@@ -38,8 +39,9 @@ const t = useTranslations(lang)
 			</h2>
 			<TechStack />
 		</SectionContainer>
-		<SectionContainer  class="bg-white dark:bg-gris py-10 px-5 md:px-10 lg:px-20">
+		<SectionContainer  class="grid md:grid-cols-2 bg-white dark:bg-gris py-20 px-5 lg:px-20">
 			<Terminal />
+			<LinkTree />
 		</SectionContainer>
 		<SectionContainer 
 			id="projects" 

@@ -3,18 +3,19 @@ import ReactIcon from "./icons/ReactIcon.astro";
 import TypeScriptIcon from "./icons/TypeScriptIcon.astro";
 import CssIcon from "./icons/CssIcon.astro";
 import ViteIcon from "./icons/ViteIcon.astro";
+import TailwindIcon from "./icons/TailwindIcon.astro";
 
 
 export const TAGS = {
   REACT: {
-    name: "React",
-    class: "border-2 border-blue text-white",
-    icon: ReactIcon,
+    name: "Astro",
+    class: "border-2 border-red text-white",
+    icon: AstroIcon,
   },
   TYPESCRIPT: {
-    name: "TypeScript",
+    name: "Tailwind",
     class: "border-2 border-sky-600 text-white",
-    icon: TypeScriptIcon,
+    icon: TailwindIcon,
   },
   VITE: {
     name: "Vite",
@@ -24,21 +25,22 @@ export const TAGS = {
 }
 
 import { getI18N } from "../i18n"
+import AstroIcon from "./icons/AstroIcon.astro";
 const { currentLocale } = Astro;
 const i18n = getI18N({ currentLocale })
 
 ---
-
-<div class="flex py-4 justify-center items-center">
+ 
+<div class="flex p-4 justify-stretch items-center">
   <a
     target="_blank"
     class="cursor-pointer"
-    href="https://ssanjuaterminal.vercel.app/"
+    href="https://ss-link.vercel.app/"
   >
     <img
-      class="w-52 object-cover transition-all duration-300 ease-out hover:scale-105"
-      src="/projects/ssanjua_terminal_ipad.webp"
-      alt="ssanjua terminal portfolio"
+      class="w-44 object-cover transition-all duration-300 ease-out hover:scale-105"
+      src="/projects/ss_linktree.webp"
+      alt="ssanjua link tree"
     />
   </a>
   <div class="ml-4">
@@ -47,15 +49,15 @@ const i18n = getI18N({ currentLocale })
     </p>
     <p class="mt-2 mb-12">
       <span class="descripcion-text-noline p-1 text-xl bg-yellow custom-shadow-sm font-semibold hover:text-white text-black dark:hover:text-white">
-        >_terminal</span>
+        ✪linkTree</span>
     </p>
     <div class="flex items-center my-4 gap-1">
-      <img class="size-6 mr-2" alt="terminal favicon" src="/logos/favicon_terminal.webp" />
+      <img class="size-6 mr-2" alt="linktree favicon" src="/logos/favicon_linktree.webp" />
       <a
         class="transition-all ease-out font-semibold hover:underline hover:font-bold"
-        href="https://ssanjuaterminal.vercel.app/"
+        href="https://ss-link.vercel.app/"
         target="_blank"
-        >ssanjuaterminal.com
+        >ss-link.app
       </a>
     </div>
     <div class="flex flex-wrap items-center gap-2 py-2">
@@ -69,5 +71,4 @@ const i18n = getI18N({ currentLocale })
       }
     </div>
   </div>
-  
 </div>
