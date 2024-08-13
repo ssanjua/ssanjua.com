@@ -1,23 +1,22 @@
 ---
-import Layout from "../layouts/Layout.astro"
-import Experience from "../components/Experience.astro"
-import SectionContainer from "../components/SectionContainer.astro"
-import EducationIcon from "../components/icons/EducationIcon.astro"
-import ProjectsIcon from "../components/icons/ProjectsIcon.astro"
-import Projects from "../components/Projects.astro"
-import TechStackIcon from "../components/icons/TechStackIcon.astro"
-import TechStack from "../components/TechStack.astro"
-import Hero from "../components/Hero.astro"
-import Contact from "../components/Contact.astro"
-import ContactIcon from "../components/icons/ContactIcon.astro"
-import Terminal from "../components/Terminal.astro"
+import Layout from "../layouts/Layout.astro";
+import Experience from "../components/Experience.astro";
+import SectionContainer from "../components/SectionContainer.astro";
+import EducationIcon from "../components/icons/EducationIcon.astro";
+import ProjectsIcon from "../components/icons/ProjectsIcon.astro";
+import Projects from "../components/Projects.astro";
+import TechStackIcon from "../components/icons/TechStackIcon.astro";
+import TechStack from "../components/TechStack.astro";
+import Hero from "../components/Hero.astro";
+import Contact from "../components/Contact.astro";
+import ContactIcon from "../components/icons/ContactIcon.astro";
+import Terminal from "../components/Terminal.astro";
 
-import { getLangFromUrl, useTranslations } from "../i18n/utils.ts"
-import LinkTree from "../components/LinkTree.astro"
+import { getLangFromUrl, useTranslations } from "../i18n/utils.ts";
+import LinkTree from "../components/LinkTree.astro";
 
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
-
 ---
 
 <Layout
@@ -25,31 +24,35 @@ const t = useTranslations(lang);
 	description="full stack web developer based in spain, seeking work"
 >
 	<main>
-		<Hero />
-		<SectionContainer
-			id="tech"
-			class="bg-background-light dark:bg-background-dark px-5 pb-20 md:px-10 lg:px-20">
+		<SectionContainer class="bg-light dark:bg-gris">
+			<Hero />
+		</SectionContainer>
+		<SectionContainer id="tech" class="px-5 pb-20 md:px-10 lg:px-20">
 			<h2
-				class="flex mb-20 text-white items-center justify-center dark:text-white text-3xl font-bold pt-20"
+				class="flex mb-20 text-white items-center justify-center dark:text-white text-3xl font-bold pt-24"
 			>
-				<span class="flex items-center bg-lightgray dark:bg-white dark:text-black p-2 custom-shadow-pink">
+				<span
+					class="flex items-center bg-lightgray dark:bg-white dark:text-black p-2 custom-shadow-pink"
+				>
 					<TechStackIcon class="size-8 mr-2" />
 					{t("index.tech")}
 				</span>
 			</h2>
 			<TechStack />
 		</SectionContainer>
-		<SectionContainer  class="grid md:grid-cols-2 bg-white dark:bg-gris py-20 px-5 lg:px-20">
+		<SectionContainer
+			class="grid md:grid-cols-2 py-24 px-5 lg:px-20 max-w-7xl mx-auto"
+		>
 			<Terminal />
 			<LinkTree />
 		</SectionContainer>
-		<SectionContainer 
-			id="projects" 
-			class="pb-20 px-5 md:px-10 lg:px-20">
+		<SectionContainer id="projects" class="pb-20 px-5 md:px-10 lg:px-20">
 			<h2
 				class="flex mb-20 text-white items-center justify-center dark:text-white text-3xl font-bold pt-20"
 			>
-				<span class="flex items-center bg-lightgray dark:bg-white dark:text-black p-2 custom-shadow-pink">
+				<span
+					class="flex items-center bg-lightgray dark:bg-white dark:text-black p-2 custom-shadow-pink"
+				>
 					<ProjectsIcon class="size-6 mr-2" />
 					{t("index.projects")}
 				</span>
@@ -57,20 +60,20 @@ const t = useTranslations(lang);
 			<Projects />
 			<!-- <SmallProjects /> -->
 		</SectionContainer>
-		<SectionContainer 
-			id="education" 
-			class=" bg-white dark:bg-lightgray px-5 md:px-10 lg:px-20 md:pb-20">
+		<SectionContainer id="education" class="px-5 md:px-10 lg:px-20 md:pb-20">
 			<h2
 				class="flex mb-20 text-white items-center justify-center dark:text-white text-3xl font-bold pt-20"
 			>
-				<span class="flex items-center bg-lightgray dark:bg-white dark:text-black p-2 custom-shadow-pink">
+				<span
+					class="flex items-center bg-lightgray dark:bg-white dark:text-black p-2 custom-shadow-pink"
+				>
 					<EducationIcon class="size-8 mr-2" />
 					{t("index.education")}
 				</span>
 			</h2>
 			<Experience />
 		</SectionContainer>
-		<SectionContainer id="contact" class="py-5 bg-white dark:bg-gris px-5 md:px-10 lg:px-20 pb-20">
+		<SectionContainer id="contact" class="px-5 md:px-10 lg:px-20 pb-20">
 			<h2
 				class="flex mb-20 text-white items-center justify-center dark:text-white text-3xl font-bold pt-20"
 			>

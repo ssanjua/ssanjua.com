@@ -63,7 +63,7 @@ const EXPERIENCE = [
 ---
 
 
-<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 ">
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 max-w-6xl mx-auto">
   {
     EXPERIENCE.map(({ date, school, title, key, link, logo }) => (
       <div class="flex flex-col gap-2 border-2 border-lightgray dark:border-white custom-shadow-ex bg-light dark:bg-gris p-10">
@@ -90,7 +90,7 @@ const EXPERIENCE = [
           role="link"
           target="_blank"
           class="flex justify-center"
-        > <span class="border-2 font-bold mt-4 border-lightgray dark:border-white dark:hover:bg-white dark:hover:text-black p-2 custom-shadow-yellow transition-all duration-300 ease-in-out hover:scale-105">
+        > <span class="border-2 font-bold mt-4 bg-white dark:bg-black border-lightgray dark:border-white dark:hover:bg-white dark:hover:text-black p-2 custom-shadow-yellow transition-all duration-300 ease-in-out hover:scale-105">
             {i18n.BUTTON.CERTIFICATE}
           </span>
         </a>

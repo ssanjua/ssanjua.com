@@ -18,7 +18,8 @@ export default {
 				yellowsm: '#cfa334',
 				purple: '#B43EFE',
 				lightgray: '#222222',
-				light: '#E1E1E1'
+				light: '#E1E1E1',
+				white: '#f5f5f5',
       }
 		},
 	},
