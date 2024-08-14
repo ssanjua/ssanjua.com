@@ -134,7 +134,7 @@ const PROJECTS = [
 <div class="grid md:grid-cols-2 gap-2 md:gap-4 max-w-6xl mx-auto">
   {
     PROJECTS.map(({ title, key, tags, image, link, github, color }) => (
-      <div class="p-8 bg-light dark:bg-gris rounded-lg">
+      <div class="p-4 md:p-8 bg-light dark:bg-gris rounded-lg">
         <div class="flex items-center justify-between mx-4">
           <h3 class={`descripcion-text-noline ${color} text-white dark:font-semibold custom-shadow-small p-2 text-xl font-bold mr-4`}>
             {title}
@@ -153,7 +153,7 @@ const PROJECTS = [
             <img
               src={image}
               alt={`Project ${title}`}
-              class="w-full max-w-[600px] object-cover transition-all duration-300 ease-out hover:scale-105"
+              class="w-full max-w-[500px] object-cover transition-all duration-300 ease-out hover:scale-105"
             />
           </a>
           <div class="mt-5">
