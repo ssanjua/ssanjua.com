@@ -1,48 +1,61 @@
 ---
+import SocialButtons from "./SocialButtons.astro";
+import GitHubIcon from "./icons/GitHubIcon.astro";
+import InstagramIcon from "./icons/InstagramIcon.astro";
+import LinkedinIcon from "./icons/LinkedinIcon.astro";
+import XIcon from "./icons/XIcon.astro";
 
-import SocialButtons from "./SocialButtons.astro"
-import GitHubIcon from "./icons/GitHubIcon.astro"
-import InstagramIcon from "./icons/InstagramIcon.astro"
-import LinkedinIcon from "./icons/LinkedinIcon.astro"
-import XIcon from "./icons/XIcon.astro"
-
-
-import { getI18N } from "../i18n"
+import { getI18N } from "../i18n";
 const { currentLocale } = Astro;
-const i18n = getI18N({ currentLocale })
-
+const i18n = getI18N({ currentLocale });
 ---
 
-<footer
-    class="md:px-10 lg:px-20 bg-light dark:bg-gris w-full"
->
-    <div
-        class="flex items-center justify-between p-2"
-    >
-        <span
-            class="text-sm text-gris dark:text-white"
-            >{i18n.FOOTER.SIGN}<span class="font-bold">ssajua ©</span> - 2024
+<footer class="md:px-10 lg:px-20 bg-light dark:bg-gris w-full">
+    <div class="flex justify-between items-center p-4">
+        <span class="text-sm text-gris dark:text-white"
+            >©2024 {i18n.FOOTER.SIGN}
+            <span class="font-bold">ssajua ©</span>
         </span>
-        <ul class="flex flex-wrap items-center mt-3 md:gap-x-2 sm:mt-0">
+        <ul class="flex items-center mt-3 sm:mt-0 gap-x-2">
             <li>
-                <SocialButtons href="https://github.com/ssanjua">
+                <a
+                    class="flex justify-center items-center transition-all duration-300 ease-in-out hover:scale-110"
+                    href="https://github.com/ssanjua"
+                    target="_blank"
+                    rel="nonopener noreferrer"
+                >
                     <GitHubIcon class="size-6" />
-                </SocialButtons>
+                </a>
             </li>
             <li>
-                <SocialButtons href="https://www.linkedin.com/in/paupallares/">
+                <a
+                    class="flex justify-center items-center transition-all duration-300 ease-in-out hover:scale-110"
+                    href="https://www.linkedin.com/in/paupallares/"
+                    target="_blank"
+                    rel="nonopener noreferrer"
+                >
                     <LinkedinIcon class="size-6" />
-                </SocialButtons>
+                </a>
             </li>
             <li>
-                <SocialButtons href="https://twitter.com/pupipallares">
+                <a
+                    class="flex justify-center items-center transition-all duration-300 ease-in-out hover:scale-110"
+                    href="https://twitter.com/pupipallares"
+                    target="_blank"
+                    rel="nonopener noreferrer"
+                >
                     <XIcon class="size-6" />
-                </SocialButtons>
+                </a>
             </li>
             <li>
-                <SocialButtons href="https://www.instagram.com/ppupipallares/">
+                <a
+                    class="flex justify-center items-center transition-all duration-300 ease-in-out hover:scale-110"
+                    href="https://www.instagram.com/ppupipallares/"
+                    target="_blank"
+                    rel="nonopener noreferrer"
+                >
                     <InstagramIcon class="size-6" />
-                </SocialButtons>
+                </a>
             </li>
         </ul>
     </div>
