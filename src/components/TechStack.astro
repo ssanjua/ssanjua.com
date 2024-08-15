@@ -50,20 +50,12 @@ const TAGS = [
         icon: AstroIcon,
     },
     {
-        name: "Next",
-        icon: NextjsIcon,
-    },
-    {
         name: "Node",
         icon: NodeJsIcon,
     },
     {
         name: "MongoDB",
         icon: MongoDBIcon,
-    },
-    {
-        name: "PostgreSQL",
-        icon: MySQLIcon,
     },
     {
         name: "Git",
@@ -77,7 +69,7 @@ const TAGS = [
 ];
 ---
 
-    <div  id="tech" class="grid grid-cols-3 md:grid-cols-5 lg:grid-cols-7 gap-3 md:gap-4 lg:gap-6 max-w-6xl mx-auto">
+    <div  id="tech" class="grid grid-cols-3 md:grid-cols-5 lg:grid-cols-6 gap-3 md:gap-4 lg:gap-6 max-w-6xl mx-auto">
         {
             TAGS.map(({ name, icon: Icon }) => (
                 <div class="flex flex-col items-center justify-center text-center p-4 transition-all duration-100 ease-out hover:scale-105
