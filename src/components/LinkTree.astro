@@ -31,19 +31,16 @@ const i18n = getI18N({ currentLocale })
 
 ---
  
-<div class="flex p-12 justify-center items-center border border-gris dark:border-white shadow-custom-dark dark:shadow-custom-white bg-light dark:bg-gris">
-    <img
-      class="w-44 object-cover transition-all duration-300 ease-out hover:scale-105"
-      src="/projects/ss_linktree.webp"
-      alt="ssanjua link tree"
-    />
-  <div class="ml-4">
-    <!-- <p class="font-semibold">
-      {i18n.TERMINAL.CHECK}
-    </p> -->
-    <p class="mt-2 mb-10">
+<div class="flex flex-col md:flex-row p-10 md:p-12 justify-center items-center border border-gris dark:border-white shadow-custom-dark dark:shadow-custom-white bg-light dark:bg-gris overflow-auto">
+  <img
+    class="w-1/2 object-cover transition-all duration-300 ease-out hover:scale-105"
+    src="/projects/ss_linktree.webp"
+    alt="ssanjua linktree web"
+  />
+  <div class="ml-0 md:ml-4 flex-grow">
+    <p class="mt-2 mb-4">
       <span class="descripcion-text-noline text-xl font-bold">
-        linkTree</span>
+        linktree</span>
     </p>
     <div class="flex items-center my-4 gap-1">
       <img class="size-6 mr-2" alt="linktree favicon" src="/logos/favicon_linktree.webp" />
@@ -54,7 +51,7 @@ const i18n = getI18N({ currentLocale })
         >ss-link.app
       </a>
     </div>
-    <div class="flex flex-wrap items-center gap-2 py-2">
+    <div class="flex flex-wrap justity-center items-center gap-2 py-2">
       {
         Object.entries(TAGS).map(([key, tag]) => (
           <span class={`inline-block text-xs py-2 px-3 text-background-dark dark:text-white ${tag.class}`}>
@@ -64,13 +61,13 @@ const i18n = getI18N({ currentLocale })
         ))
       }
     </div>
-    <footer class="flex items-end justify-start mt-4 gap-x-4">
-        <LinkButton href="https://github.com/ssanjua/ssanjua-linktree">
-          <GitHubIcon class="size-4" /> Repo
-        </LinkButton>   
-        <LinkButton href="https://ss-link.vercel.app/">
-          <Link class="size-4" /> Web
-        </LinkButton>
+    <footer class="flex items-end justify-center md:justify-start mt-4 gap-x-4">
+      <LinkButton href="https://github.com/ssanjua/ssanjua-linktree">
+        <GitHubIcon class="size-4" /> Repo
+      </LinkButton>   
+      <LinkButton href="https://ss-link.vercel.app/">
+        <Link class="size-4" /> Web
+      </LinkButton>
     </footer>
   </div>
 </div>
