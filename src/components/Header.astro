@@ -18,7 +18,7 @@ const t = useTranslations(lang)
     >
         <div>
             <nav
-                class="flex dark:text-white items-center flex-row md:gap-x-4 lg:gap-x-6"
+                class="flex dark:text-white items-center flex-row gap-x-2 md:gap-x-4 lg:gap-x-6"
             >
                 <a href="#top">
                     <!-- <ProfilePicture class="border-2 border-pink hidden md:block md:size-14 shadow-md" /> -->
@@ -26,7 +26,7 @@ const t = useTranslations(lang)
                 </a>
 
                 <a
-                    class="font-bold hover:bg-orange hover:text-white dark:hover:text-background-dark px-2 md:px-4 py-2"
+                    class="font-bold hidden md:block hover:bg-orange hover:text-white dark:hover:text-background-dark px-2 md:px-4 py-2"
                     href="#tech">{t("nav.tech")}</a
                 >
                 <a
@@ -44,7 +44,7 @@ const t = useTranslations(lang)
                 >
             </nav>
         </div>
-        <div class="flex gap-2 md:gap-4 ml- md:ml-0">
+        <div class="flex gap-3 md:gap-4 ml-2 md:ml-0">
             <ThemeToggle />
             <LanguageSwitch />
         </div>
