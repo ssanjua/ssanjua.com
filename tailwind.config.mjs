@@ -20,7 +20,14 @@ export default {
 				lightgray: '#222222',
 				light: '#E1E1E1',
 				white: '#f5f5f5',
-      }
+      },
+			boxShadow: {
+        'custom-white': '4px 4px 0px 0px #E1E1E1',
+        'custom-dark': '4px 4px 0px 0px #0F0F0F', 
+        'custom-yellow': '4px 4px 0px 0px #fecd23',
+        'custom-pink': '4px 4px 0px 0px #E54980',
+        'custom-none': 'none'
+      },
 		},
 	},
 	plugins: [

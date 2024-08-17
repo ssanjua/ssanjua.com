@@ -2,10 +2,12 @@
 import SunIcon from "./icons/SunIcon.astro";
 import MoonIcon from "./icons/MoonIcon.astro";
 ---
+
 <button
+    aria-label="button"
     id="theme-toggle"
     type="button"
-    class="border-2 border-background-dark hover:bg-background-dark hover:text-white dark:border-white dark:hover:bg-white dark:hover:text-yellow px-2 custom-shadow-pink hover:scale-105 transition"
+    class="border border-background-dark hover:bg-background-dark hover:text-white dark:border-white dark:hover:bg-white dark:hover:text-yellow px-2 custom-shadow-pink hover:scale-105 transition"
 >
     <MoonIcon id="theme-toggle-dark-icon" class="hidden size-5" />
     <SunIcon id="theme-toggle-light-icon" class="hidden size-5" />

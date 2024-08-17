@@ -63,10 +63,10 @@ const EXPERIENCE = [
 ---
 
 
-<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 max-w-6xl mx-auto">
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
   {
     EXPERIENCE.map(({ date, school, title, key, link, logo }) => (
-      <div class="flex flex-col gap-2 border-2 border-lightgray dark:border-white custom-shadow-ex bg-light dark:bg-gris p-10">
+      <div class="flex flex-col gap-2 border border-lightgray dark:border-white shadow-custom-dark dark:shadow-custom-white bg-light dark:bg-gris p-10">
         <div class="flex justify-start items-center">
           <img
             src={logo}
@@ -74,7 +74,7 @@ const EXPERIENCE = [
             class=" rounded-lg size-14"
           />
           <div class=" ml-4">
-            <h4 class="text-xs text-gray-900 dark:text-gray-300 mb-1">{date}</h4>
+            <h3 class="text-xs text-gray-900 dark:text-gray-300 mb-1">{date}</h3>
             <h2 class="font-bold font-xl">{school}</h2>
           </div>
         </div>
@@ -86,11 +86,12 @@ const EXPERIENCE = [
           {i18n.EDUCATION[key as EducationKey]}
         </p>
         <a
+          aria-label="button"
           href={link}
           role="link"
           target="_blank"
           class="flex justify-center"
-        > <span class="border-2 font-bold mt-4 bg-white dark:bg-black border-lightgray dark:border-white dark:hover:bg-white dark:hover:text-black p-2 custom-shadow-yellow transition-all duration-300 ease-in-out hover:scale-105">
+        > <span class="border-2 font-bold mt-4 bg-white dark:bg-black border-lightgray dark:border-white dark:hover:bg-white dark:hover:text-black p-2  transition-all duration-300 ease-in-out hover:scale-105">
             {i18n.BUTTON.CERTIFICATE}
           </span>
         </a>

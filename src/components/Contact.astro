@@ -1,101 +1,109 @@
 ---
+import EmailIcon from "./icons/EmailIcon.astro";
+import MapIcon from "./icons/MapIcon.astro";
+import MobileIcon from "./icons/MobileIcon.astro";
+import DownloadButton from "./buttons/DownloadButton.astro";
 
-import EmailIcon from "./icons/EmailIcon.astro"
-import MapIcon from "./icons/MapIcon.astro"
-import MobileIcon from "./icons/MobileIcon.astro"
-import DownloadButton from "./buttons/DownloadButton.astro"
-
-
-import { getI18N } from "../i18n"
+import { getI18N } from "../i18n";
 const { currentLocale } = Astro;
-const i18n = getI18N({ currentLocale })
-
-
+const i18n = getI18N({ currentLocale });
 ---
 
-<div class="flex border-2 border-gris dark:border-white custom-shadow-dark mb-2 p-6 mx-auto max-w-6xl">
-    <div class="flex items-center">
-      <a class="cursor-pointer">
-        <img
-          src="/pau_cv.webp"
-          id="profile-picture"
-          class="hidden md:block md:max-w-[250px] h-auto"
-          alt="curriculum de paula pallares"
-        />
-      </a>
-      <div class="m-5">
-        <p class="descripcion-text text-wrap my-4">
-          <span class=""
-            >
-            {i18n.CONTACT.SHORT_DESCRIPTION}
-          </span>
+<div class="flex border border-gris dark:border-white shadow-custom-dark dark:shadow-custom-white mb-2 p-6 mx-auto max-w-6xl">
+  <div class="flex items-center">
+    <button
+      id="desktop-profile-button"
+      class="hidden md:block focus:outline-none"
+      aria-label="Expandir imagen del currículum de Paula Pallares"
+    >
+      <img
+        src="/pau_cv.webp"
+        id="desktop-profile-picture"
+        class="md:max-w-[250px] h-auto"
+        alt="Currículum vitae de Paula Pallares en formato imagen"
+      />
+    </button>
+    <div class="m-5">
+      <p class="descripcion-text text-wrap my-4">
+        {i18n.CONTACT.SHORT_DESCRIPTION}
+      </p>
+      <p>
+        {i18n.CONTACT.CURRENTLY}
+        <br />
+        <span class="font-bold text-myPink">
+          {i18n.CONTACT.WORKINPROGRESS}
+        </span>
+      </p>
+      <p class="flex items-center my-2">
+        <MobileIcon class="size-4 mr-1" />
+        <a
+          aria-label="button"
+          href="tel:+34613526623"
+          class="text-sm hover:font-bold dark:text-gray-200 dark:hover:text-white transition-all duration-300 ease-in-out"
+        >
+          +34 613 526 623
+        </a>
+      </p>
+      <div class="flex items-center mb-2">
+        <EmailIcon class="size-4 mr-1" />
+        <a
+          aria-label="button"
+          href="mailto:ppaupallares@gmail.com"
+          class="text-sm hover:font-bold text-gray-900 dark:text-gray-200 dark:hover:text-white transition-all duration-300 ease-in-out"
+        >
+          ppaupallares@gmail.com
+        </a>
+      </div>
+      <div class="flex items-center mb-5">
+        <MapIcon class="size-4 mr-1" />
+        <p class="text-sm dark:text-gray-200">
+          {i18n.CONTACT.BASED}
+          <span class="font-bold">{i18n.CONTACT.COUNTRY}</span>
         </p>
-        <p>
-          <span class=""
-            >{i18n.CONTACT.CURRENTLY}
-            <br /></span
-          >
-          <span class="font-bold text-myPink">
-            {i18n.CONTACT.WORKINPROGRESS}
-            
-          </span>
-        </p>
-        <p class="flex items-center my-2">
-          <MobileIcon class="size-4 mr-1" />
-          <a
-            href="tel:+34613526623"
-            class="text-sm hover:font-bold dark:text-gray-200 dark:hover:text-white transition-all duration-300 ease-in-out"
-          >
-            +34613526623</a
-          >
-        </p>
-        <div class="flex items-center mb-2">
-          <EmailIcon class="size-4 mr-1" />
-          <a
-            href="mailto:ppaupallares@gmail.com"
-            class="text-sm hover:font-bold text-gray-900 dark:text-gray-200 dark:hover:text-white transition-all duration-300 ease-in-out"
-          >
-            ppaupallares@gmail.com</a
-          >
-        </div>
-        <div class="flex items-center mb-5">
-          <MapIcon class="size-4 mr-1" />
-          <p class="text-sm dark:text-gray-200">
-            {i18n.CONTACT.BASED}
-            <span class="font-bold">{i18n.CONTACT.COUNTRY}</span>
-          </p>
-        </div>
-        <div class="flex justify-center m-5">
-          <a class="cursor-pointer">
-            <img
-              src="/pau_cv.webp"
-              id="profile-picture"
-              class="md:hidden w-60 h-auto"
-              alt="curriculum de paula pallares mobile"
-            />
-          </a>
-        </div>
-        <div class="flex font-bold">
-          <DownloadButton />
-        </div>
-      
+      </div>
+      <div class="flex justify-center m-5">
+        <button
+          id="mobile-profile-button"
+          class="md:hidden focus:outline-none"
+          aria-label="Expandir imagen del currículum de Paula Pallares en móvil"
+        >
+          <img
+            src="/pau_cv.webp"
+            id="mobile-profile-picture"
+            class="w-60 h-auto"
+            alt="Currículum vitae de Paula Pallares en formato imagen para móvil"
+          />
+        </button>
+      </div>
+      <div class="flex font-bold">
+        <DownloadButton />
       </div>
     </div>
-
   </div>
-  
-  <script is:inline>
-    const image = document.getElementById("profile-picture");
-  
-    image.addEventListener("click", () => {
+</div>
+
+<script is:inline>
+  function toggleFullscreen(imageId) {
+    const image = document.getElementById(imageId);
+
+    if (image) {
       if (!document.fullscreenElement) {
         image.requestFullscreen().catch((err) => {
           console.error(
-            `Error al intentar activar el modo de pantalla completa: ${err.message}`,
+            `Error al intentar activar el modo de pantalla completa: ${err.message}`
           );
         });
       } else {
         document.exitFullscreen();
       }
-    });
-  </script>
+    }
+  }
+
+  document
+    .getElementById("desktop-profile-button")
+    .addEventListener("click", () => toggleFullscreen("desktop-profile-picture"));
+
+  document
+    .getElementById("mobile-profile-button")
+    .addEventListener("click", () => toggleFullscreen("mobile-profile-picture"));
+</script>

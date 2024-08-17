@@ -1,9 +1,8 @@
 ---
-import ReactIcon from "./icons/ReactIcon.astro";
-import TypeScriptIcon from "./icons/TypeScriptIcon.astro";
-import CssIcon from "./icons/CssIcon.astro";
+import LinkButton from "./LinkButton.astro";
 import ViteIcon from "./icons/ViteIcon.astro";
 import TailwindIcon from "./icons/TailwindIcon.astro";
+import Link from "./icons/Link.astro";
 
 
 export const TAGS = {
@@ -26,30 +25,25 @@ export const TAGS = {
 
 import { getI18N } from "../i18n"
 import AstroIcon from "./icons/AstroIcon.astro";
+import GitHubIcon from "./icons/GitHubIcon.astro";
 const { currentLocale } = Astro;
 const i18n = getI18N({ currentLocale })
 
 ---
  
-<div class="flex p-4 justify-stretch items-center">
-  <a
-    target="_blank"
-    class="cursor-pointer"
-    href="https://ss-link.vercel.app/"
-  >
+<div class="flex p-12 justify-center items-center border border-gris dark:border-white shadow-custom-dark dark:shadow-custom-white bg-light dark:bg-gris">
     <img
       class="w-44 object-cover transition-all duration-300 ease-out hover:scale-105"
       src="/projects/ss_linktree.webp"
       alt="ssanjua link tree"
     />
-  </a>
   <div class="ml-4">
-    <p class="font-semibold">
+    <!-- <p class="font-semibold">
       {i18n.TERMINAL.CHECK}
-    </p>
-    <p class="mt-2 mb-12">
-      <span class="descripcion-text-noline p-1 text-xl bg-yellow custom-shadow-sm font-semibold hover:text-white text-black dark:hover:text-white">
-        ✪linkTree</span>
+    </p> -->
+    <p class="mt-2 mb-10">
+      <span class="descripcion-text-noline text-xl font-bold">
+        linkTree</span>
     </p>
     <div class="flex items-center my-4 gap-1">
       <img class="size-6 mr-2" alt="linktree favicon" src="/logos/favicon_linktree.webp" />
@@ -70,5 +64,13 @@ const i18n = getI18N({ currentLocale })
         ))
       }
     </div>
+    <footer class="flex items-end justify-start mt-4 gap-x-4">
+        <LinkButton href="https://github.com/ssanjua/ssanjua-linktree">
+          <GitHubIcon class="size-4" /> Repo
+        </LinkButton>   
+        <LinkButton href="https://ss-link.vercel.app/">
+          <Link class="size-4" /> Web
+        </LinkButton>
+    </footer>
   </div>
 </div>

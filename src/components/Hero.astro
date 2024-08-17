@@ -1,158 +1,86 @@
 ---
-import ProfileGif from "./ProfileGif.astro"
-import SectionContainer from "./SectionContainer.astro"
-import SocialContact from "./SocialContact.astro"
-import GitHubIcon from "./icons/GitHubIcon.astro"
-import InstagramIcon from "./icons/InstagramIcon.astro"
-import LinkedinIcon from "./icons/LinkedinIcon.astro"
-import XIcon from "./icons/XIcon.astro"
+import ProfileGif from "./ProfileGif.astro";
+import SectionContainer from "./SectionContainer.astro";
+import SocialContact from "./SocialContact.astro";
+import GitHubIcon from "./icons/GitHubIcon.astro";
+import InstagramIcon from "./icons/InstagramIcon.astro";
+import LinkedinIcon from "./icons/LinkedinIcon.astro";
+import XIcon from "./icons/XIcon.astro";
 
-
-import { getI18N } from "../i18n"
+import { getI18N } from "../i18n";
 const { currentLocale } = Astro;
-const i18n = getI18N({ currentLocale })
-
+const i18n = getI18N({ currentLocale });
 ---
 
-<SectionContainer
-  class="pt-44 pb-24 px-4"
->
-  <div class="flex justify-center flex-row gap-4">
-    <div class="hidden lg:block">
-      <ProfileGif class="max-w-[250px] mt-14" />
-    </div>
-    <div class="flex flex-col">
-      <p>
-        <span class="text-pink font-bold text-xl">PAU PALLARES</span> aka
-      </p>
-      <div class="flex flex-col sm:flex-row my-4 md:items-center gap-y-2">
-        <h3
-          id="ssanjua"
-          class="ss-title text-5xl md:text-6xl font-bold flex transition-colors"
-        >
-          SSANJUA
-        </h3>
-        <a
-          href="https://linkedin.com/in/paupallares"
-          target="_blank"
-          rel="nonopener"
-          class="flex text-lg font-bold ml-0 sm:ml-4"
-        >
-          <span
-            class="border-2 p-2 text-base custom-shadow-pink border-yellow hover:bg-background-dark hover:text-white bg-background-light dark:hover:bg-background-light dark:bg-background-dark dark:hover:text-background-dark transition duration-300 ease-in-out hover:scale-105"
-            >FULL STACK DEVELOPER</span
-          >
-        </a>
-      </div>
-      <h2 class="descripcion-text max-w-[800px] text-pretty">
-        <span
-          class="font-bold text-base hover:text-yellow dark:hover:text-yellow dark:font-semibold dark:text-white"
-          >{i18n.HERO.HELLO}</span
-        >
-        <span class="dark:font"
-        
-          >{i18n.HERO.DESCRIPTION1}</span
-        >
-        <span
-          class="font-bold dark:text:white hover:text-yellow dark:font-semibold text-base underline"
-          >{i18n.HERO.TECH}</span
-        >
-        <span class="dark:font">{i18n.HERO.PROJ}</span>
-        <span class="dark:text-white font-bold dark:font-semibold"
-          >{i18n.HERO.PROJNAMES}</span
-        >
-        <span class="dark:font"
-          >{i18n.HERO.PROJEXPLAIN}</span
-        >
-        <span class="dark:text-white font-bold dark:font-semibold"
-          >{i18n.HERO.SKILLS}</span
-        >
-      </h2>
-      <div
-        class="hidden lg:flex font-bold justify-center items-center gap-6 mt-10"
-      >
-        <SocialContact
-          href="https://drive.google.com/file/d/1me7-_HcOuj8stwOJCg11MWzkd-nwmm2-/view?usp=sharing"
-        >
-          <span class="py-3 px-10 text-white bg-pink custom-shadow-yellow"
-            >CV</span
-          >
-        </SocialContact>
-        <a
-          class="transition duration-300 ease-in-out hover:scale-105"
-          href="mailto:ejemplo@dominio.com"
-        >
-          <span
-            class="py-3 px-5 dark:bg-white custom-shadow-pink text-white bg-lightgray dark:text-black"
-          >
-            EMAIL
-          </span></a
-        >
-        <nav class="flex gap-x-2 dark:text-white">
-          <a
-            class="flex hover:bg-orange hover:text-white justify-center items-center transition-all duration-300 ease-in-out hover:scale-105 size-12"
-            href="https://github.com/ssanjua"
-            target="_blank"
-            rel="nonopener noreferrer"
-          >
-            <GitHubIcon class="size-7" />
-          </a>
-          <a
-            class="flex hover:bg-blue justify-center hover:text-white items-center transition-all duration-300 ease-in-out hover:scale-105 size-12"
-            href="https://www.linkedin.com/in/paupallares/"
-            target="_blank"
-            rel="nonopener noreferrer"
-          >
-            <LinkedinIcon class="size-7" />
-          </a>
-          <a
-            class="flex hover:bg-green justify-center hover:text-white items-center transition-all duration-300 ease-in-out hover:scale-105 size-12"
-            href="https://twitter.com/pupipallares"
-            target="_blank"
-            rel="nonopener noreferrer"
-          >
-            <XIcon class="size-7" />
-          </a>
-          <a
-            class="flex hover:bg-red justify-center items-center hover:text-white transition-all duration-300 ease-in-out hover:scale-105 size-12"
-            href="https://www.instagram.com/ppupipallares/s"
-            target="_blank"
-            rel="nonopener noreferrer"
-          >
-          <InstagramIcon class="size-7" />
-          </a>
-        </nav>
-      </div>
-    </div>
+<div class="flex justify-center flex-row gap-4 md:gap-6">
+  <div class="hidden lg:block">
+    <ProfileGif class="max-w-[250px] mt-14" />
   </div>
-
-  <div class="flex justify-center items-center lg:hidden mt-10">
-    <ProfileGif class="max-w-[150px]" />
-    <div>
-      <div class="flex justify-center items-center mb-8">
-        <SocialContact
-          href="https://drive.google.com/file/d/1me7-_HcOuj8stwOJCg11MWzkd-nwmm2-/view?usp=sharing"
+  <div class="flex flex-col">
+    <p>
+      <span class="text-pink font-bold text-xl">PAU PALLARES</span> aka
+    </p>
+    <div class="flex flex-col sm:flex-row my-4 md:items-center gap-y-2">
+      <h1
+        id="ssanjua"
+        class="ss-title text-5xl md:text-6xl font-bold flex transition-colors"
+      >
+        SSANJUA
+      </h1>
+      <a
+        href="https://linkedin.com/in/paupallares"
+        target="_blank"
+        rel="nonopener"
+        class="flex text-lg font-bold ml-0 sm:ml-4"
+      >
+        <span
+          class="border p-2 text-base custom-shadow-pink border-yellow hover:bg-background-dark hover:text-white bg-background-light dark:hover:bg-background-light dark:bg-background-dark dark:hover:text-background-dark transition duration-300 ease-in-out hover:scale-105"
+          >FULL STACK DEVELOPER</span
         >
-          <span
-            class="py-2 px-8 text-white font-bold bg-pink custom-shadow-yellow"
-            >CV</span
-          >
-        </SocialContact>
-      </div>
-      <div class="flex justify-center font-bold items-center mb-5">
+      </a>
+    </div>
+    <h2 class="descripcion-text max-w-[800px] text-pretty">
+      <span
+        class="font-bold text-base hover:text-yellow dark:hover:text-yellow dark:font-semibold dark:text-white"
+        >{i18n.HERO.HELLO}</span
+      >
+      <span class="dark:font">{i18n.HERO.DESCRIPTION1}</span>
+      <span
+        class="font-bold dark:text:white hover:text-yellow dark:font-semibold text-base"
+        >{i18n.HERO.TECH}</span
+      >
+      <span class="dark:font">{i18n.HERO.PROJ}</span>
+      <span class="dark:text-white font-bold dark:font-semibold"
+        >{i18n.HERO.PROJNAMES}</span
+      >
+      <span class="dark:font">{i18n.HERO.PROJEXPLAIN}</span>
+      <span class="dark:text-white font-bold dark:font-semibold"
+        >{i18n.HERO.SKILLS}</span
+      >
+    </h2>
+    <div
+      class="hidden lg:flex font-bold justify-center items-center gap-6 mt-10"
+    >
+      <SocialContact
+        href="https://drive.google.com/file/d/1me7-_HcOuj8stwOJCg11MWzkd-nwmm2-/view?usp=sharing"
+      >
+        <span class="py-3 px-10 text-white bg-pink custom-shadow-yellow"
+          >CV</span
+        >
+      </SocialContact>
+      <a
+        class="transition duration-300 ease-in-out hover:scale-105"
+        href="mailto:ejemplo@dominio.com"
+      >
+        <span
+          class="py-3 px-5 dark:bg-white custom-shadow-pink text-white bg-lightgray dark:text-black"
+        >
+          EMAIL
+        </span></a
+      >
+      <nav class="flex gap-x-2 dark:text-white">
         <a
-          class="transition duration-300 ease-in-out hover:scale-105"
-          href="mailto:ejemplo@dominio.com"
-        >
-          <span
-            class="py-2 px-5 dark:bg-white custom-shadow-pink text-white bg-lightgray dark:text-black"
-          >
-            EMAIL
-          </span></a
-        >
-      </div>
-      <nav class="flex gap-x-1 dark:text-white">
-        <a
+          aria-label="button"
           class="flex hover:bg-orange hover:text-white justify-center items-center transition-all duration-300 ease-in-out hover:scale-105 size-12"
           href="https://github.com/ssanjua"
           target="_blank"
@@ -161,6 +89,7 @@ const i18n = getI18N({ currentLocale })
           <GitHubIcon class="size-7" />
         </a>
         <a
+          aria-label="button"
           class="flex hover:bg-blue justify-center hover:text-white items-center transition-all duration-300 ease-in-out hover:scale-105 size-12"
           href="https://www.linkedin.com/in/paupallares/"
           target="_blank"
@@ -169,6 +98,7 @@ const i18n = getI18N({ currentLocale })
           <LinkedinIcon class="size-7" />
         </a>
         <a
+          aria-label="button"
           class="flex hover:bg-green justify-center hover:text-white items-center transition-all duration-300 ease-in-out hover:scale-105 size-12"
           href="https://twitter.com/pupipallares"
           target="_blank"
@@ -177,17 +107,80 @@ const i18n = getI18N({ currentLocale })
           <XIcon class="size-7" />
         </a>
         <a
+          aria-label="button"
           class="flex hover:bg-red justify-center items-center hover:text-white transition-all duration-300 ease-in-out hover:scale-105 size-12"
           href="https://www.instagram.com/ppupipallares/s"
           target="_blank"
           rel="nonopener noreferrer"
         >
-        <InstagramIcon class="size-7" />
+          <InstagramIcon class="size-7" />
         </a>
       </nav>
     </div>
   </div>
-</SectionContainer>
+</div>
+
+<div class="flex justify-center items-center lg:hidden mt-10">
+  <ProfileGif class="max-w-[150px]" />
+  <div>
+    <div class="flex justify-center items-center mb-8">
+      <SocialContact
+        href="https://drive.google.com/file/d/1me7-_HcOuj8stwOJCg11MWzkd-nwmm2-/view?usp=sharing"
+      >
+        <span
+          class="py-2 px-8 text-white font-bold bg-pink custom-shadow-yellow"
+          >CV</span
+        >
+      </SocialContact>
+    </div>
+    <div class="flex justify-center font-bold items-center mb-5">
+      <a
+        class="transition duration-300 ease-in-out hover:scale-105"
+        href="mailto:ejemplo@dominio.com"
+      >
+        <span
+          class="py-2 px-5 dark:bg-white custom-shadow-pink text-white bg-lightgray dark:text-black"
+        >
+          EMAIL
+        </span></a
+      >
+    </div>
+    <nav class="flex gap-x-1 dark:text-white">
+      <a
+        class="flex hover:bg-orange hover:text-white justify-center items-center transition-all duration-300 ease-in-out hover:scale-105 size-12"
+        href="https://github.com/ssanjua"
+        target="_blank"
+        rel="nonopener noreferrer"
+      >
+        <GitHubIcon class="size-7" />
+      </a>
+      <a
+        class="flex hover:bg-blue justify-center hover:text-white items-center transition-all duration-300 ease-in-out hover:scale-105 size-12"
+        href="https://www.linkedin.com/in/paupallares/"
+        target="_blank"
+        rel="nonopener noreferrer"
+      >
+        <LinkedinIcon class="size-7" />
+      </a>
+      <a
+        class="flex hover:bg-green justify-center hover:text-white items-center transition-all duration-300 ease-in-out hover:scale-105 size-12"
+        href="https://twitter.com/pupipallares"
+        target="_blank"
+        rel="nonopener noreferrer"
+      >
+        <XIcon class="size-7" />
+      </a>
+      <a
+        class="flex hover:bg-red justify-center items-center hover:text-white transition-all duration-300 ease-in-out hover:scale-105 size-12"
+        href="https://www.instagram.com/ppupipallares/s"
+        target="_blank"
+        rel="nonopener noreferrer"
+      >
+        <InstagramIcon class="size-7" />
+      </a>
+    </nav>
+  </div>
+</div>
 
 <script type="module" is:inline>
   const colors = [
