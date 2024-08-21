@@ -1,19 +1,18 @@
 ---
-import Header from "../components/Header.astro"
-import "@fontsource-variable/martian-mono"
-import "@fontsource-variable/noto-sans"
-import "@fontsource/press-start-2p"
-import Footer from "../components/Footer.astro"
+import Header from "../components/Header.astro";
+import "@fontsource-variable/martian-mono";
+import "@fontsource-variable/noto-sans";
+import "@fontsource/press-start-2p";
+import Footer from "../components/Footer.astro";
 // font-family: 'Noto Sans Variable', sans-serif
 
 interface Props {
-	title: string
-	description: string
+	title: string;
+	description: string;
 }
 
-const { title, description } = Astro.props
-const { currentLocale } = Astro
-
+const { title, description } = Astro.props;
+const { currentLocale } = Astro;
 ---
 
 <!doctype html>
@@ -36,7 +35,9 @@ const { currentLocale } = Astro
 			}
 		</script>
 	</head>
-	<body class="relative bg-white dark:bg-background-dark text-black dark:text-white/95">
+	<body
+		class="relative bg-white dark:bg-background-dark text-black dark:text-white/95"
+	>
 		<script src="../../node_modules/flowbite/dist/flowbite.min.js"></script>
 
 		<div class="">

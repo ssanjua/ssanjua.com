@@ -8,85 +8,82 @@ import MongoDBIcon from "./icons/MongoDBIcon.astro";
 import MySQLIcon from "./icons/MySQLIcon.astro";
 import TypeScriptIcon from "./icons/TypeScriptIcon.astro";
 import PythonIcon from "./icons/PythonIcon.astro";
-import AstroIcon from '../components/icons/AstroIcon.astro';
-import HtmlIcon from '../components/icons/HtmlIcon.astro';
-import CssIcon from '../components/icons/CssIcon.astro';
-import GitIcon from '../components/icons/GitIcon.astro';
-import GitHubIcon from '../components/icons/GitHubIconFull.astro';
-
+import AstroIcon from "../components/icons/AstroIcon.astro";
+import HtmlIcon from "../components/icons/HtmlIcon.astro";
+import CssIcon from "../components/icons/CssIcon.astro";
+import GitIcon from "../components/icons/GitIcon.astro";
+import GitHubIcon from "../components/icons/GitHubIconFull.astro";
 
 const TAGS = [
-    {
-        name: "JavaScript",
-        icon: JavaScriptIcon,
-    },
-    {
-        name: "Python",
-        icon: PythonIcon,
-    },
-    {
-        name: "TypeScript",
-        icon: TypeScriptIcon,
-    },
-    {
-        name: "HTML",
-        icon: HtmlIcon,
-    },
-    {
-        name: "CSS",
-        icon: CssIcon,
-    },
-    
-    {
-        name: "TailwindCSS",
-        icon: TailwindIcon,
-    },
-    {
-        name: "React",
-        icon: ReactIcon,
-    },
-    {
-        name: "Astro",
-        icon: AstroIcon,
-    },
-    {
-        name: "Node",
-        icon: NodeJsIcon,
-    },
-    {
-        name: "MongoDB",
-        icon: MongoDBIcon,
-    },
-    {
-        name: "Git",
-        icon: GitIcon,
-    },
-    {
-        name: "GitHub",
-        icon: GitHubIcon,
-    },
-    
+  {
+    name: "JavaScript",
+    icon: JavaScriptIcon,
+  },
+  {
+    name: "Python",
+    icon: PythonIcon,
+  },
+  {
+    name: "TypeScript",
+    icon: TypeScriptIcon,
+  },
+  {
+    name: "HTML",
+    icon: HtmlIcon,
+  },
+  {
+    name: "CSS",
+    icon: CssIcon,
+  },
+
+  {
+    name: "TailwindCSS",
+    icon: TailwindIcon,
+  },
+  {
+    name: "React",
+    icon: ReactIcon,
+  },
+  {
+    name: "Astro",
+    icon: AstroIcon,
+  },
+  {
+    name: "Node",
+    icon: NodeJsIcon,
+  },
+  {
+    name: "MongoDB",
+    icon: MongoDBIcon,
+  },
+  {
+    name: "Git",
+    icon: GitIcon,
+  },
+  {
+    name: "GitHub",
+    icon: GitHubIcon,
+  },
 ];
 ---
 
-    <div  id="tech" class="grid grid-cols-3 md:grid-cols-5 lg:grid-cols-6 gap-3 md:gap-4 lg:gap-6 max-w-6xl mx-auto">
-        {
-            TAGS.map(({ name, icon: Icon }) => (
-                <div class="flex flex-col items-center justify-center text-center p-4 transition-all duration-100 ease-out hover:scale-105
+<div
+  id="tech"
+  class="grid grid-cols-3 md:grid-cols-5 lg:grid-cols-6 gap-3 md:gap-4 lg:gap-6 max-w-6xl mx-auto"
+>
+  {
+    TAGS.map(({ name, icon: Icon }) => (
+      <div
+        class="flex flex-col items-center justify-center text-center p-4 transition-all duration-100 ease-out hover:scale-105
                             border border-background-dark bg-background-light dark:shadow-custom-white shadow-custom-dark
                             dark:border-white  dark:bg-background-dark dark:hover:text-black dark:hover:bg-white
                             hover:bg-background-dark hover:text-white"
-                >
-                    <div class="mb-3 transition-all duration-300 hover:scale-110">
-                        <Icon class="size-10" />
-                    </div>
-                    <span class="text-base font-bold">
-                        {name}
-                    </span>
-                </div>
-            ))
-        }
-    </div>
-
-
-
+      >
+        <div class="mb-3 transition-all duration-300 hover:scale-110">
+          <Icon class="size-10" />
+        </div>
+        <span class="text-base font-bold">{name}</span>
+      </div>
+    ))
+  }
+</div>

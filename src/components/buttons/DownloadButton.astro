@@ -3,12 +3,26 @@ import { getI18N } from "../../i18n"
 const { currentLocale } = Astro;
 const i18n = getI18N({ currentLocale })
 
+const getDownloadLink = () => {
+  const englishUrl = "https://drive.google.com/file/d/1uaAkdNiTYHtlx3AJQcZWWPZ69Hf36JZV/view?usp=drive_link";
+  const spanishUrl = "https://drive.google.com/file/d/1me7-_HcOuj8stwOJCg11MWzkd-nwmm2-/view?usp=drive_link";
+
+  if (currentLocale === "en") {
+    return englishUrl;
+  } else if (currentLocale === "es") {
+    return spanishUrl;
+  } else {
+    return englishUrl;
+  }
+}
+
 ---
 
 <a
+    aria-label="button"
     class="transition-all duration-300 ease-in-out hover:scale-105 custom-shadow-pink
     border-2 border-gris dark:border-white py-2 p-8"
-    href="https://drive.google.com/file/d/1uaAkdNiTYHtlx3AJQcZWWPZ69Hf36JZV/view?usp=drive_link"
+    href={getDownloadLink()}
     target="_blank"
     rel="nonopener noreferrer"
 >
