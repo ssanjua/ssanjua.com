@@ -16,10 +16,10 @@
       "description": "Full stack food delivery app featuring auth0, Stripe for handling payments, user profiles, and advanced management. Includes order tracking, order management, and menu options."
     },
     "filmmaker": {
-      "description": "This is my filmmaking portfolio. I merged my two passions here."
+      "description": "This is my audiovisual portfolio. I merged my two passions here. You can find some of my latest work here."
     },
-    "harveysApp": {
-      "description": "A fun app that uses text-to-speech technology to bring Harvey, Michael's robot from 'The Office,' to life. Make Harvey speak whatever you type."
+    "IndiePodcasts": {
+      "description": "Web application designed for small podcasts that want to share their content in a simple and uncomplicated way. The platform allows users to easily upload, edit and delete their podcasts, offering an intuitive and responsive user experience."
     }
   },
   "EDUCATION": {

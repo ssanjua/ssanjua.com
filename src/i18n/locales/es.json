@@ -17,10 +17,10 @@
       "description": "Aplicación full stack de delivery de comida con auth0, Stripe para manejar pagos, perfiles de usuario y gestión avanzada. Incluye seguimiento de pedidos, gestión de pedidos y opciones de menú."
     },
     "filmmaker": {
-      "description": "Este es mi portafolio de cineasta. Aquí fusioné mis dos pasiones."
+      "description": "Este es mi portafolio de cineasta. Aquí fusioné mis dos pasiones. Puedes visualizar algunos de mis trabajos en la web."
     },
-    "harveysApp": {
-      "description": "Una aplicación divertida que utiliza tecnología 'text to speak' para dar vida a Harvey, el robot de Michael de 'The Office'."
+    "IndiePodcasts": {
+      "description": "Aplicación web diseñada para pequeños podcasts que desean compartir sus contenidos de forma sencilla y sin complicaciones. La plataforma permite a los usuarios cargar, editar y eliminar fácilmente sus podcasts, ofreciendo una experiencia de usuario intuitiva y receptiva."
     }
   },
   "EDUCATION": {

@@ -14,7 +14,10 @@ import TypeScriptIcon from "./icons/TypeScriptIcon.astro";
 import PythonIcon from "./icons/PythonIcon.astro";
 import HTMLIcon from "./icons/HtmlIcon.astro";
 import CssIcon from "./icons/CssIcon.astro";
+import Firebase from "./icons/Firebase.astro";
 import AstroIcon from "./icons/AstroIcon.astro";
+import ExpressIcon from "./icons/ExpressIcon.astro"
+
 
 import { getI18N } from "../i18n";
 const { currentLocale } = Astro;
@@ -38,7 +41,7 @@ export const TAGS = {
   },
   JAVASCRIPT: {
     name: "JavaScript",
-    class: "bg-yellowsm text-white",
+    class: "bg-yellowsm text-blac",
     icon: JavaScriptIcon,
   },
   NODE: {
@@ -86,17 +89,36 @@ export const TAGS = {
     class: "bg-red text-white",
     icon: AstroIcon,
   },
+  FIREBASE: {
+    name: "Firebase",
+    class: "bg-yellowsm text-black",
+    icon: Firebase,
+  },
+  EXPRESS: {
+    name: "Express",
+    class: "bg-gris text-white",
+    icon: ExpressIcon,
+  }
 };
 
-type ProjectKey = "bookeando" | "yarcoDelivery" | "filmmaker" | "harveysApp";
+type ProjectKey = "bookeando" | "yarcoDelivery" | "filmmaker" | "IndiePodcasts";
 
 const PROJECTS = [
+{
+    title: "IndiePodcasts",
+    key: "IndiePodcasts",
+    link: "https://indiepodcasts.vercel.app",
+    github: "https://github.com/ssanjua/indie-podcasts",
+    image: "/projects/indiePodcasts.webp",
+    tags: [ TAGS.REACT, TAGS.NODE, TAGS.FIREBASE, TAGS.MONGODB, TAGS.EXPRESS ],
+    color: "bg-red",
+  },
   {
     title: "bookeando",
     key: "bookeando",
     link: "https://bookeando.onrender.com/",
     github: "https://github.com/ssanjua/booking-web",
-    image: "/projects/bookeando.webp",
+    image: "/projects/bookeando-feed.webp",
     tags: [TAGS.REACT, TAGS.TYPESCRIPT, TAGS.NODE, TAGS.TAILWIND, TAGS.MONGODB],
     color: "bg-pink",
   },
@@ -105,7 +127,7 @@ const PROJECTS = [
     key: "yarcoDelivery",
     link: "https://sanjuan-delivery-app-frontend.onrender.com/",
     github: "https://github.com/ssanjua/sanjuan-delivery-app",
-    image: "/projects/yarco.webp",
+    image: "/projects/yarco-feed.webp",
     tags: [TAGS.REACT, TAGS.TYPESCRIPT, TAGS.NODE, TAGS.TAILWIND, TAGS.MONGODB],
     color: "bg-orange",
   },
@@ -114,20 +136,12 @@ const PROJECTS = [
     key: "filmmaker",
     link: "https://ppaupallares.vercel.app/",
     github: "https://github.com/ssanjua/ssanjua-filmmaker-web",
-    image: "/projects/ppau.webp",
+    image: "/projects/pp-screenshots.webp",
     tags: [TAGS.ASTRO, TAGS.NODE, TAGS.NEXT, TAGS.TAILWIND],
     color: "bg-yellow",
   },
-  {
-    title: "Harvey's",
-    key: "harveysApp",
-    link: "https://ssanjua.pythonanywhere.com",
-    github: "https://github.com/ssanjua/MicaelScott-Harvey_app",
-    image: "/projects/harveys.webp",
-    tags: [TAGS.PYTHON, TAGS.HTML, TAGS.CSS, TAGS.JAVASCRIPT],
-    color: "bg-red",
-  },
 ];
+
 ---
 
 <div class="flex flex-col gap-y-4">
@@ -138,7 +152,7 @@ const PROJECTS = [
         <div class="relative flex flex-col items-center col-span-6 row-span-5 gap-8 transition duration-300 p-2 ease-in-out transform overflow-clip md:group-hover:-translate-y-1">
           <img
             alt={`Project ${title}`}
-            class="object-cover object-top w-full h-full transition duration-300 md:group-hover:scale-105"
+            class="object-cover rounded-md object-top w-full h-full transition duration-300 md:group-hover:scale-105"
             src={image}
           />
         </div>
@@ -158,7 +172,7 @@ const PROJECTS = [
               </li>
             ))}
           </ul>
-          <div class="mt-2 text-gray-700 dark:text-gray-400">
+          <div class="mt-2 text-gray-700 dark:text-gray-200">
             {i18n.PROJECTS[key as ProjectKey].description}
           </div>
           <footer class="flex items-end justify-start mt-4 gap-x-4">
@@ -178,5 +192,3 @@ const PROJECTS = [
     </article>
   ))
 }
-
-

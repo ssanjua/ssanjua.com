@@ -9,7 +9,7 @@ const { currentLocale } = Astro;
 const i18n = getI18N({ currentLocale });
 ---
 
-<div class="flex border border-gris dark:border-white shadow-custom-dark dark:shadow-custom-white mb-2 p-6 mx-auto max-w-6xl">
+<div class="flex  mb-2 p-6 mx-auto max-w-6xl">
   <div class="flex items-center">
     <button
       id="desktop-profile-button"
@@ -19,7 +19,7 @@ const i18n = getI18N({ currentLocale });
       <img
         src="/cv_paupallares_en.webp"
         id="desktop-profile-picture"
-        class="md:max-w-[250px] h-auto"
+        class="md:max-w-[250px] h-auto mr-2 shadow-xl"
         alt="Currículum vitae de Paula Pallares en formato imagen"
       />
     </button>
