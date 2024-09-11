@@ -25,7 +25,7 @@ const EXPERIENCE = [
     title: "Full Stack Web Developer",
     key: "fcc",
     link: "https://www.freecodecamp.org/espanol/certification/ssanjua/full-stack",
-    logo: "/logos/free_code_camp.jpeg",
+    logo: "/logos/free_code_camp.webp",
   },
   {
     date: "July 2023 - December 2023",
@@ -41,7 +41,7 @@ const EXPERIENCE = [
     title: "IBM Data Engineer",
     key: "coursera",
     link: "https://www.coursera.org/account/accomplishments/specialization/certificate/5F78DFXU8CRF",
-    logo: "/logos/courseralearning_logo.jpeg",
+    logo: "/logos/courseralearning_logo.webp",
   },
   {
     date: "February 2023 - July 2023",
@@ -49,7 +49,7 @@ const EXPERIENCE = [
     title: "Data Science",
     key: "henry",
     link: "https://certificates.soyhenry.com/new-cert?id=a99a7015e911f55e0c11947392b6f03b3ee0180e7d88e5831c53652946a34eef",
-    logo: "/logos/henryok_logo.jpeg",
+    logo: "/logos/henryok_logo.webp",
   },
   {
     date: "June 2023",
@@ -57,16 +57,16 @@ const EXPERIENCE = [
     title: "C2 Proficent",
     key: "efset",
     link: "https://cert.efset.org/CaWU7w",
-    logo: "/logos/efset.jpeg",
+    logo: "/logos/efset.webp",
   },
 ];
 ---
 
 
-<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 max-w-6xl mx-auto">
   {
     EXPERIENCE.map(({ date, school, title, key, link, logo }) => (
-      <div class="flex flex-col gap-2 border border-lightgray dark:border-white shadow-custom-dark dark:shadow-custom-white bg-light dark:bg-gris p-10">
+      <div class="flex flex-col gap-2 border border-lightgray dark:border-white shadow-custom-dark dark:shadow-custom-white p-8">
         <div class="flex justify-start items-center">
           <img
             src={logo}
@@ -82,16 +82,17 @@ const EXPERIENCE = [
         <h3 id="description" class="font-bold text-xl">
           {title}
         </h3>
-        <p id="description" class="font-semibold">
+        <p id="description" class="text-sm">
           {i18n.EDUCATION[key as EducationKey]}
         </p>
+        <div class="flex-grow"></div>
         <a
           aria-label="button"
           href={link}
           role="link"
           target="_blank"
           class="flex justify-center"
-        > <span class="border-2 font-bold mt-4 bg-white dark:bg-black border-lightgray dark:border-white dark:hover:bg-white dark:hover:text-black p-2  transition-all duration-300 ease-in-out hover:scale-105">
+        > <span class="border font-semibold mt-4 bg-white dark:bg-gris border-lightgray dark:border-white dark:hover:bg-white dark:hover:text-black p-2 transition-all duration-300 ease-in-out hover:scale-105">
             {i18n.BUTTON.CERTIFICATE}
           </span>
         </a>
