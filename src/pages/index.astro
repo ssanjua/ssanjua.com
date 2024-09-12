@@ -14,6 +14,7 @@ import Terminal from "../components/Terminal.astro";
 
 import { getLangFromUrl, useTranslations } from "../i18n/utils.ts";
 import LinkTree from "../components/LinkTree.astro";
+import PlusIcon from "../components/icons/PlusIcon.astro";
 
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
@@ -24,67 +25,82 @@ const t = useTranslations(lang);
 	description="full stack web developer based in spain, seeking work"
 >
 	<main class="">
-		<div
-			class="section w-full pt-44 pb-24 bg-light dark:bg-gris mx-auto px-5"
-		>
+		<div class="section w-full pt-44 pb-24 bg-light dark:bg-gris mx-auto px-5">
 			<Hero />
 		</div>
-		<SectionContainer id="tech" class="px-5 pb-20 md:px-10 lg:px-20">
+		<SectionContainer id="projects" class="px-5 pb-20 pt-40 md:px-10 lg:px-20">
 			<h2
-				class="flex mb-20 text-white items-center justify-center dark:text-white text-3xl font-bold pt-24"
+				class="flex mb-10 text-white items-center justify-start dark:text-white font-bold"
 			>
 				<span
-					class="flex items-center bg-lightgray dark:bg-white dark:text-black px-8 py-2 custom-shadow-pink"
+					class="flex items-center text-4xl border-background-dark text-background-dark underline underline-offset-4 decoration-pink dark:text-white py-2"
 				>
-					<TechStackIcon class="size-8 mr-2" />
-					{t("index.tech")}
-				</span>
-			</h2>
-			<TechStack />
-		</SectionContainer>
-		<SectionContainer class="grid lg:grid-cols-2 py-24 px-5 lg:px-20 gap-8">
-			<Terminal />
-			<LinkTree />
-		</SectionContainer>
-		<SectionContainer id="projects" class="px-5 pb-20 mt-10 md:px-10 lg:px-20">
-			<h2
-				class="flex mb-20 text-white items-center justify-center dark:text-white text-3xl font-bold"
-			>
-				<span
-					class="flex items-center bg-lightgray dark:bg-white dark:text-black px-8 py-2 custom-shadow-pink"
-				>
-					<ProjectsIcon class="size-6 mr-2" />
+					<ProjectsIcon class="size-8 mr-4" />
 					{t("index.projects")}
 				</span>
 			</h2>
 			<Projects />
-			<!-- <SmallProjects /> -->
 		</SectionContainer>
-		<SectionContainer id="education" class="px-5 md:px-10 lg:px-20 md:pb-16">
-			<h2
-				class="flex mb-20 text-white items-center justify-center dark:text-white text-3xl font-bold pt-10"
+		<SectionContainer class="py-8 px-5 lg:px-20">
+			<h3
+				class="flex mb-10 text-white items-center justify-start dark:text-white font-semibold"
 			>
 				<span
-					class="flex items-center bg-lightgray dark:bg-white dark:text-black px-8 py-2 custom-shadow-pink"
+					class="flex items-center text-2xl border-background-dark text-background-dark underline underline-offset-4 decoration-pink dark:text-white py-2"
 				>
-					<EducationIcon class="size-8 mr-2" />
-					{t("index.education")}
+				<PlusIcon class="size-6 mr-4" />
+					{t("index.personalProjects")}
 				</span>
-			</h2>
-			<Experience />
-		</SectionContainer>
-		<SectionContainer id="contact" class="px-5 md:px-10 lg:px-20 pb-20">
-			<h2
-				class="flex mb-12 text-white items-center justify-center dark:text-white text-3xl font-bold pt-10"
+			</h3>
+			<div class="grid lg:grid-cols-2 gap-8">
+				<Terminal />
+				<LinkTree />
+			</div>
+			</SectionContainer>
+
+			<SectionContainer
+				id="education"
+				class="px-5 pb-20 pt-36 md:px-10 lg:px-20 md:pb-16"
 			>
-				<span
-					class="flex items-center bg-lightgray dark:bg-white dark:text-black px-8 py-2 custom-shadow-pink"
+				<h2
+					class="flex mb-16 text-white items-center justify-start dark:text-white font-bold"
 				>
-					<ContactIcon class="size-8 mr-2" />
-					{t("index.contact")}
-				</span>
-			</h2>
-			<Contact />
+					<span
+						class="flex items-center text-4xl border-background-dark text-background-dark underline underline-offset-4 decoration-pink dark:text-white py-2"
+					>
+						<EducationIcon class="size-8 mr-2" />
+						{t("index.education")}
+					</span>
+				</h2>
+				<Experience />
+			</SectionContainer>
+			<SectionContainer id="tech" class="px-5 pb-20 pt-24 md:px-10 lg:px-20">
+				<h2
+					class="flex mb-16 text-white items-center justify-start dark:text-white font-bold"
+				>
+					<span
+						class="flex items-center text-4xl border-background-dark text-background-dark underline underline-offset-4 decoration-pink dark:text-white py-2"
+					>
+						<TechStackIcon class="size-8 mr-2" />
+						{t("index.tech")}
+					</span>
+				</h2>
+				<TechStack />
+			</SectionContainer>
+
+			<SectionContainer id="contact" class="pb-20 pt-24 px-5 md:px-10 lg:px-20">
+				<h2
+					class="flex mb-8 text-white items-center justify-start dark:text-white font-bold"
+				>
+					<span
+						class="flex items-center text-4xl border-background-dark text-background-dark underline underline-offset-4 decoration-pink dark:text-white py-2"
+					>
+						<ContactIcon class="size-8 mr-2" />
+						{t("index.contact")}
+					</span>
+				</h2>
+				<Contact />
+			</SectionContainer>
 		</SectionContainer>
 	</main>
 </Layout>

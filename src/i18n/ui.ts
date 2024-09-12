@@ -13,8 +13,9 @@ export const ui = {
     'nav.contact': 'Contact',
     'index.tech': 'TECH STACK',
     'index.education': 'EDUCATION',
-    'index.projects': 'PROYECTS',
+    'index.projects': 'PROJECTS',
     'index.contact': 'CONTACT', 
+    'index.personalProjects': 'latests personal projects:',
   },
   es: {
     'nav.tech': 'Stack',
@@ -25,5 +26,6 @@ export const ui = {
     'index.education': 'EDUCACIÓN',
     'index.projects': 'PROYECTOS',
     'index.contact': 'CONTACTO', 
+    'index.personalProjects': 'mis últimos proyectos personales:'
   },
 } as const;
