@@ -2,10 +2,10 @@
   "HERO": {
     "HELLO": "Hi! I'm Paula,",
     "DESCRIPTION1": "also known as ssanjua. Passionate about technology and committed to creating products that make a difference, my experience in the multimedia sector has shaped me in leadership and collaborative work. Specialized in technologies such as",
-    "TECH": "JavaScript, React, Node.js, and SQL/NoSQL databases,",
-    "PROJ": "my projects include applications like",
-    "PROJNAMES": "Bookeando and YarcoDelivery,",
-    "PROJEXPLAIN": "covering both backend and frontend. My colleagues highlight my technical skills as well as my",
+    "TECH": "JavaScript, React, Node.js, and SQL/NoSQL databases.",
+    "PROJ": "",
+    "PROJNAMES": "",
+    "PROJEXPLAIN": "My colleagues highlight my technical skills as well as my",
     "SKILLS": "creative thinking and problem-solving abilities."
   },
   "PROJECTS": {

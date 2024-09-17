@@ -8,6 +8,7 @@ import LinkedinIcon from "./icons/LinkedinIcon.astro";
 import XIcon from "./icons/XIcon.astro";
 
 import { getI18N } from "../i18n";
+import CvButton from "./buttons/CvButton.astro";
 const { currentLocale } = Astro;
 const i18n = getI18N({ currentLocale });
 ---
@@ -61,13 +62,9 @@ const i18n = getI18N({ currentLocale });
     <div
       class="hidden lg:flex font-bold justify-start items-center gap-6 mt-10"
     >
-      <SocialContact
-        href="https://drive.google.com/file/d/1me7-_HcOuj8stwOJCg11MWzkd-nwmm2-/view?usp=sharing"
-      >
-        <span class="py-3 px-10 text-white bg-pink custom-shadow-yellow"
-          >CV</span
-        >
-      </SocialContact>
+      <div class="flex text-white bg-pink custom-shadow-yellow font-bold">
+        <CvButton />
+      </div>
       <a
         class="transition duration-300 ease-in-out hover:scale-105"
         href="mailto:ejemplo@dominio.com"
@@ -121,31 +118,26 @@ const i18n = getI18N({ currentLocale });
 </div>
 
 <div class="flex justify-center items-center lg:hidden mt-10">
-  <ProfileGif class="max-w-[150px]" />
+  <ProfileGif class="max-w-[120px]" />
   <div>
-    <div class="flex justify-center items-center mb-8">
-      <SocialContact
-        href="https://drive.google.com/file/d/1me7-_HcOuj8stwOJCg11MWzkd-nwmm2-/view?usp=sharing"
-      >
-        <span
-          class="py-2 px-8 text-white font-bold bg-pink custom-shadow-yellow"
-          >CV</span
+    <div class="flex gap-6 m-8 justify-center items-center">
+      <div class="text-white bg-pink custom-shadow-yellow font-bold">
+        <CvButton />
+      </div>
+      <div class="font-bold items-center">
+        <a
+          class="transition duration-300 ease-in-out hover:scale-105"
+          href="mailto:ejemplo@dominio.com"
         >
-      </SocialContact>
-    </div>
-    <div class="flex justify-center font-bold items-center mb-5">
-      <a
-        class="transition duration-300 ease-in-out hover:scale-105"
-        href="mailto:ejemplo@dominio.com"
-      >
-        <span
-          class="py-2 px-5 dark:bg-white custom-shadow-pink text-white bg-lightgray dark:text-black"
+          <span
+            class="py-3 px-5 dark:bg-white custom-shadow-pink text-white bg-lightgray dark:text-black"
+          >
+            EMAIL
+          </span></a
         >
-          EMAIL
-        </span></a
-      >
+      </div>
     </div>
-    <nav class="flex dark:text-white">
+    <nav class="flex m-8 dark:text-white">
       <a
         aria-label="button"
         class="flex hover:bg-orange hover:text-white justify-center items-center transition-all duration-300 ease-in-out hover:scale-105 size-10"
