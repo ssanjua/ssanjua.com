@@ -1,22 +1,20 @@
 ---
+import Line from "../components/buttons/Line.astro";
 
-import Line from "../components/buttons/Line.astro"
-
-
-import { getI18N } from "../i18n"
+import { getI18N } from "../i18n";
+import ChevronIcon from "./icons/ChevronIcon.astro";
 const { currentLocale } = Astro;
-const i18n = getI18N({ currentLocale })
+const i18n = getI18N({ currentLocale });
 
-type EducationKey = 'helsinki' | 'fcc' | 'henry' | 'efset' | 'coursera'
-
+type EducationKey = "helsinki" | "fcc" | "henry" | "efset" | "coursera";
 
 const EXPERIENCE = [
-{
+  {
     date: "March 2024 ~",
     school: "Helsinki University",
     title: "Full Stack Open",
     key: "helsinki",
-    link: "https://fullstackopen.com/",
+    link: "https://studies.cs.helsinki.fi/stats/api/certificate/fullstackopen/en/812d1a6d8d1153fb4ff479ae95fe1152",
     logo: "/logos/helsinski.webp",
   },
   {
@@ -62,19 +60,18 @@ const EXPERIENCE = [
 ];
 ---
 
-
-<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
+<div
+  class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto"
+>
   {
     EXPERIENCE.map(({ date, school, title, key, link, logo }) => (
       <div class="flex flex-col gap-2 border border-lightgray dark:border-white shadow-custom-dark dark:shadow-custom-white p-8">
         <div class="flex justify-start items-center">
-          <img
-            src={logo}
-            alt={`${school} logo`}
-            class=" rounded-lg size-14"
-          />
+          <img src={logo} alt={`${school} logo`} class=" rounded-lg size-14" />
           <div class=" ml-4">
-            <h3 class="text-xs text-gray-900 dark:text-gray-300 mb-1">{date}</h3>
+            <h3 class="text-xs text-gray-900 dark:text-gray-300 mb-1">
+              {date}
+            </h3>
             <h2 class="font-bold font-xl">{school}</h2>
           </div>
         </div>
@@ -85,16 +82,22 @@ const EXPERIENCE = [
         <p id="description" class="text-sm">
           {i18n.EDUCATION[key as EducationKey]}
         </p>
-        <div class="flex-grow"></div>
+        <div class="flex-grow mt-6" />
         <a
           aria-label="button"
           href={link}
           role="link"
           target="_blank"
-          class="flex justify-center"
-        > <span class="border font-semibold mt-4 bg-white dark:bg-gris border-lightgray dark:border-white dark:hover:bg-white dark:hover:text-black p-2 transition-all duration-300 ease-in-out hover:scale-105">
-            {i18n.BUTTON.CERTIFICATE}
-          </span>
+          class="flex justify-start items-center transition-all duration-300 ease-in-out hover:translate-x-1 text-gris dark:text-light"
+        >
+          {" "}
+          <>
+            
+            <span class="font-semibold ">
+              {i18n.BUTTON.CERTIFICATE}
+            </span>
+            <ChevronIcon class="size-6" />
+          </>
         </a>
       </div>
     ))
