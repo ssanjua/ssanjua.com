@@ -1,4 +1,4 @@
 export const SITE = {
-  website: "https://ss4njua.vercel.app/",
+  website: "https://ssanjua.vercel.app/",
   ogImage: "oG-ssanjua.webp",
 }
