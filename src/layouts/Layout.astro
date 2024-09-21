@@ -12,6 +12,7 @@ interface Props {
 	title: string;
 	description: string;
 	ogImage?:string;
+	author: string;
 }
 
 const { title, description } = Astro.props;
@@ -25,33 +26,30 @@ const socialImageURL = new URL(ogImage, Astro.url);
 <html lang={currentLocale}>
 	<head>
 		<meta charset="UTF-8" />
-		<meta name="description" content={description} />
+		<meta name="description" content="Astro description" />
 		<meta name="viewport" content="width=device-width" />
 		<link rel="canonical" href={canonicalURL} />
-		<link rel="icon" type="webp" href="/favicon.webp" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="generator" content={Astro.generator} />
-		<title>{title}</title>
 
-		<!-- Etiquetas Open Graph -->
-		<meta property="og:title" content={title} />
-		<meta property="og:description" content={description} />
-		<meta name="title" content={title} />
+		<!-- General Meta Tags -->
+    <title>{title}</title>
+    <meta name="title" content={title} />
     <meta name="description" content={description} />
-    <meta name="author" content="Pau Pallares ssanjua" />
+    <meta name="author" content={SITE.author} />
 
-		<meta property="og:image" content={socialImageURL}  />
-		<meta property="og:type" content="website" />
-		<meta property="og:url" content="https://ssanjua.vercel.app" />
-		<!-- Cambia por tu URL -->
-		<meta property="og:image:width" content="1200" />
-		<meta property="og:image:height" content="630" />
-		<meta property="og:locale" content={currentLocale} />
+    <!-- Open Graph / Facebook -->
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonicalURL} />
+    <meta property="og:image" content={socialImageURL} />
 
-		<!-- Etiquetas para Twitter (se reutilizan las de Open Graph) -->
-		<meta name="twitter:card" content="summary_large_image" />
-		<meta name="twitter:title" content={title} />
-		<meta name="twitter:description" content={description} />
-		<meta name="twitter:image" content={socialImageURL}  />
+		 <!-- Twitter -->
+		 <meta name="twitter:card" content="summary_large_image" />
+		 <meta name="twitter:url" content={canonicalURL} />
+		 <meta name="twitter:title" content={title} />
+		 <meta name="twitter:description" content={description} />
+		 <meta name="twitter:image" content={socialImageURL} />
 
 		<script>
 			if (!localStorage.getItem("color-theme")) {
