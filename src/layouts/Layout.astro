@@ -5,18 +5,21 @@ import "@fontsource-variable/noto-sans";
 import "@fontsource/press-start-2p";
 import Footer from "../components/Footer.astro";
 import { SITE } from "../config";
-// font-family: 'Noto Sans Variable', sans-serif
 
 interface Props {
-	title: string;
-	description: string;
+	title?: string;
+	description?: string;
 	ogImage?: string;
-	author: string;
+	author?: string;
 }
 
-const { title, description } = Astro.props;
 const { currentLocale } = Astro;
-const { ogImage = SITE.ogImage, author = SITE.author} = Astro.props;
+const { 
+	title = SITE.title,
+	description = SITE.description,
+	ogImage = SITE.ogImage, 
+	author = SITE.author
+} = Astro.props;
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 const socialImageURL = new URL(ogImage, Astro.url);
 ---
