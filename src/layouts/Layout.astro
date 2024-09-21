@@ -4,15 +4,20 @@ import "@fontsource-variable/martian-mono";
 import "@fontsource-variable/noto-sans";
 import "@fontsource/press-start-2p";
 import Footer from "../components/Footer.astro";
+import { SITE } from "../config";
+import { string } from "astro/zod";
 // font-family: 'Noto Sans Variable', sans-serif
 
 interface Props {
 	title: string;
 	description: string;
+	ogImage?:string;
 }
 
 const { title, description } = Astro.props;
 const { currentLocale } = Astro;
+const { ogImage = SITE.ogImage } = Astro.props;
+const socialImageURL = new URL(ogImage, Astro.url);
 ---
 
 <!doctype html>
@@ -28,7 +33,11 @@ const { currentLocale } = Astro;
 		<!-- Etiquetas Open Graph -->
 		<meta property="og:title" content={title} />
 		<meta property="og:description" content={description} />
-		<meta property="og:image" content="/oG-ssanjua.webp" />
+		<meta name="title" content={title} />
+    <meta name="description" content={description} />
+    <meta name="author" content="Pau Pallares ssanjua" />
+
+		<meta property="og:image" content={socialImageURL}  />
 		<meta property="og:type" content="website" />
 		<meta property="og:url" content="https://ssanjua.vercel.app" />
 		<!-- Cambia por tu URL -->
@@ -40,7 +49,7 @@ const { currentLocale } = Astro;
 		<meta name="twitter:card" content="summary_large_image" />
 		<meta name="twitter:title" content={title} />
 		<meta name="twitter:description" content={description} />
-		<meta name="twitter:image" content="/oG-ssanjua.webp" />
+		<meta name="twitter:image" content={socialImageURL}  />
 
 		<script>
 			if (!localStorage.getItem("color-theme")) {
