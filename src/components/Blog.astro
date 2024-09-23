@@ -1,0 +1,68 @@
+---
+import LinkButton from "./LinkButton.astro";
+import ViteIcon from "./icons/ViteIcon.astro";
+import TailwindIcon from "./icons/TailwindIcon.astro";
+import Link from "./icons/Link.astro";
+
+export const TAGS = {
+  REACT: {
+    name: "Astro",
+    class: "dark:bg-gray-800 bg-gray-300",
+    icon: AstroIcon,
+  },
+  TYPESCRIPT: {
+    name: "Tailwind",
+    class: "dark:bg-gray-800 bg-gray-300",
+    icon: TailwindIcon,
+  },
+  VITE: {
+    name: "Vite",
+    class: "dark:bg-gray-800 bg-gray-300",
+    icon: ViteIcon,
+  },
+}
+
+import { getI18N } from "../i18n"
+import AstroIcon from "./icons/AstroIcon.astro";
+import GitHubIcon from "./icons/GitHubIcon.astro";
+const { currentLocale } = Astro;
+const i18n = getI18N({ currentLocale })
+
+---
+ 
+<div class="flex flex-col">
+  <img
+    class="w-full max-6xl object-cover rounded-xl transition-all duration-300 ease-out hover:scale-105"
+    src="/projects/oG-ss4njua.webp"
+    alt="ssanjua linktree web"
+  />
+  <div class="">
+    <div class="flex items-center my-4 gap-1">
+      <img class="size-6 mr-2" alt="linktree favicon" src="/logos/favicon_linktree.webp" />
+      <a
+        class="transition-all ease-out font-semibold hover:underline hover:font-bold"
+        href="https://ss4njua.vercel.app/"
+        target="_blank"
+        >ss4njua-blog.com
+      </a>
+    </div>
+    <div class="flex flex-wrap justity-center items-center gap-2 py-2">
+      {
+        Object.entries(TAGS).map(([key, tag]) => (
+          <span class={`inline-block text-xs py-2 px-3 text-background-dark dark:text-white ${tag.class}`}>
+            <tag.icon class="inline-block size-3.5" />
+            {tag.name}
+          </span>
+        ))
+      }
+    </div>
+    <footer class="flex items-end justify-center md:justify-start mt-4 gap-x-4">
+      <LinkButton href="https://github.com/ssanjua/ss4njua-blog">
+        <GitHubIcon class="size-4" /> Repo
+      </LinkButton>   
+      <LinkButton href="https://ss4njua.vercel.app/">
+        <Link class="size-4" /> Web
+      </LinkButton>
+    </footer>
+  </div>
+</div>

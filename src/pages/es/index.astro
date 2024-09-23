@@ -12,6 +12,7 @@ import Contact from "../../components/Contact.astro"
 import ContactIcon from "../../components/icons/ContactIcon.astro"
 import Terminal from "../../components/Terminal.astro"
 import PlusIcon from "../../components/icons/PlusIcon.astro"
+import Blog from "../../components/Blog.astro"
 
 import { getLangFromUrl, useTranslations } from "../../i18n/utils.ts"
 import LinkTree from "../../components/LinkTree.astro"
@@ -21,10 +22,7 @@ const t = useTranslations(lang)
 
 ---
 
-<Layout
-	title="ssanjua - full stack web developer - portfolio "
-	description="full stack web developer based in spain, seeking work"
->
+<Layout author="ssanjua">
 	<main class="">
 		<div class="section w-full pt-44 pb-24 bg-light dark:bg-gris mx-auto px-5">
 			<Hero />
@@ -49,13 +47,14 @@ const t = useTranslations(lang)
 				<span
 					class="flex items-center text-2xl border-background-dark text-background-dark underline underline-offset-4 decoration-pink dark:text-white py-2"
 				>
-				<PlusIcon class="size-6 mr-4" />
+				<PlusIcon class="size-4 mr-4" />
 					{t("index.personalProjects")}
 				</span>
 			</h3>
-			<div class="grid lg:grid-cols-2 gap-8">
+			<div class="grid md:grid-cols-3 gap-4">
 				<Terminal />
 				<LinkTree />
+				<Blog />
 			</div>
 			</SectionContainer>
 
