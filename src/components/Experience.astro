@@ -10,7 +10,7 @@ type EducationKey = "helsinki" | "fcc" | "henry" | "efset" | "coursera";
 
 const EXPERIENCE = [
   {
-    date: "March 2024 ~",
+    date: "2024",
     school: "Helsinki University",
     title: "Full Stack Open",
     key: "helsinki",
@@ -18,15 +18,15 @@ const EXPERIENCE = [
     logo: "/logos/helsinski.webp",
   },
   {
-    date: "July 2023 - May 2024",
+    date: "2024",
     school: "freeCodeCamp",
-    title: "Full Stack Web Developer",
+    title: "Full Stack Developer",
     key: "fcc",
     link: "https://www.freecodecamp.org/espanol/certification/ssanjua/full-stack",
     logo: "/logos/free_code_camp.webp",
   },
   {
-    date: "July 2023 - December 2023",
+    date: "2023",
     school: "HardvardX",
     title: "CS50 Computer Science",
     key: "harvard",
@@ -34,7 +34,7 @@ const EXPERIENCE = [
     logo: "/logos/harvard.webp",
   },
   {
-    date: "June 2023 - September 2023",
+    date: "2023",
     school: "Coursera",
     title: "IBM Data Engineer",
     key: "coursera",
@@ -42,7 +42,7 @@ const EXPERIENCE = [
     logo: "/logos/courseralearning_logo.webp",
   },
   {
-    date: "February 2023 - July 2023",
+    date: "2023",
     school: "SoyHenry",
     title: "Data Science",
     key: "henry",
@@ -50,7 +50,7 @@ const EXPERIENCE = [
     logo: "/logos/henryok_logo.webp",
   },
   {
-    date: "June 2023",
+    date: "2024",
     school: "EF SET ",
     title: "C2 Proficent",
     key: "efset",
@@ -61,7 +61,7 @@ const EXPERIENCE = [
 ---
 
 <div
-  class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto"
+  class="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-3 md:gap-6 max-w-6xl mx-auto"
 >
   {
     EXPERIENCE.map(({ date, school, title, key, link, logo }) => (
@@ -79,9 +79,9 @@ const EXPERIENCE = [
         <h3 id="description" class="font-bold text-xl">
           {title}
         </h3>
-        <p id="description" class="text-sm">
+        {/* <p id="description" class="text-sm">
           {i18n.EDUCATION[key as EducationKey]}
-        </p>
+        </p> */}
         <div class="flex-grow mt-6" />
         <a
           aria-label="button"
@@ -93,7 +93,7 @@ const EXPERIENCE = [
           {" "}
           <>
             
-            <span class="font-semibold ">
+            <span class="font-semibold">
               {i18n.BUTTON.CERTIFICATE}
             </span>
             <ChevronIcon class="size-6" />
