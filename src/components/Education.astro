@@ -1,0 +1,105 @@
+---
+import Line from "../components/buttons/Line.astro";
+
+import { getI18N } from "../i18n";
+import ChevronIcon from "./icons/ChevronIcon.astro";
+const { currentLocale } = Astro;
+const i18n = getI18N({ currentLocale });
+
+type EducationKey = "helsinki" | "fcc" | "henry" | "efset" | "coursera";
+
+const EDUCATION = [
+  {
+    date: "2024",
+    school: "Helsinki University",
+    title: "Full Stack Open",
+    key: "helsinki",
+    link: "https://studies.cs.helsinki.fi/stats/api/certificate/fullstackopen/en/812d1a6d8d1153fb4ff479ae95fe1152",
+    logo: "/logos/helsinski.webp",
+  },
+  {
+    date: "2024",
+    school: "freeCodeCamp",
+    title: "Full Stack Developer",
+    key: "fcc",
+    link: "https://www.freecodecamp.org/espanol/certification/ssanjua/full-stack",
+    logo: "/logos/free_code_camp.webp",
+  },
+  {
+    date: "2023",
+    school: "HardvardX",
+    title: "CS50 Computer Science",
+    key: "harvard",
+    link: "https://courses.edx.org/certificates/6956d84d08f74fb082bb4b7be62f6a7b?_gl=1*1fu5ao5*_ga*Mzk2MzE1MTcwLjE2OTE2NjA1MzY.*_ga_D3KS4KMDT0*MTcwNjgxMTYyMC4xOS4xLjE3MDY4MTE2MzQuNDYuMC4w",
+    logo: "/logos/harvard.webp",
+  },
+  {
+    date: "2023",
+    school: "Coursera",
+    title: "IBM Data Engineer",
+    key: "coursera",
+    link: "https://www.coursera.org/account/accomplishments/specialization/certificate/5F78DFXU8CRF",
+    logo: "/logos/courseralearning_logo.webp",
+  },
+  {
+    date: "2023",
+    school: "SoyHenry",
+    title: "Data Science",
+    key: "henry",
+    link: "https://certificates.soyhenry.com/new-cert?id=a99a7015e911f55e0c11947392b6f03b3ee0180e7d88e5831c53652946a34eef",
+    logo: "/logos/henryok_logo.webp",
+  },
+  {
+    date: "2024",
+    school: "EF SET ",
+    title: "C2 Proficent",
+    key: "efset",
+    link: "https://cert.efset.org/CaWU7w",
+    logo: "/logos/efset.webp",
+  },
+];
+---
+
+<div
+  class="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-3 md:gap-6 max-w-6xl mx-auto"
+>
+  {
+    EDUCATION.map(({ date, school, title, key, link, logo }) => (
+      <div class="flex flex-col gap-2 border border-lightgray dark:border-white shadow-custom-dark dark:shadow-custom-white p-8">
+        <div class="flex justify-start items-center">
+          <img src={logo} alt={`${school} logo`} class=" rounded-lg size-14" />
+          <div class=" ml-4">
+            <h3 class="text-xs text-gray-900 dark:text-gray-300 mb-1">
+              {date}
+            </h3>
+            <h2 class="font-bold font-xl">{school}</h2>
+          </div>
+        </div>
+        <Line />
+        <h3 id="description" class="font-bold text-xl">
+          {title}
+        </h3>
+        {/* <p id="description" class="text-sm">
+          {i18n.EDUCATION[key as EducationKey]}
+        </p> */}
+        <div class="flex-grow mt-6" />
+        <a
+          aria-label="button"
+          href={link}
+          role="link"
+          target="_blank"
+          class="flex justify-start items-center transition-all duration-300 ease-in-out hover:translate-x-1 text-gris dark:text-light"
+        >
+          {" "}
+          <>
+            
+            <span class="font-semibold">
+              {i18n.BUTTON.CERTIFICATE}
+            </span>
+            <ChevronIcon class="size-6" />
+          </>
+        </a>
+      </div>
+    ))
+  }
+</div>

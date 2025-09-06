@@ -16,6 +16,7 @@ export const ui = {
     'index.projects': 'PROJECTS',
     'index.contact': 'CONTACT', 
     'index.personalProjects': 'Latests personal projects:',
+    'index.experience': 'EXPERIENCE',
   },
   es: {
     'nav.tech': 'Stack',
@@ -26,6 +27,7 @@ export const ui = {
     'index.education': 'EDUCACIÓN',
     'index.projects': 'PROYECTOS',
     'index.contact': 'CONTACTO', 
-    'index.personalProjects': 'Últimos proyectos personales:'
+    'index.personalProjects': 'Últimos proyectos personales:',
+    'index.experience': 'EXPERIENCIA',
   },
 } as const;

@@ -6,6 +6,7 @@ import EducationIcon from "../../components/icons/EducationIcon.astro"
 import ProjectsIcon from "../../components/icons/ProjectsIcon.astro"
 import Projects from "../../components/Projects.astro"
 import TechStackIcon from "../../components/icons/TechStackIcon.astro"
+import Education from "../../components/Education.astro"
 import TechStack from "../../components/TechStack.astro"
 import Hero from "../../components/Hero.astro"
 import Contact from "../../components/Contact.astro"
@@ -27,6 +28,22 @@ const t = useTranslations(lang)
 		<div class="section w-full pt-44 pb-24 bg-light dark:bg-gris mx-auto px-5">
 			<Hero />
 		</div>
+		<SectionContainer
+		id="jobExperience"
+		class="px-5 pb-20 pt-20 md:pt-32 lg:pt-40 md:px-10 lg:px-20"
+	>
+		<h2
+			class="flex mb-10 text-white items-center justify-start dark:text-white font-bold"
+		>
+			<span
+				class="flex items-center text-4xl border-background-dark text-background-dark underline underline-offset-4 decoration-pink dark:text-white py-2"
+			>
+				<ProjectsIcon class="size-8 mr-4" />
+				{t("index.experience")}
+			</span>
+		</h2>
+		<Experience />
+	</SectionContainer>
 		<SectionContainer id="projects" class="px-5 pb-20 pt-20 md:pt-32 lg:pt-40 md:px-10 lg:px-20">
 			<h2
 				class="flex mb-10 text-white items-center justify-start dark:text-white font-bold"
@@ -72,7 +89,7 @@ const t = useTranslations(lang)
 						{t("index.education")}
 					</span>
 				</h2>
-				<Experience />
+				<Education />
 			</SectionContainer>
 			<!-- <SectionContainer id="tech" class="px-5 pb-20 pt-10 md:pt-26 lg:pt-28 md:px-10 lg:px-20">
 				<h2
